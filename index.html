@@ -1,0 +1,2740 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>淡江大學外交與國際關係學系 ｜ 教師甄選 ｜ 林文正 Wen-Cheng Lin</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Noto+Sans+TC:wght@300;400;500;700;900&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1a1a1a;--paper:#f5f0e8;
+  --accent:#8b2500;--accent-light:#c4532b;
+  --gold:#b8860b;--sage:#5a6e5a;--muted:#6b6560;
+  --line:#c9c0b4;--card-bg:#faf7f2;
+  --blue:#1d3557;--blue2:#3a5a8c;--purple:#6b4c7a;--teal:#2a7a6e;
+  --tku-blue:#003366;--tku-gold:#c9a253;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%;overflow:hidden}
+body{font-family:'Noto Sans TC','Source Serif 4',serif;background:var(--paper);color:var(--ink);line-height:1.8}
+
+/* ==== App Structure ==== */
+.app{display:flex;flex-direction:column;height:100vh}
+
+/* ==== Top Brand Bar (TKU style) ==== */
+.brand-bar{flex-shrink:0;background:linear-gradient(135deg,var(--tku-blue) 0%,#002855 100%);color:#fff;padding:.5rem 1.2rem;display:flex;align-items:center;justify-content:space-between;border-bottom:3px solid var(--tku-gold)}
+.brand-left{display:flex;align-items:center;gap:.8rem}
+.brand-logo{width:32px;height:32px;border-radius:50%;background:var(--tku-gold);display:flex;align-items:center;justify-content:center;color:var(--tku-blue);font-weight:900;font-size:.85rem;font-family:'Playfair Display',serif}
+.brand-title{font-size:.95rem;font-weight:700;letter-spacing:.05em}
+.brand-sub{font-size:.78rem;color:#c9a253;letter-spacing:.03em;margin-top:2px}
+.brand-right{display:flex;gap:.4rem;align-items:center}
+.lang-btn{padding:.35rem .9rem;border:1px solid rgba(255,255,255,.3);background:transparent;color:#fff;font-size:.85rem;cursor:pointer;border-radius:3px;transition:all .2s;font-family:inherit}
+.lang-btn.active{background:var(--tku-gold);color:var(--tku-blue);border-color:var(--tku-gold);font-weight:700}
+.lang-btn:hover:not(.active){background:rgba(255,255,255,.15)}
+
+/* ==== Navigation ==== */
+.top-nav{flex-shrink:0;background:#1a1a1a;display:flex;align-items:center;padding:0 1rem;height:48px;gap:.2rem;overflow-x:auto;scrollbar-width:none}
+.top-nav::-webkit-scrollbar{display:none}
+.nav-btn{flex-shrink:0;padding:.4rem .85rem;background:0;border:0;font-family:'Noto Sans TC',sans-serif;font-size:.76rem;font-weight:500;color:#999;cursor:pointer;border-radius:4px;transition:all .25s;white-space:nowrap}
+.nav-btn:hover{color:#ddd;background:rgba(255,255,255,.06)}
+.nav-btn.active{color:var(--paper);background:var(--accent)}
+.nav-time{font-size:.66rem;color:#666;margin-left:4px;font-weight:400}
+
+/* ==== Pages ==== */
+.page-container{flex:1;overflow:hidden;position:relative}
+.page{position:absolute;inset:0;overflow-y:auto;padding:2rem 1.8rem 4rem;opacity:0;transform:translateX(30px);pointer-events:none;transition:opacity .38s,transform .38s}
+.page.active{opacity:1;transform:translateX(0);pointer-events:auto}
+.page-inner{max-width:920px;margin:0 auto}
+
+/* ==== Bottom Bar ==== */
+.bottom-bar{flex-shrink:0;height:46px;background:#faf7f2;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 1.5rem}
+.page-indicator{font-size:.72rem;color:var(--muted);letter-spacing:.03em}
+.page-dots{display:flex;gap:6px}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--line);cursor:pointer;transition:all .3s}
+.dot.active{background:var(--accent);transform:scale(1.35)}
+.arrow-btns{display:flex;gap:.4rem}
+.arrow-btn{width:32px;height:32px;border-radius:50%;border:1px solid var(--line);background:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.9rem;color:var(--muted);transition:all .2s}
+.arrow-btn:hover{border-color:var(--accent);color:var(--accent)}
+.arrow-btn:disabled{opacity:.3;cursor:default}
+
+/* ==== Typography ==== */
+.page h2{font-family:'Playfair Display',serif;font-size:clamp(1.85rem,3.4vw,2.6rem);font-weight:700;color:var(--accent);line-height:1.2;margin-bottom:.3rem}
+.page h2::after{content:'';display:block;width:46px;height:3px;background:var(--gold);margin-top:.5rem;margin-bottom:1.4rem}
+.page h3{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--ink);margin:1.8rem 0 .7rem;font-weight:700}
+.page h4{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--accent);margin:1.1rem 0 .55rem;font-weight:700}
+.page p{font-size:1.02rem;margin-bottom:1rem;color:#333;line-height:1.85}
+.page p strong{color:var(--ink)}
+.page ul,.page ol{padding-left:1.3rem;margin-bottom:1rem;font-size:1rem;color:#333}
+.page li{margin-bottom:.4rem;line-height:1.8}
+
+/* ==== Hero ==== */
+.hero-header{border-bottom:1px solid var(--line);padding-bottom:1.6rem;margin-bottom:1.8rem;background:linear-gradient(180deg,rgba(0,51,102,.03) 0%,transparent 100%);padding:1.5rem 1.2rem;border-radius:8px}
+.hero-section{display:flex;gap:1.5rem;align-items:flex-start;flex-wrap:wrap}
+.hero-info{flex:1;min-width:250px}
+.hero-name{font-family:'Playfair Display',serif;font-size:clamp(1.85rem,3.6vw,2.5rem);font-weight:900;color:var(--tku-blue);line-height:1.15}
+.hero-name-en{font-family:'Source Serif 4',serif;font-style:italic;font-size:1.15rem;color:var(--gold);margin-top:.25rem}
+.hero-sub{font-family:'Source Serif 4',serif;font-size:1rem;color:var(--muted);margin:.6rem 0 .7rem;line-height:1.7}
+.hero-tags{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:.9rem}
+.tag{padding:.32rem .85rem;background:rgba(139,37,0,.07);color:var(--accent);border-radius:16px;font-size:.85rem;font-weight:500}
+.tag.blue{background:rgba(29,53,87,.08);color:var(--tku-blue)}
+.tag.gold{background:rgba(184,134,11,.1);color:var(--gold)}
+
+/* ==== Agenda Table ==== */
+.agenda-grid{display:grid;grid-template-columns:78px 1fr;gap:0;margin:1rem 0;border:1px solid var(--line);border-radius:6px;overflow:hidden;background:#fff}
+.agenda-row{display:contents}
+.agenda-time{padding:.85rem .9rem;background:var(--tku-blue);color:var(--tku-gold);font-weight:700;font-size:.95rem;text-align:center;font-family:'Playfair Display',serif;border-bottom:1px solid rgba(255,255,255,.1)}
+.agenda-desc{padding:.85rem 1.1rem;background:#fff;border-bottom:1px solid var(--line);font-size:.98rem;line-height:1.7}
+.agenda-row:last-child .agenda-time,.agenda-row:last-child .agenda-desc{border-bottom:0}
+
+/* ==== Cards ==== */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:.95rem;margin:1.2rem 0}
+.card{background:var(--card-bg);border-radius:7px;padding:1.1rem;border-top:3px solid var(--accent);box-shadow:0 2px 10px rgba(0,0,0,.04);transition:transform .3s,box-shadow .3s}
+.card:hover{transform:translateY(-3px);box-shadow:0 5px 22px rgba(0,0,0,.09)}
+.card h4{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--accent);margin:0 0 .5rem}
+.card p{font-size:.92rem;color:#555;margin-bottom:0;line-height:1.75}
+.card.sage{border-top-color:var(--sage)}.card.sage h4{color:var(--sage)}
+.card.blue{border-top-color:var(--tku-blue)}.card.blue h4{color:var(--tku-blue)}
+.card.purple{border-top-color:var(--purple)}.card.purple h4{color:var(--purple)}
+.card.teal{border-top-color:var(--teal)}.card.teal h4{color:var(--teal)}
+.card.gold{border-top-color:var(--gold)}.card.gold h4{color:var(--gold)}
+
+/* ==== Flow Diagram (Self-Intro) ==== */
+.flow-container{background:#fff;border:1px solid var(--line);border-radius:8px;padding:1.5rem 1rem;margin:1rem 0;box-shadow:0 2px 10px rgba(0,0,0,.04);overflow-x:auto}
+.flow-svg{width:100%;min-width:720px;height:auto;display:block}
+
+/* ==== Curriculum (P3, HTML replacing SVG) ==== */
+.curri{background:#fff;border:1px solid var(--line);border-radius:10px;padding:1.5rem 1.2rem;margin:1.2rem 0;box-shadow:0 2px 12px rgba(0,0,0,.05)}
+.curri-title{background:#1a1a1a;color:var(--paper);padding:.85rem 1.2rem;border-radius:6px;font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:700;text-align:center;letter-spacing:.03em;margin-bottom:1.4rem}
+.curri-modules{display:grid;grid-template-columns:repeat(4,1fr);gap:.7rem;margin-bottom:1.2rem}
+.curri-mod{border-radius:8px;padding:.9rem .85rem;color:#fff;display:flex;flex-direction:column;min-height:160px}
+.curri-mod.modA{background:linear-gradient(135deg,#3a5a8c 0%,#1d3557 100%)}
+.curri-mod.modB{background:linear-gradient(135deg,#a8321a 0%,#8b2500 100%)}
+.curri-mod.modC{background:linear-gradient(135deg,#c9a253 0%,#b8860b 100%)}
+.curri-mod.modD{background:linear-gradient(135deg,#4a8c7e 0%,#2a7a6e 100%)}
+.curri-mod-head{font-weight:700;font-size:1rem;font-family:'Playfair Display',serif;text-align:center;margin-bottom:.2rem}
+.curri-mod-sub{font-size:.78rem;color:var(--tku-gold);text-align:center;padding-bottom:.55rem;margin-bottom:.6rem;border-bottom:1px solid rgba(255,255,255,.2)}
+.curri-mod.modC .curri-mod-sub{color:#1a1a1a;border-color:rgba(0,0,0,.15)}
+.curri-mod-list{font-size:.82rem;line-height:1.6}
+.curri-mod-list div{margin-bottom:.25rem}
+
+.curri-axis{background:#fff;border:2px dashed var(--accent);border-radius:8px;padding:1rem;margin-bottom:1.2rem;text-align:center}
+.curri-axis-title{color:var(--accent);font-size:1rem;font-weight:700;margin-bottom:.3rem}
+.curri-axis-desc{color:#333;font-size:.88rem;line-height:1.7}
+
+.curri-update-banner{background:#fffbf0;border:1px solid var(--gold);border-radius:6px;padding:.6rem;text-align:center;color:var(--gold);font-size:.98rem;font-weight:700;font-family:'Playfair Display',serif;margin-bottom:.9rem}
+.curri-updates{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin-bottom:1.2rem}
+.curri-up{background:#fff;border:1.5px solid var(--gold);border-radius:8px;overflow:hidden}
+.curri-up-head{padding:.55rem .85rem;color:#fff;font-weight:700;font-size:.92rem;text-align:center}
+.curri-up.up1 .curri-up-head{background:linear-gradient(135deg,#c9a253 0%,#b8860b 100%);color:#1a1a1a}
+.curri-up.up2 .curri-up-head{background:linear-gradient(135deg,#4a8c7e 0%,#2a7a6e 100%)}
+.curri-up.up3 .curri-up-head{background:linear-gradient(135deg,#a8321a 0%,#8b2500 100%)}
+.curri-up-body{padding:.7rem .85rem}
+.curri-up-q{color:var(--tku-blue);font-weight:700;font-size:.83rem;margin-bottom:.3rem}
+.curri-up-a{color:#333;font-size:.82rem;line-height:1.6}
+
+.curri-peda{background:#faf7f2;border:1px solid var(--teal);border-radius:8px;padding:1rem 1.1rem}
+.curri-peda-title{color:var(--teal);font-family:'Playfair Display',serif;font-weight:700;font-size:1rem;text-align:center;margin-bottom:.8rem}
+.curri-peda-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.7rem}
+.curri-peda-item{font-size:.82rem}
+.curri-peda-item strong{display:block;color:#1a1a1a;font-size:.9rem;margin-bottom:.25rem}
+.curri-peda-item span{display:block;color:#333;line-height:1.55;margin-bottom:.15rem}
+.curri-peda-item em{display:block;color:#666;font-style:italic;font-size:.78rem;margin-top:.2rem}
+
+@media(max-width:900px){
+  .curri-modules,.curri-updates,.curri-peda-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:600px){
+  .curri-modules,.curri-updates,.curri-peda-grid{grid-template-columns:1fr}
+}
+
+/* ==== Lesson Sample (W7 Digital Authoritarianism) ==== */
+.lesson{background:linear-gradient(135deg,#fff8e6 0%,#fffaf0 100%);border:2px solid var(--gold);border-radius:10px;padding:1.4rem 1.3rem;margin:1.5rem 0;position:relative;box-shadow:0 3px 14px rgba(184,134,11,.12)}
+.lesson::before{content:'📖 上課內容範例';position:absolute;top:-12px;left:20px;background:var(--gold);color:#fff;padding:3px 13px;border-radius:3px;font-size:.8rem;font-weight:700;letter-spacing:.05em}
+body.lang-en .lesson::before{content:'📖 LESSON SAMPLE'}
+.lesson-head{margin-bottom:.9rem;padding-bottom:.7rem;border-bottom:1px dashed var(--gold)}
+.lesson-week{display:inline-block;background:var(--gold);color:#fff;padding:.25rem .7rem;border-radius:3px;font-family:'Playfair Display',serif;font-size:.85rem;font-weight:700;margin-right:.5rem}
+.lesson-topic{display:inline-block;font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;color:#1a1a1a;vertical-align:middle}
+.lesson-cite{font-size:.8rem;color:#666;font-style:italic;margin-top:.4rem;line-height:1.5}
+.lesson-cite strong{color:var(--accent);font-style:normal}
+.lesson-narr{background:#fff;border-left:3px solid var(--accent);padding:.7rem .9rem;margin:.7rem 0;font-size:.92rem;line-height:1.85;color:#333;border-radius:0 4px 4px 0}
+.lesson-narr strong{color:var(--accent)}
+.lesson-blocks{display:grid;grid-template-columns:repeat(4,1fr);gap:.7rem;margin-top:1rem}
+.lesson-blk{background:#fff;border:1px solid rgba(184,134,11,.3);border-radius:6px;padding:.75rem .8rem;display:flex;flex-direction:column}
+.lesson-blk-num{font-family:'Playfair Display',serif;font-size:.85rem;color:var(--gold);font-weight:700;letter-spacing:.05em;margin-bottom:.2rem}
+.lesson-blk-title{font-weight:700;font-size:.95rem;color:#1a1a1a;margin-bottom:.4rem;padding-bottom:.35rem;border-bottom:1px solid #f0e6d0}
+.lesson-blk-body{font-size:.83rem;line-height:1.65;color:#444;flex:1}
+.lesson-blk-body strong{color:var(--accent)}
+.lesson-take{margin-top:1rem;background:#1a1a1a;color:var(--paper);padding:.85rem 1.1rem;border-radius:6px;font-size:.92rem;line-height:1.75}
+.lesson-take strong{color:var(--tku-gold)}
+.lesson-take-label{display:inline-block;background:var(--tku-gold);color:#1a1a1a;padding:.15rem .55rem;border-radius:3px;font-size:.75rem;font-weight:700;letter-spacing:.05em;margin-right:.5rem;font-family:'Playfair Display',serif}
+
+/* Lesson figures (concept diagrams) */
+.lesson-figs{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;margin-top:1rem}
+.lesson-fig{background:#fff;border:1px solid rgba(184,134,11,.35);border-radius:6px;padding:.8rem;display:flex;flex-direction:column}
+.lesson-fig-cap{font-size:.82rem;font-weight:700;color:var(--accent);text-align:center;margin-bottom:.4rem;font-family:'Playfair Display',serif}
+.lesson-fig-sub{font-size:.75rem;color:#666;text-align:center;font-style:italic;margin-bottom:.4rem}
+.lesson-fig svg{width:100%;height:auto;display:block;flex:1}
+.lesson-fig-note{font-size:.78rem;color:#444;line-height:1.6;margin-top:.4rem;padding-top:.4rem;border-top:1px dashed rgba(184,134,11,.25)}
+.lesson-fig-note strong{color:var(--accent)}
+@media(max-width:800px){
+  .lesson-figs{grid-template-columns:1fr}
+}
+
+/* W4 lesson variant - blue (party-state) */
+.lesson.blue{background:linear-gradient(135deg,#eef3f9 0%,#f7faff 100%);border-color:var(--tku-blue)}
+.lesson.blue::before{background:var(--tku-blue);content:'📖 上課內容範例'}
+body.lang-en .lesson.blue::before{content:'📖 LESSON SAMPLE'}
+.lesson.blue .lesson-week{background:var(--tku-blue)}
+.lesson.blue .lesson-head{border-bottom-color:var(--tku-blue)}
+.lesson.blue .lesson-blk{border-color:rgba(29,53,87,.3)}
+.lesson.blue .lesson-blk-num{color:var(--tku-blue)}
+.lesson.blue .lesson-blk-title{border-bottom-color:#dbe5f0}
+.lesson.blue .lesson-blk-body strong{color:var(--tku-blue)}
+.lesson.blue .lesson-narr{border-left-color:var(--tku-blue)}
+.lesson.blue .lesson-narr strong{color:var(--tku-blue)}
+.lesson.blue .lesson-fig{border-color:rgba(29,53,87,.3)}
+.lesson.blue .lesson-fig-cap{color:var(--tku-blue)}
+.lesson.blue .lesson-fig-note{border-top-color:rgba(29,53,87,.25)}
+.lesson.blue .lesson-fig-note strong{color:var(--tku-blue)}
+
+/* Network diagram nodes (W4) */
+.net-legend{display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center;margin-top:.5rem;font-size:.78rem;color:#444}
+.net-legend-item{display:flex;align-items:center;gap:.3rem}
+.net-legend-dot{width:12px;height:12px;border-radius:50%;display:inline-block}
+@media(max-width:900px){
+  .lesson-blocks{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:600px){
+  .lesson-blocks{grid-template-columns:1fr}
+}
+
+/* ==== Lesson hint (above collapsible lessons) ==== */
+.lesson-hint{display:flex;align-items:center;gap:.6rem;background:linear-gradient(90deg,rgba(184,134,11,.08) 0%,transparent 100%);border-left:3px solid var(--gold);padding:.7rem 1rem;margin:1.2rem 0 .5rem;border-radius:0 4px 4px 0;font-size:.92rem;color:#1a1a1a}
+.lesson-hint-icon{font-size:1.1rem;flex-shrink:0}
+.lesson-hint strong{color:var(--accent)}
+
+/* ==== Collapsible lesson ==== */
+.lesson{transition:all .3s ease}
+.lesson-toggle{position:absolute;top:50%;right:18px;transform:translateY(-50%);background:rgba(255,255,255,.95);border:1.5px solid var(--gold);color:var(--gold);width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;font-weight:700;cursor:pointer;transition:all .25s;font-family:inherit;line-height:1}
+.lesson.blue .lesson-toggle{border-color:var(--tku-blue);color:var(--tku-blue)}
+.lesson-toggle:hover{background:var(--gold);color:#fff;transform:translateY(-50%) scale(1.1)}
+.lesson.blue .lesson-toggle:hover{background:var(--tku-blue);color:#fff}
+.lesson-head{cursor:pointer;user-select:none;position:relative;padding-right:50px;transition:padding .25s}
+.lesson-head:hover{opacity:0.85}
+.lesson-summary{font-size:.92rem;color:#444;line-height:1.7;margin-top:.5rem;font-style:italic}
+.lesson-summary strong{color:var(--accent);font-style:normal}
+.lesson.blue .lesson-summary strong{color:var(--tku-blue)}
+.lesson-body{max-height:0;overflow:hidden;transition:max-height .5s ease,opacity .35s ease,margin-top .35s ease;opacity:0;margin-top:0}
+.lesson.is-open .lesson-body{max-height:9999px;opacity:1;margin-top:.9rem}
+.lesson.is-open .lesson-toggle{transform:translateY(-50%) rotate(45deg)}
+.lesson.is-open .lesson-head{padding-bottom:.7rem;border-bottom:1px dashed var(--gold)}
+.lesson.blue.is-open .lesson-head{border-bottom-color:var(--tku-blue)}
+
+/* ==== Journey (HTML version, replaces SVG) ==== */
+.journey{background:#fff;border:1px solid var(--line);border-radius:10px;padding:1.8rem 1.4rem;margin:1.2rem 0;box-shadow:0 2px 12px rgba(0,0,0,.05)}
+.journey-title{background:#1a1a1a;color:var(--paper);padding:.9rem 1.2rem;border-radius:6px;font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;text-align:center;letter-spacing:.03em;margin-bottom:1.8rem}
+.jstage{margin-bottom:2.2rem}
+.jstage-header{display:flex;align-items:baseline;gap:.7rem;border-bottom:1px solid;padding-bottom:.4rem;margin-bottom:1rem;flex-wrap:wrap}
+.jstage-num{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:900;letter-spacing:.05em}
+.jstage-title{font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:700}
+.jstage-desc{font-size:.95rem;color:#555;line-height:1.75;font-style:italic;margin-top:.4rem;margin-bottom:0;padding-left:.2rem}
+.jstage.blue .jstage-header{border-color:var(--tku-blue)}
+.jstage.blue .jstage-num,.jstage.blue .jstage-title{color:var(--tku-blue)}
+.jstage.accent .jstage-header{border-color:var(--accent)}
+.jstage.accent .jstage-num,.jstage.accent .jstage-title{color:var(--accent)}
+.jstage.gold .jstage-header{border-color:var(--gold)}
+.jstage.gold .jstage-num,.jstage.gold .jstage-title{color:var(--gold)}
+.jstage.teal .jstage-header{border-color:var(--teal)}
+.jstage.teal .jstage-num,.jstage.teal .jstage-title{color:var(--teal)}
+
+/* Stage 1: horizontal steps with arrows */
+.j-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:.7rem;align-items:stretch;position:relative}
+.j-step{background:linear-gradient(135deg,#2a4a7a 0%,#1d3557 100%);color:#fff;border-radius:8px;padding:.9rem .85rem;display:flex;flex-direction:column;justify-content:flex-start;min-height:150px;position:relative;word-break:break-word;overflow-wrap:break-word}
+.j-step.current{box-shadow:0 0 0 3px var(--tku-gold);border:0}
+.j-step-top{font-size:.95rem;font-weight:700;line-height:1.35;margin-bottom:.45rem;padding-bottom:.4rem;border-bottom:1px solid rgba(201,162,83,.25)}
+.j-step-mid{font-size:.8rem;color:var(--tku-gold);margin-bottom:.4rem;line-height:1.5;font-weight:600}
+.j-step-bot{font-size:.8rem;opacity:.88;line-height:1.55}
+.j-step::after{content:'›';position:absolute;right:-16px;top:50%;transform:translateY(-50%);font-size:1.6rem;color:var(--tku-blue);font-weight:700;z-index:2}
+.j-step:last-child::after{display:none}
+
+/* Stage 2: three research pillars */
+.j-pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;align-items:stretch}
+.j-pillar{background:#fff;border:2px solid var(--accent);border-radius:8px;overflow:hidden;display:flex;flex-direction:column}
+.j-pillar-head{background:linear-gradient(135deg,#a8321a 0%,#8b2500 100%);color:#fff;padding:.6rem .9rem;font-weight:700;font-size:1rem;font-family:'Playfair Display',serif}
+.j-pillar-body{padding:.85rem .9rem;display:flex;flex-direction:column;flex:1}
+.j-pillar-body ul{list-style:none;padding:0;margin:0 0 .5rem;font-size:.88rem;flex:1}
+.j-pillar-body li{padding:.2rem 0 .2rem .9rem;position:relative;line-height:1.55;color:#333;margin-bottom:.3rem}
+.j-pillar-body li::before{content:'•';position:absolute;left:0;top:.2rem;color:var(--accent);font-weight:700}
+.j-pillar-body li:last-child{margin-bottom:0}
+.j-pillar-foot{font-size:.83rem;color:#666;font-style:italic;border-top:1px dashed var(--line);padding-top:.5rem;margin-top:auto}
+
+/* Stage 3: publications */
+.j-pubs{display:grid;grid-template-columns:repeat(3,1fr);gap:.9rem}
+.j-pub{background:#faf7f2;border:1px solid;border-radius:8px;padding:.85rem;display:flex;gap:.7rem;align-items:stretch}
+.j-pub.ssci{border-color:var(--gold)}
+.j-pub.tssci{border-color:var(--accent)}
+.j-pub-badge{flex-shrink:0;width:62px;border-radius:6px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;font-weight:700;text-align:center}
+.j-pub.ssci .j-pub-badge{background:linear-gradient(135deg,#c9a253 0%,#b8860b 100%)}
+.j-pub.tssci .j-pub-badge{background:linear-gradient(135deg,#a8321a 0%,#8b2500 100%)}
+.j-pub-badge-big{font-size:.95rem;letter-spacing:.04em}
+.j-pub-badge-sm{font-size:.78rem;margin-top:2px;opacity:.92}
+.j-pub-body{flex:1}
+.j-pub-title{font-weight:700;font-size:.98rem;color:#1a1a1a;line-height:1.5}
+.j-pub-journal{font-size:.88rem;color:#555;margin-top:.2rem}
+.j-pub-note{font-size:.85rem;color:var(--accent);font-style:italic;margin-top:.25rem}
+
+.j-submit{display:grid;grid-template-columns:repeat(3,1fr);gap:.9rem;margin-top:.8rem}
+.j-submit-box{background:#fffbf0;border:1px dashed var(--gold);border-radius:6px;padding:.7rem .85rem}
+.j-submit-box strong{display:block;font-size:.95rem;color:#1a1a1a;margin-bottom:.2rem}
+.j-submit-box span{font-size:.87rem;color:#555}
+
+/* Stage 4: contribution */
+.j-contrib{display:grid;grid-template-columns:repeat(4,1fr);gap:.8rem}
+.j-ctc{background:#fff;border:2px solid var(--teal);border-radius:8px;overflow:hidden}
+.j-ctc-head{background:var(--teal);color:#fff;padding:.65rem .9rem;font-weight:700;font-size:1rem;text-align:center}
+.j-ctc-body{padding:.85rem .9rem}
+.j-ctc-item{margin-bottom:.6rem}
+.j-ctc-item:last-child{margin-bottom:0}
+.j-ctc-item-t{font-weight:700;color:var(--tku-blue);font-size:.95rem;line-height:1.5}
+.j-ctc-item-s{font-size:.85rem;color:#555;line-height:1.6;margin-top:1px}
+
+@media(max-width:900px){
+  .j-steps{grid-template-columns:repeat(2,1fr)}
+  .j-step::after{display:none}
+  .j-pillars,.j-pubs,.j-submit,.j-contrib{grid-template-columns:1fr}
+}
+
+/* ==== Architecture ==== */
+.arch-section{background:#fff;border-radius:8px;padding:1.2rem;margin:.8rem 0;box-shadow:0 2px 10px rgba(0,0,0,.04);border-left:4px solid var(--accent)}
+.arch-section.blue{border-left-color:var(--tku-blue)}
+.arch-section.sage{border-left-color:var(--sage)}
+.arch-section.gold{border-left-color:var(--gold)}
+.arch-title{font-family:'Playfair Display',serif;font-weight:700;font-size:1rem;color:var(--accent);margin-bottom:.5rem;display:flex;align-items:center;gap:.5rem}
+.arch-section.blue .arch-title{color:var(--tku-blue)}
+.arch-section.sage .arch-title{color:var(--sage)}
+.arch-section.gold .arch-title{color:var(--gold)}
+.arch-num{display:inline-flex;width:26px;height:26px;background:var(--accent);color:#fff;border-radius:50%;align-items:center;justify-content:center;font-size:.78rem;font-weight:700}
+.arch-section.blue .arch-num{background:var(--tku-blue)}
+.arch-section.sage .arch-num{background:var(--sage)}
+.arch-section.gold .arch-num{background:var(--gold)}
+
+/* ==== Q & A Cards ==== */
+.qa-card{background:#fff;border-radius:8px;margin:1rem 0;border:1px solid var(--line);overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.qa-question{background:linear-gradient(90deg,rgba(139,37,0,.08) 0%,transparent 100%);padding:1rem 1.2rem;border-left:4px solid var(--accent);font-weight:700;font-size:1.08rem;color:var(--ink);display:flex;gap:.7rem;align-items:flex-start;line-height:1.65}
+.qa-q-label{flex-shrink:0;background:var(--accent);color:#fff;padding:.22rem .7rem;border-radius:3px;font-size:.85rem;font-weight:700;letter-spacing:.05em;margin-top:2px}
+.qa-answer{padding:1.15rem 1.3rem 1.25rem;font-size:1rem;line-height:1.9;color:#333}
+.qa-answer p{font-size:1rem;line-height:1.9}
+.qa-answer ul,.qa-answer ol{font-size:.98rem;line-height:1.85}
+.qa-answer h4{font-size:1.1rem}
+.qa-answer strong{color:var(--accent)}
+.qa-answer .key-line{display:inline-block;background:rgba(184,134,11,.12);padding:2px 7px;border-radius:3px;color:var(--ink);font-weight:500}
+
+/* ==== Week Grid (Course Syllabus) ==== */
+.week-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:.55rem;margin:.8rem 0}
+.week-box{background:#fff;border:1px solid var(--line);border-top:3px solid var(--accent);border-radius:5px;padding:.55rem .6rem;font-size:.76rem;transition:all .25s;cursor:default;position:relative}
+.week-box:hover{transform:translateY(-2px);box-shadow:0 4px 14px rgba(0,0,0,.08)}
+.week-box.new{border-top-color:var(--gold);background:#fffbf0}
+.week-box.new::after{content:'NEW';position:absolute;top:-7px;right:5px;background:var(--gold);color:#fff;font-size:.6rem;font-weight:700;padding:1px 4px;border-radius:3px;letter-spacing:.05em}
+.week-box.exam{background:#f0f0f0;border-top-color:var(--muted)}
+.week-box.video{background:rgba(42,122,110,.05);border-top-color:var(--teal)}
+.week-num{font-family:'Playfair Display',serif;font-weight:900;color:var(--accent);font-size:1.05rem;line-height:1}
+.week-box.new .week-num{color:var(--gold)}
+.week-box.exam .week-num{color:var(--muted)}
+.week-box.video .week-num{color:var(--teal)}
+.week-topic{font-weight:700;margin:.35rem 0 .2rem;font-size:.95rem;color:var(--ink)}
+.week-detail{color:#666;font-size:.83rem;line-height:1.55}
+
+/* ==== Research Diagram ==== */
+.research-flow{background:linear-gradient(135deg,#fafaf8 0%,#fff 100%);border:1px solid var(--line);border-radius:8px;padding:1.2rem;margin:1rem 0;box-shadow:0 2px 10px rgba(0,0,0,.04)}
+.research-step{display:flex;align-items:flex-start;gap:.9rem;margin-bottom:.7rem;padding:.6rem .7rem;background:#fff;border-radius:5px;border-left:3px solid var(--accent)}
+.research-step.blue{border-left-color:var(--tku-blue)}
+.research-step.gold{border-left-color:var(--gold)}
+.research-step.sage{border-left-color:var(--sage)}
+.rs-num{flex-shrink:0;width:28px;height:28px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.8rem}
+.research-step.blue .rs-num{background:var(--tku-blue)}
+.research-step.gold .rs-num{background:var(--gold)}
+.research-step.sage .rs-num{background:var(--sage)}
+.rs-content{flex:1}
+.rs-title{font-weight:700;font-size:1rem;color:var(--ink);margin-bottom:.25rem}
+.rs-desc{font-size:.93rem;color:#555;line-height:1.8}
+
+/* ==== Pubs ==== */
+.pub-item{padding:.65rem 0 .65rem .8rem;border-left:2px solid var(--line);margin-left:.3rem;margin-bottom:.5rem;position:relative}
+.pub-item::before{content:'';position:absolute;left:-5px;top:.9rem;width:8px;height:8px;border-radius:50%;background:var(--accent)}
+.pub-item.ssci::before{background:var(--tku-blue)}
+.pub-item.tssci::before{background:var(--accent)}
+.pub-item.chapter::before{background:var(--gold)}
+.pub-year{display:inline-block;font-size:.7rem;color:var(--muted);font-weight:700;background:#f0e9db;padding:1px 7px;border-radius:3px;margin-right:.4rem;letter-spacing:.03em}
+.pub-journal{display:inline-block;font-size:.7rem;padding:1px 6px;border-radius:3px;font-weight:700;letter-spacing:.03em;margin-left:.3rem}
+.pub-journal.ssci{background:var(--tku-blue);color:#fff}
+.pub-journal.tssci{background:var(--accent);color:#fff}
+.pub-journal.chapter{background:var(--gold);color:#fff}
+.pub-title{font-size:.84rem;color:#333;line-height:1.65;margin-top:.15rem}
+
+/* ==== Timeline ==== */
+.timeline{position:relative;padding-left:1.8rem;margin:1rem 0}
+.timeline::before{content:'';position:absolute;left:7px;top:0;bottom:0;width:2px;background:var(--line)}
+.tl-item{position:relative;padding-bottom:.9rem}
+.tl-item::before{content:'';position:absolute;left:-25px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--accent);border:2px solid var(--paper);z-index:1}
+.tl-item.blue::before{background:var(--tku-blue)}
+.tl-item.sage::before{background:var(--sage)}
+.tl-item.gold::before{background:var(--gold)}
+.tl-year{font-family:'Playfair Display',serif;font-size:.92rem;color:var(--muted);font-weight:700}
+.tl-title{font-weight:700;font-size:1.02rem;color:var(--ink);margin:.15rem 0}
+.tl-desc{font-size:.93rem;color:#555;line-height:1.75}
+
+/* ==== Experiment Box ==== */
+.exp-box{background:linear-gradient(135deg,rgba(184,134,11,.06) 0%,rgba(42,122,110,.04) 100%);border:1px dashed var(--gold);border-radius:8px;padding:1.1rem;margin:1rem 0}
+
+/* ==== Paper Figures (P4 Research) ==== */
+.paper-fig{background:#fff;border:1px solid var(--line);border-radius:8px;padding:1rem;margin:.9rem 0;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.paper-fig-title{font-family:'Playfair Display',serif;font-size:.95rem;color:var(--accent);font-weight:700;margin-bottom:.1rem}
+.paper-fig-sub{font-size:.8rem;color:#666;font-style:italic;margin-bottom:.6rem}
+.paper-fig svg{width:100%;height:auto;display:block}
+.paper-fig-caption{font-size:.82rem;color:#444;margin-top:.6rem;line-height:1.7;padding:.5rem .7rem;background:#faf7f2;border-left:3px solid var(--accent);border-radius:3px}
+.paper-fig-caption strong{color:var(--accent)}
+.paper-fig-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:.9rem 0}
+@media(max-width:800px){
+  .paper-fig-grid{grid-template-columns:1fr}
+}
+
+/* ==== Highlight Section (Future Research) ==== */
+.highlight-section{background:linear-gradient(135deg,#fffbf0 0%,#faf7f2 100%);border:2px solid var(--gold);border-radius:10px;padding:1.3rem;margin:1.5rem 0;position:relative;box-shadow:0 3px 14px rgba(184,134,11,.12)}
+.highlight-section::before{content:'★ 未來發展重點';position:absolute;top:-12px;left:20px;background:var(--gold);color:#fff;padding:2px 12px;border-radius:3px;font-size:.78rem;font-weight:700;letter-spacing:.05em}
+body.lang-en .highlight-section::before{content:'★ KEY FUTURE DIRECTION'}
+.highlight-section h3{margin-top:.2rem;margin-bottom:.5rem;font-size:1.25rem}
+
+/* ==== Energy Experiment Architecture ==== */
+.energy-exp{background:#fff;border:1px solid var(--line);border-radius:8px;padding:1.2rem 1rem;margin:1rem 0}
+.energy-exp-title{text-align:center;font-family:'Playfair Display',serif;font-size:1.05rem;color:#1a1a1a;font-weight:700;margin-bottom:.1rem}
+.energy-exp-sub{text-align:center;font-size:.82rem;color:#666;font-style:italic;margin-bottom:1rem}
+.energy-label{font-family:'Playfair Display',serif;font-size:.85rem;font-weight:700;color:var(--muted);text-align:center;margin:.9rem 0 .5rem;letter-spacing:.04em}
+
+/* 2x2 + Control cell matrix */
+.cell-matrix{display:grid;grid-template-columns:auto 1fr 1fr;gap:.5rem;max-width:100%;margin:.5rem auto}
+.cell-hd{background:#1a1a1a;color:var(--paper);padding:.5rem .7rem;font-weight:700;font-size:.82rem;text-align:center;border-radius:4px;font-family:'Playfair Display',serif;display:flex;align-items:center;justify-content:center}
+.cell-hd.empty{background:transparent}
+.cell-hd.rowlabel{writing-mode:horizontal-tb;background:#2a2a2a}
+.cell{border-radius:6px;padding:.7rem .85rem;color:#fff;display:flex;flex-direction:column;justify-content:center;min-height:90px}
+.cell.c1{background:linear-gradient(135deg,#4a8c7e 0%,#2a7a6e 100%)}
+.cell.c2{background:linear-gradient(135deg,#5a9c8e 0%,#3a8a7e 100%)}
+.cell.c3{background:linear-gradient(135deg,#a8321a 0%,#8b2500 100%)}
+.cell.c4{background:linear-gradient(135deg,#b8422a 0%,#9b3510 100%)}
+.cell-n{font-size:.95rem;font-weight:700;font-family:'Playfair Display',serif;margin-bottom:.2rem}
+.cell-sub{font-size:.77rem;opacity:.92;line-height:1.5}
+.cell-sz{font-size:.75rem;color:#ffe;opacity:.85;margin-top:.3rem;font-style:italic}
+
+.cell-ctrl{background:linear-gradient(135deg,#888 0%,#6b6560 100%);color:#fff;border-radius:6px;padding:.7rem 1rem;margin-top:.5rem;text-align:center;font-size:.82rem}
+.cell-ctrl strong{font-family:'Playfair Display',serif;font-size:.9rem;display:block;margin-bottom:.15rem}
+
+.hyp-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem;margin:.8rem 0 .3rem}
+.hyp{background:#faf7f2;border-left:3px solid var(--accent);border-radius:4px;padding:.55rem .7rem}
+.hyp-id{font-family:'Playfair Display',serif;font-weight:700;color:var(--accent);font-size:.82rem}
+.hyp-txt{font-size:.77rem;color:#333;line-height:1.5;margin-top:.15rem}
+
+.dv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.45rem;margin-top:.4rem}
+.dv{background:#faf7f2;border:1px solid var(--line);border-radius:4px;padding:.45rem .6rem}
+.dv-id{color:var(--purple);font-weight:700;font-size:.78rem}
+.dv-txt{font-size:.75rem;color:#333;line-height:1.45;margin-top:.15rem}
+
+/* Experiment workflow (5 steps) */
+.exp-flow{display:grid;grid-template-columns:repeat(5,1fr);gap:.4rem;margin:.8rem 0 .3rem;position:relative}
+.exp-flow-step{background:linear-gradient(135deg,#fafaf8 0%,#fff 100%);border:1px solid var(--line);border-radius:6px;padding:.6rem .55rem;text-align:center;position:relative}
+.exp-flow-step::after{content:'›';position:absolute;right:-12px;top:50%;transform:translateY(-50%);font-size:1.3rem;color:var(--gold);font-weight:700;z-index:2}
+.exp-flow-step:last-child::after{display:none}
+.exp-flow-num{display:inline-block;width:18px;height:18px;line-height:18px;border-radius:50%;background:var(--gold);color:#fff;font-size:.7rem;font-weight:700;font-family:'Playfair Display',serif;margin-bottom:.3rem}
+.exp-flow-title{font-weight:700;font-size:.8rem;color:#1a1a1a;margin-bottom:.15rem}
+.exp-flow-desc{font-size:.72rem;color:#666;line-height:1.4}
+
+.energy-meta{display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem;margin-top:.9rem;padding-top:.8rem;border-top:1px dashed var(--line)}
+.energy-meta-item{text-align:center}
+.energy-meta-item span{display:block;font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:.15rem}
+.energy-meta-item strong{display:block;font-size:.88rem;color:var(--accent);font-family:'Playfair Display',serif;font-weight:700}
+
+@media(max-width:800px){
+  .cell-matrix{grid-template-columns:1fr}
+  .cell-hd.rowlabel{writing-mode:horizontal-tb}
+  .hyp-grid{grid-template-columns:repeat(2,1fr)}
+  .dv-grid{grid-template-columns:1fr}
+  .energy-meta{grid-template-columns:repeat(2,1fr)}
+}
+.exp-title{display:flex;align-items:center;gap:.5rem;font-weight:700;color:var(--gold);margin-bottom:.7rem;font-size:1.1rem}
+
+/* ==== Contribution ==== */
+.contrib-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:.9rem;margin:1rem 0}
+.contrib-item{background:#fff;padding:1rem;border-radius:6px;border-top:3px solid var(--tku-gold);box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.contrib-icon{font-size:1.4rem;margin-bottom:.4rem}
+.contrib-label{font-weight:700;color:var(--tku-blue);font-size:1rem;margin-bottom:.35rem}
+.contrib-text{font-size:.9rem;color:#555;line-height:1.75}
+
+/* ==== Hide/Show by lang ==== */
+/* By default, hide both zh and en variants; only show the active language. */
+.zh, .en, .zh-inline, .en-inline{display:none !important}
+body.lang-zh .zh{display:block !important}
+body.lang-zh .zh-inline{display:inline !important}
+body.lang-en .en{display:block !important}
+body.lang-en .en-inline{display:inline !important}
+/* Elements that are semantically block-level (h2/h3/h4/p/div/li/ul/ol) should stay block when shown */
+body.lang-zh h2.zh-inline, body.lang-zh h3.zh-inline, body.lang-zh h4.zh-inline,
+body.lang-zh p.zh-inline, body.lang-zh div.zh-inline, body.lang-zh li.zh-inline,
+body.lang-zh ul.zh-inline, body.lang-zh ol.zh-inline{display:block !important}
+body.lang-en h2.en-inline, body.lang-en h3.en-inline, body.lang-en h4.en-inline,
+body.lang-en p.en-inline, body.lang-en div.en-inline, body.lang-en li.en-inline,
+body.lang-en ul.en-inline, body.lang-en ol.en-inline{display:block !important}
+/* SVG <text> elements with language class — use visibility trick (display on SVG text needs specific value) */
+body.lang-zh text.en-inline, body.lang-en text.zh-inline{visibility:hidden !important;display:none !important}
+body.lang-zh text.zh-inline, body.lang-en text.en-inline{visibility:visible !important;display:inline !important}
+
+/* ==== Responsive ==== */
+@media(max-width:600px){
+  .page{padding:1.3rem .9rem 3rem}
+  .card-grid,.contrib-grid{grid-template-columns:1fr}
+  .brand-title{font-size:.75rem}
+  .agenda-grid{grid-template-columns:60px 1fr}
+  .agenda-time{font-size:.75rem;padding:.5rem .4rem}
+}
+</style>
+</head>
+<body class="lang-zh">
+<div class="app">
+
+<!-- ====== Brand Bar ====== -->
+<div class="brand-bar">
+  <div class="brand-left">
+    <div class="brand-logo">TKU</div>
+    <div>
+      <div class="brand-title zh-inline">淡江大學外交與國際關係學系｜教師甄選</div>
+      <div class="brand-title en-inline">TKU｜Department of Diplomacy and International Relations</div>
+      <div class="brand-sub zh-inline">林文正 ｜ Wen-Cheng Lin ｜ 2026</div>
+      <div class="brand-sub en-inline">Faculty Recruitment ｜ Wen-Cheng Lin ｜ 2026</div>
+    </div>
+  </div>
+  <div class="brand-right">
+    <button class="lang-btn active" onclick="setLang('zh')">中文</button>
+    <button class="lang-btn" onclick="setLang('en')">EN</button>
+  </div>
+</div>
+
+<!-- ====== Top Nav ====== -->
+<div class="top-nav">
+  <button class="nav-btn active" onclick="goPage(0)"><span class="zh-inline">首頁</span><span class="en-inline">Index</span></button>
+  <button class="nav-btn" onclick="goPage(1)"><span class="zh-inline">① 自我介紹</span><span class="en-inline">① Self-Intro</span><span class="nav-time"> 5m</span></button>
+  <button class="nav-btn" onclick="goPage(2)"><span class="zh-inline">② 委員提問</span><span class="en-inline">② Q&amp;A</span><span class="nav-time"> 10m</span></button>
+  <button class="nav-btn" onclick="goPage(3)"><span class="zh-inline">③ 教學示範</span><span class="en-inline">③ Teaching</span><span class="nav-time"> 10m</span></button>
+  <button class="nav-btn" onclick="goPage(4)"><span class="zh-inline">④ 研究領域</span><span class="en-inline">④ Research</span><span class="nav-time"> 10m</span></button>
+  <button class="nav-btn" onclick="goPage(5)"><span class="zh-inline">⑤ 交流</span><span class="en-inline">⑤ Discussion</span><span class="nav-time"> 10m</span></button>
+</div>
+
+<div class="page-container">
+
+<!-- ====== P0 Cover ====== -->
+<div class="page active" data-page="0"><div class="page-inner">
+
+<div class="hero-header">
+<div class="hero-section">
+<div class="hero-info">
+<div class="hero-name zh-inline">林文正 博士</div>
+<div class="hero-name en-inline">Dr. Wen-Cheng Lin</div>
+<div class="hero-name-en">Wen-Cheng Lin, Ph.D. ｜ National Chengchi University, 2023</div>
+
+<div class="hero-sub">
+<span class="zh-inline">中央研究院社會學研究所 博士後研究員（2026 迄今）<br>政治學研究所合聘｜兼任助理教授 ｜輔仁大學社會學系</span>
+<span class="en-inline">Postdoctoral Research Fellow, Institute of Sociology &amp; Institute of Political Science, Academia Sinica (2026-)<br>Adjunct Assistant Professor, Department of Sociology, Fu Jen Catholic University</span>
+</div>
+
+<div class="hero-tags">
+  <span class="tag zh-inline">比較政治</span>
+  <span class="tag en-inline">Comparative Politics</span>
+  <span class="tag blue zh-inline">國際關係</span>
+  <span class="tag blue en-inline">International Relations</span>
+  <span class="tag gold zh-inline">中國大陸研究</span>
+  <span class="tag gold en-inline">China Studies</span>
+  <span class="tag zh-inline">政治社會學</span>
+  <span class="tag en-inline">Political Sociology</span>
+  <span class="tag blue zh-inline">民意調查</span>
+  <span class="tag blue en-inline">Public Opinion</span>
+  <span class="tag gold zh-inline">量化方法與因果推論</span>
+  <span class="tag gold en-inline">Quantitative Methods &amp; Causal Inference</span>
+</div>
+</div>
+</div>
+</div>
+
+<h3 class="zh-inline">大綱</h3>
+<h3 class="en-inline">Outline</h3>
+
+<div class="agenda-grid">
+  <div class="agenda-row">
+    <div class="agenda-time"> </div>
+    <div class="agenda-desc">
+      <strong class="zh-inline">① 自我介紹</strong>
+      <strong class="en-inline">① Self-Introduction</strong>
+      <span class="zh-inline"> ｜ 學術訓練 → 研究關懷 → 發表成果 → 對淡江外交系的貢獻</span>
+      <span class="en-inline"> ｜ Training → Research Agenda → Publications → Contribution to DDIR</span>
+    </div>
+  </div>
+  <div class="agenda-row">
+    <div class="agenda-time"> </div>
+    <div class="agenda-desc">
+      <strong class="zh-inline">② 審查委員提問</strong>
+      <strong class="en-inline">② Committee Q&amp;A</strong>
+      <span class="zh-inline"> ｜ 支援 IR 課程、新研究主題（大數據與因果推論、中國大陸研究方法）</span>
+      <span class="en-inline"> ｜ IR teaching support, new research themes</span>
+    </div>
+  </div>
+  <div class="agenda-row">
+    <div class="agenda-time"> </div>
+    <div class="agenda-desc">
+      <strong class="zh-inline">③ 教學示範</strong>
+      <strong class="en-inline">③ Teaching Demonstration</strong>
+      <span class="zh-inline"> ｜「中國大陸問題研究」課綱（國防部委託中研院研擬軍事院校課綱撰述案）</span>
+      <span class="en-inline"> ｜ &quot;Introduction to Mainland China Studies&quot; syllabus</span>
+    </div>
+  </div>
+  <div class="agenda-row">
+    <div class="agenda-time"> </div>
+    <div class="agenda-desc">
+      <strong class="zh-inline">④ 研究領域介紹</strong>
+      <strong class="en-inline">④ Research Presentation</strong>
+      <span class="zh-inline"> ｜ 灰色侵擾與民意影響、未來研究擴展（能源地緣政治實驗）</span>
+      <span class="en-inline"> ｜ Gray-zone coercion and public opinion</span>
+    </div>
+  </div>
+  <div class="agenda-row">
+    <div class="agenda-time"> </div>
+    <div class="agenda-desc">
+      <strong class="zh-inline">⑤ 綜合交流</strong>
+      <strong class="en-inline">⑤ Open Discussion</strong>
+      <span class="zh-inline"> ｜ 研究方法、穩健性檢定、研究關懷延伸</span>
+      <span class="en-inline"> ｜ Methods, robustness checks, research extensions</span>
+    </div>
+  </div>
+</div>
+
+<h3 class="zh-inline">核心研究主軸</h3>
+<h3 class="en-inline">Core Research Themes</h3>
+
+<div class="card-grid">
+  <div class="card blue">
+    <h4 class="zh-inline">中國對台影響與民意</h4>
+    <h4 class="en-inline">China's Influence on Taiwan</h4>
+    <p class="zh-inline">軍機繞台、地方統戰、外交孤立對臺灣民意的塑造與分化</p>
+    <p class="en-inline">Military incursions, united front tactics, and diplomatic isolation reshaping Taiwan's public opinion.</p>
+  </div>
+  <div class="card">
+    <h4 class="zh-inline">威權韌性與民主抵抗</h4>
+    <h4 class="en-inline">Authoritarian Resilience &amp; Democratic Resistance</h4>
+    <p class="zh-inline">中國海外援助、媒體自由侵蝕、威權繼承政黨中的女性賦權</p>
+    <p class="en-inline">Chinese foreign aid, erosion of media freedom, women's empowerment under authoritarian successor parties.</p>
+  </div>
+  <div class="card gold">
+    <h4 class="zh-inline">新方法論：大數據與因果推論</h4>
+    <h4 class="en-inline">Big Data &amp; Causal Inference</h4>
+    <p class="zh-inline">ARFIMA-MLM、合成控制、文字探勘、影片分析、網絡分析</p>
+    <p class="en-inline">ARFIMA-MLM, synthetic control, text mining, video analysis, network analysis.</p>
+  </div>
+  <div class="card sage">
+    <h4 class="zh-inline">兩岸關係與台灣政治變遷</h4>
+    <h4 class="en-inline">Cross-Strait &amp; Taiwan's Political Change</h4>
+    <p class="zh-inline">從碩士論文到博士後：民粹、世代政治、大罷免、能源地緣政治</p>
+    <p class="en-inline">From M.A. to postdoc: populism, generational politics, energy geopolitics.</p>
+  </div>
+</div>
+
+</div></div>
+
+<!-- ====== P1 Self-Introduction (Flow Chart) ====== -->
+<div class="page" data-page="1"><div class="page-inner">
+<h2 class="zh-inline">① 自我介紹 </h2>
+<h2 class="en-inline">① Self-Introduction ｜ 5 min</h2>
+
+<p class="zh-inline">從文化大學到政治大學、從民意調查到跨國政體比較——以下是我走過的學術路徑。<strong>每一站都回答一個問題，每一個問題都指向現在。</strong></p>
+<p class="en-inline">From Chinese Culture University to NCCU, from public opinion surveys to cross-national regime comparison—each step has answered a question, and each question points to today.</p>
+
+<!-- =============== Journey (HTML layout) =============== -->
+<div class="journey">
+  <div class="journey-title zh-inline">學術旅程 ｜ Academic Journey ｜ From Question to Question</div>
+  <div class="journey-title en-inline">Academic Journey ｜ From Question to Question</div>
+
+  <!-- ===== STAGE 1: Training ===== -->
+  <div class="jstage blue">
+    <div class="jstage-header">
+      <span class="jstage-num">STAGE 1</span>
+      <span class="jstage-title zh-inline">｜ 學術訓練</span>
+      <span class="jstage-title en-inline">｜ Training</span>
+    </div>
+    <p class="jstage-desc zh-inline">融合政治學與社會學研究，塑造跨層次的視野</p>
+    <p class="jstage-desc en-inline">Integrating political science and sociology to cultivate a multi-level analytical perspective</p>
+
+    <div class="j-steps">
+      <div class="j-step">
+        <div class="j-step-top zh-inline">國立臺灣師範大學 政治學</div>
+        <div class="j-step-top en-inline">NTNU · Political Science</div>
+        <div class="j-step-mid zh-inline">碩士 (2012)</div>
+        <div class="j-step-mid en-inline">M.A. (2012)</div>
+        <div class="j-step-bot zh-inline">中國對台採購的政治經濟分析</div>
+        <div class="j-step-bot en-inline">Political economy of China's procurement toward Taiwan</div>
+      </div>
+      <div class="j-step">
+        <div class="j-step-top zh-inline">國立政治大學 政治學</div>
+        <div class="j-step-top en-inline">NCCU · Political Science</div>
+        <div class="j-step-mid zh-inline">博士 (2023)</div>
+        <div class="j-step-mid en-inline">Ph.D. (2023)</div>
+        <div class="j-step-bot zh-inline">威權體制下的女性政治賦權</div>
+        <div class="j-step-bot en-inline">Women's empowerment under authoritarianism</div>
+      </div>
+      <div class="j-step">
+        <div class="j-step-top zh-inline">中央研究院（兼任）</div>
+        <div class="j-step-top en-inline">Academia Sinica (affiliated)</div>
+        <div class="j-step-mid zh-inline">社會所 + 政治所 博後</div>
+        <div class="j-step-mid en-inline">Postdoc · Sociology &amp; Pol. Sci.</div>
+        <div class="j-step-bot zh-inline">跨所合作 ｜ 跨領域整合</div>
+        <div class="j-step-bot en-inline">Cross-institutional &amp; interdisciplinary</div>
+      </div>
+      <div class="j-step current">
+        <div class="j-step-top zh-inline">中央研究院（現職）</div>
+        <div class="j-step-top en-inline">Academia Sinica (current)</div>
+        <div class="j-step-mid zh-inline">社會所 + 政治所 博後</div>
+        <div class="j-step-mid en-inline">Postdoc Fellow · Sociology &amp; Pol. Sci.</div>
+        <div class="j-step-bot zh-inline">學術變現與規劃計劃案</div>
+        <div class="j-step-bot en-inline">Research-to-policy &amp; grant planning</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== STAGE 2: Research Agenda ===== -->
+  <div class="jstage accent">
+    <div class="jstage-header">
+      <span class="jstage-num">STAGE 2</span>
+      <span class="jstage-title zh-inline">｜ 研究關懷</span>
+      <span class="jstage-title en-inline">｜ Research Agenda</span>
+    </div>
+    <p class="jstage-desc zh-inline">致力於將複雜的政治社會現象轉化為可分析的數據，協助台灣在面對外部政治衝擊與內部治理轉型時，更具實證基礎</p>
+    <p class="jstage-desc en-inline">Transforming complex political-social phenomena into analyzable data to help Taiwan respond to external shocks and internal governance transitions with stronger empirical grounding</p>
+
+    <div class="j-pillars">
+      <div class="j-pillar">
+        <div class="j-pillar-head zh-inline">A ｜ 比較政治</div>
+        <div class="j-pillar-head en-inline">A ｜ Comparative Politics</div>
+        <div class="j-pillar-body">
+          <ul class="zh-inline">
+            <li>威權政治：女性賦權、政體繼承</li>
+            <li>中國銳實力：援助、媒體侵蝕</li>
+            <li>兩岸關係：銳實力對台選舉</li>
+          </ul>
+          <ul class="en-inline">
+            <li>Authoritarian politics &amp; regime succession</li>
+            <li>Chinese sharp power: aid &amp; media</li>
+            <li>Cross-Strait sharp power on elections</li>
+          </ul>
+          <div class="j-pillar-foot zh-inline">→ 全球視野下理解中國</div>
+          <div class="j-pillar-foot en-inline">→ Understanding China through a global lens</div>
+        </div>
+      </div>
+
+      <div class="j-pillar">
+        <div class="j-pillar-head zh-inline">B ｜ 公共輿論</div>
+        <div class="j-pillar-head en-inline">B ｜ Public Opinion</div>
+        <div class="j-pillar-body">
+          <ul class="zh-inline">
+            <li>軍機繞台：聚旗 vs. 問責</li>
+            <li>香港效應：反送中與 2020 大選</li>
+            <li>民粹、大罷免潮、世代政治</li>
+          </ul>
+          <ul class="en-inline">
+            <li>Military incursions: rally vs. accountability</li>
+            <li>Hong Kong effect on 2020 election</li>
+            <li>Populism, Recall Wave, generations</li>
+          </ul>
+          <div class="j-pillar-foot zh-inline">→ 灰色地帶下的民意動態</div>
+          <div class="j-pillar-foot en-inline">→ Opinion dynamics under gray-zone pressure</div>
+        </div>
+      </div>
+
+      <div class="j-pillar">
+        <div class="j-pillar-head zh-inline">C ｜ 政治社會學</div>
+        <div class="j-pillar-head en-inline">C ｜ Political Sociology</div>
+        <div class="j-pillar-body">
+          <ul class="zh-inline">
+            <li>旅遊、文化距離與保守主義態度</li>
+            <li>老化社會、性別差異與退休所得</li>
+            <li>能源政策與地緣政治（進行中）</li>
+          </ul>
+          <ul class="en-inline">
+            <li>Tourism, cultural distance, protectionist attitudes</li>
+            <li>Aging society, gender gap in retirement income</li>
+            <li>Energy policy and geopolitics (ongoing)</li>
+          </ul>
+          <div class="j-pillar-foot zh-inline">→ 從社會結構理解政治選擇</div>
+          <div class="j-pillar-foot en-inline">→ Political choice rooted in social structure</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== STAGE 3: Publications ===== -->
+  <div class="jstage gold">
+    <div class="jstage-header">
+      <span class="jstage-num">STAGE 3</span>
+      <span class="jstage-title zh-inline">｜ 發表成果</span>
+      <span class="jstage-title en-inline">｜ Publications</span>
+    </div>
+    <p class="jstage-desc zh-inline">從獨立研究到跨國合作，從 TSSCI 到 SSCI，持續累積國際可見度</p>
+    <p class="jstage-desc en-inline">From solo work to cross-national collaboration, from TSSCI to SSCI — building international visibility</p>
+
+    <div class="j-pubs">
+      <div class="j-pub ssci">
+        <div class="j-pub-badge"><div class="j-pub-badge-big">SSCI</div><div class="j-pub-badge-sm">Q1/Q2</div></div>
+        <div class="j-pub-body">
+          <div class="j-pub-title zh-inline">Chinese Foreign Aid &amp; Media Freedom</div>
+          <div class="j-pub-title en-inline">Chinese Foreign Aid &amp; Media Freedom</div>
+          <div class="j-pub-journal">Int'l Relations of Asia-Pacific (2025)</div>
+          <div class="j-pub-note zh-inline">合著：賴定佾、吳文欽</div>
+          <div class="j-pub-note en-inline">Co-authored with Lai &amp; Wu</div>
+        </div>
+      </div>
+
+      <div class="j-pub tssci">
+        <div class="j-pub-badge"><div class="j-pub-badge-big">TSSCI</div><div class="j-pub-badge-sm zh-inline">第一級</div><div class="j-pub-badge-sm en-inline">Tier 1</div></div>
+        <div class="j-pub-body">
+          <div class="j-pub-title zh-inline">香港效應：反送中對 2020 選舉影響</div>
+          <div class="j-pub-title en-inline">The Hong Kong Effect on Taiwan's 2020 Election</div>
+          <div class="j-pub-journal zh-inline">人文及社會科學集刊 (accepted)</div>
+          <div class="j-pub-journal en-inline">J. Social Sciences &amp; Philosophy (accepted)</div>
+          <div class="j-pub-note zh-inline">合著：林宗弘</div>
+          <div class="j-pub-note en-inline">Co-authored with Lin Thung-Hong</div>
+        </div>
+      </div>
+
+      <div class="j-pub tssci">
+        <div class="j-pub-badge"><div class="j-pub-badge-big">TSSCI</div><div class="j-pub-badge-sm zh-inline">第一級</div><div class="j-pub-badge-sm en-inline">Tier 1</div></div>
+        <div class="j-pub-body">
+          <div class="j-pub-title zh-inline">臺灣民眾的民粹態度初探</div>
+          <div class="j-pub-title en-inline">Populist Attitudes in Taiwan</div>
+          <div class="j-pub-journal zh-inline">選舉研究 (accepted)</div>
+          <div class="j-pub-journal en-inline">Journal of Electoral Studies (accepted)</div>
+          <div class="j-pub-note zh-inline">獨著</div>
+          <div class="j-pub-note en-inline">Sole author</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="j-submit">
+      <div class="j-submit-box">
+        <strong class="zh-inline">[投稿中] 軍機入侵的聚旗/問責</strong>
+        <strong class="en-inline">[Under review] Military Incursions &amp; Rally/Accountability</strong>
+        <span class="zh-inline">→ JPR (2026/1)，含實驗法穩健性檢定</span>
+        <span class="en-inline">→ JPR (Jan 2026), with experimental robustness</span>
+      </div>
+      <div class="j-submit-box">
+        <strong class="zh-inline">[投稿中] 中國銳實力對台灣選舉</strong>
+        <strong class="en-inline">[Under review] China's Sharp Power on Taiwan Elections</strong>
+        <span class="zh-inline">→ Journal of Democracy (2026 Q3)</span>
+        <span class="en-inline">→ Journal of Democracy (2026 Q3)</span>
+      </div>
+      <div class="j-submit-box">
+        <strong class="zh-inline">[投稿中] 中國海外援助與性別平等</strong>
+        <strong class="en-inline">[Under review] China's Foreign Aid &amp; Gender Equality</strong>
+        <span class="zh-inline">→ World Development (2026 Q2)</span>
+        <span class="en-inline">→ World Development (2026 Q2)</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== STAGE 4: Contribution ===== -->
+  <div class="jstage teal">
+    <div class="jstage-header">
+      <span class="jstage-num">STAGE 4</span>
+      <span class="jstage-title zh-inline">｜ 對淡江外交的貢獻</span>
+      <span class="jstage-title en-inline">｜ Contribution to DDIR</span>
+    </div>
+    <p class="jstage-desc zh-inline">研究技術與教學的整合——帶入統計、大數據與 AI，提高學生「數據力」</p>
+    <p class="jstage-desc en-inline">Integrating research methods with teaching — bringing statistics, big data, and AI into the classroom to strengthen students' data literacy</p>
+
+    <div class="j-contrib">
+      <div class="j-ctc">
+        <div class="j-ctc-head zh-inline">① 教學支援</div>
+        <div class="j-ctc-head en-inline">① Teaching Support</div>
+        <div class="j-ctc-body">
+          <div class="j-ctc-item">
+            <div class="j-ctc-item-t zh-inline">中國大陸研究</div>
+            <div class="j-ctc-item-t en-inline">Mainland China Studies</div>
+            <div class="j-ctc-item-s zh-inline">軍事院校課綱撰述案經驗</div>
+            <div class="j-ctc-item-s en-inline">MND syllabus co-authorship</div>
+          </div>
+          <div class="j-ctc-item">
+            <div class="j-ctc-item-t zh-inline">兩岸關係與民意</div>
+            <div class="j-ctc-item-t en-inline">Cross-Strait &amp; Public Opinion</div>
+            <div class="j-ctc-item-s zh-inline">TEDS、中國效應調查</div>
+            <div class="j-ctc-item-s en-inline">TEDS, China Impact Survey</div>
+          </div>
+          <div class="j-ctc-item">
+            <div class="j-ctc-item-t zh-inline">IR 融入政治社會學</div>
+            <div class="j-ctc-item-t en-inline">IR integrated in Pol. Sociology</div>
+            <div class="j-ctc-item-s zh-inline">國際環境決定論教案</div>
+            <div class="j-ctc-item-s en-inline">IR environmental determinism lesson</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="j-ctc">
+        <div class="j-ctc-head zh-inline">② 量化方法教學</div>
+        <div class="j-ctc-head en-inline">② Quantitative Methods</div>
+        <div class="j-ctc-body">
+          <div class="j-ctc-item">
+            <div class="j-ctc-item-t zh-inline">經驗研究方法</div>
+            <div class="j-ctc-item-t en-inline">Empirical methods</div>
+            <div class="j-ctc-item-s zh-inline">因果推論、多層次模型</div>
+            <div class="j-ctc-item-s en-inline">Causal inference, MLM</div>
+          </div>
+          <div class="j-ctc-item">
+            <div class="j-ctc-item-t zh-inline">大數據應用</div>
+            <div class="j-ctc-item-t en-inline">Big Data applications</div>
+            <div class="j-ctc-item-s zh-inline">文字探勘、影片分析</div>
+            <div class="j-ctc-item-s en-inline">Text mining, video analysis</div>
+          </div>
+          <div class="j-ctc-item">
+            <div class="j-ctc-item-t zh-inline">軟體教學</div>
+            <div class="j-ctc-item-t en-inline">Software training</div>
+            <div class="j-ctc-item-s zh-inline">R / Python / Stata / GIS</div>
+            <div class="j-ctc-item-s en-inline">R / Python / Stata / GIS</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="j-ctc">
+        <div class="j-ctc-head zh-inline">③ 研究能量</div>
+        <div class="j-ctc-head en-inline">③ Research Capacity</div>
+        <div class="j-ctc-body">
+          <div class="j-ctc-item">
+            <div class="j-ctc-item-t zh-inline">外部計畫整合</div>
+            <div class="j-ctc-item-t en-inline">External grants</div>
+            <div class="j-ctc-item-s zh-inline">中研院 + 國科會計畫合作</div>
+            <div class="j-ctc-item-s en-inline">Academia Sinica + NSTC collaborations</div>
+          </div>
+          <div class="j-ctc-item">
+            <div class="j-ctc-item-t zh-inline">國際發表</div>
+            <div class="j-ctc-item-t en-inline">International presence</div>
+            <div class="j-ctc-item-s zh-inline">APSA / IPSA / MPSA 系列</div>
+            <div class="j-ctc-item-s en-inline">APSA / IPSA / MPSA series</div>
+          </div>
+          <div class="j-ctc-item">
+            <div class="j-ctc-item-t zh-inline">共同著作網絡</div>
+            <div class="j-ctc-item-t en-inline">Co-authorship network</div>
+            <div class="j-ctc-item-s zh-inline">跨機構、跨世代研究團隊</div>
+            <div class="j-ctc-item-s en-inline">Cross-institutional, cross-cohort teams</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="j-ctc">
+        <div class="j-ctc-head zh-inline">④ 系所銜接</div>
+        <div class="j-ctc-head en-inline">④ Institutional Linkage</div>
+        <div class="j-ctc-body">
+          <div class="j-ctc-item">
+            <div class="j-ctc-item-t zh-inline">兩岸關係研究中心</div>
+            <div class="j-ctc-item-t en-inline">Cross-Strait Research Center</div>
+            <div class="j-ctc-item-s zh-inline">議題對接、合作研究</div>
+            <div class="j-ctc-item-s en-inline">Topic alignment, joint research</div>
+          </div>
+          <div class="j-ctc-item">
+            <div class="j-ctc-item-t zh-inline">中國大陸研究中心</div>
+            <div class="j-ctc-item-t en-inline">Mainland China Research Center</div>
+            <div class="j-ctc-item-s zh-inline">田野、調查資料合作</div>
+            <div class="j-ctc-item-s en-inline">Fieldwork and survey data sharing</div>
+          </div>
+          <div class="j-ctc-item">
+            <div class="j-ctc-item-t zh-inline">國際事務學院</div>
+            <div class="j-ctc-item-t en-inline">College of Int'l Affairs</div>
+            <div class="j-ctc-item-s zh-inline">跨系所課程合作</div>
+            <div class="j-ctc-item-s en-inline">Cross-departmental co-teaching</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<!-- =============== /Journey =============== -->
+
+<p style="font-size:.82rem;color:var(--muted);margin-top:.6rem;font-style:italic">
+<span class="zh-inline">※ 一條主軸：從「中國對台採購」（碩論 2012）→「威權下的女性賦權」（博論 2023）→「中國銳實力與台灣民意」（博後迄今），始終圍繞<strong style="color:var(--accent)">威權如何影響民主</strong>這個核心問題。</span>
+<span class="en-inline">※ One thread: from &quot;China's procurement strategy toward Taiwan&quot; (M.A. 2012) to &quot;Women's empowerment under authoritarianism&quot; (Ph.D. 2023) to &quot;Chinese sharp power and Taiwan's public opinion&quot; (postdoc)—all asking <strong style="color:var(--accent)">how authoritarianism shapes democracy</strong>.</span>
+</p>
+
+</div></div>
+
+<!-- ====== P2 Committee Q&A ====== -->
+<div class="page" data-page="2"><div class="page-inner">
+<h2 class="zh-inline">② 審查委員提問 </h2>
+<h2 class="en-inline">② Committee Q&amp;A ｜ 10 min</h2>
+
+<p class="zh-inline">以下是針對委員可能關切議題預擬的回應。每個答案先給<strong>一句重點</strong>，再展開說明證據與延伸。</p>
+<p class="en-inline">Prepared responses to likely committee questions. Each starts with a highlight sentence, then evidence and extension.</p>
+
+<div class="qa-card">
+  <div class="qa-question">
+    <span class="qa-q-label">Q1</span>
+    <span class="zh-inline">請問您是否能支援外交系的「國際關係」相關課程？您的中國研究背景，如何與 IR 理論教學銜接？</span>
+    <span class="en-inline">Can you support IR courses in the department? How does your China studies background connect to IR theory teaching?</span>
+  </div>
+  <div class="qa-answer">
+    <p class="zh-inline"><strong>一句話：</strong><span class="key-line">可以。我在政治社會學課程中已經融入完整的 IR 理論單元——特別是「國際環境決定論」，用以解釋國家自主性與比較政治的關係。</span></p>
+    <p class="en-inline"><strong>Highlight:</strong> <span class="key-line">Yes. My political sociology course already integrates a full IR unit—&quot;International Environment Determinism&quot;—to explain state autonomy and comparative politics.</span></p>
+
+    <h4 class="zh-inline">具體操作：以 W6「國際環境決定論」為例</h4>
+    <h4 class="en-inline">Example: Week 6 &quot;International Environment Determinism&quot;</h4>
+
+    <p class="zh-inline">我在輔仁大學政治社會學課程中，設計一整週的 IR 理論回顧：</p>
+    <ul class="zh-inline">
+      <li><strong>三大典範對照：</strong>現實主義（Morgenthau/Waltz）、自由主義（Keohane/Nye）、建構主義（Wendt）。每個典範對「國家自主性」給出不同答案。</li>
+      <li><strong>延伸理論：</strong>依賴理論（Frank）、世界體系論（Wallerstein）、發展型國家（Johnson/Evans）、霸權穩定論（Kindleberger/Gilpin）。</li>
+      <li><strong>台灣案例串接：</strong>美中台三角、ECFA、台灣認同變遷。讓學生理解理論不是抽象公式，而是分析台灣處境的工具。</li>
+      <li><strong>互動式時間線：</strong>從 1948 到 2025 的 IR 理論發展史，學生可點選任一節點了解學者、專書與對應事件。</li>
+    </ul>
+
+    <p class="en-inline">In my Fu Jen political sociology course, I dedicate a full week to IR theory review: three paradigms, derivative theories, and Taiwan cases as analytical anchors.</p>
+
+    <h4 class="zh-inline">與外交系的銜接點</h4>
+    <h4 class="en-inline">Connection to DDIR</h4>
+    <ul class="zh-inline">
+      <li><strong>我的 SSCI 論文本身就是 IR 研究：</strong>《Chinese Foreign Aid and the Erosion of Media Freedom》發表於 <em>International Relations of the Asia-Pacific</em>（SSCI Q1/Q2），涵蓋 143 個受援國、21 年資料，是標準的比較外交政策研究。</li>
+      <li><strong>量化 IR 的方法訓練：</strong>我熟悉 V-Dem、COW、UCDP、AidData 等 IR 主流資料庫，可以協助學生進行實證研究。</li>
+      <li><strong>中國外交議題：</strong>一帶一路、戰狼外交、海外援助、統戰、銳實力——這些都是當前 IR 學界最前沿的研究議題，我的研究恰好集中在此。</li>
+    </ul>
+    <ul class="en-inline">
+      <li>My SSCI paper is itself IR research—comparative foreign policy with 143 recipient countries, 21 years of data.</li>
+      <li>Training in quantitative IR: V-Dem, COW, UCDP, AidData.</li>
+      <li>China's foreign behavior (BRI, sharp power, foreign aid) is central to my agenda.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="qa-card">
+  <div class="qa-question">
+    <span class="qa-q-label">Q2</span>
+    <span class="zh-inline">您提到的新研究主題：「大數據與因果推論」以及「中國大陸研究方法」。能否說明為什麼這些方法對外交/國關研究是必要的？</span>
+    <span class="en-inline">You highlight big data and causal inference as new research themes. Why are these necessary for diplomacy/IR studies?</span>
+  </div>
+  <div class="qa-answer">
+    <p class="zh-inline"><strong>一句話：</strong><span class="key-line">IR 領域的傳統觀察無法處理中國這類「資料封閉+行為隱匿」的威權國家——只有反事實因果思維配合新興方法（文字探勘、影片分析、網絡分析）才能逼近真相。</span></p>
+    <p class="en-inline"><strong>Highlight:</strong> <span class="key-line">Traditional IR observation cannot handle regimes like China. Only counterfactual causal thinking plus new tools can approach the truth.</span></p>
+
+    <h4 class="zh-inline">為什麼「反事實因果」重要？</h4>
+    <h4 class="en-inline">Why counterfactual causal inference matters</h4>
+    <p class="zh-inline">IR 研究最常見的錯誤是：<strong>「看到相關就下因果結論」</strong>。例如：「中國援助增加 → 受援國媒體自由下降」，但這可能只是因為「威權國家本來就找中國拿錢」。我的論文用三個方法處理這個內生性問題：</p>
+    <ol class="zh-inline">
+      <li><strong>工具變數法（IV）：</strong>用中國國內鋼鐵產能過剩作為工具變數，排除反向因果。</li>
+      <li><strong>傾向分數配對（PSM）：</strong>為每個受中國援助的國家，找配對的「反事實」樣本。</li>
+      <li><strong>合成控制法（SCM）：</strong>在邦交轉換案例（如巴拿馬轉向中國），建構合成的「未轉向版本」作為比較基準。</li>
+    </ol>
+
+    <p class="en-inline">The most common IR mistake: inferring causation from correlation. I use IV, PSM, and Synthetic Control to address endogeneity.</p>
+
+    <h4 class="zh-inline">中國大陸研究方法：三個工具箱</h4>
+    <h4 class="en-inline">Three toolkits for China studies</h4>
+
+    <div class="card-grid" style="margin:.6rem 0">
+      <div class="card blue">
+        <h4 class="zh-inline">🔤 文字探勘</h4>
+        <h4 class="en-inline">🔤 Text Mining</h4>
+        <p class="zh-inline">用 Graph RAG + NLP 自動標記黨政文件、立法文本。已發表：2025 IPSA（合著：陳奕如）。</p>
+        <p class="en-inline">Graph RAG + NLP for auto-labeling  documents and legislative texts. Presented: 2025 IPSA. (Co-author: I-Ju CHEN)</p>
+      </div>
+      <div class="card gold">
+        <h4 class="zh-inline">🎬 影片分析</h4>
+        <h4 class="en-inline">🎬 Video Analysis</h4>
+        <p class="zh-inline">用影像辨識分析中國官方宣傳影片（電視劇民營企業大統戰）。結合意識形態編碼與場景分類。</p>
+        <p class="en-inline">Image recognition for CCP propaganda videos, combining ideological coding and scene classification.</p>
+      </div>
+      <div class="card sage">
+        <h4 class="zh-inline">🕸️ 網絡分析</h4>
+        <h4 class="en-inline">🕸️ Network Analysis</h4>
+        <p class="zh-inline">中共菁英流動網絡（延續碩論研究）、中國對外援助受援國網絡、台灣民眾旅遊中國後保守主義傳播網絡。</p>
+        <p class="en-inline">Elite mobility, aid recipient networks, ideological diffusion networks.</p>
+      </div>
+    </div>
+
+    <p class="zh-inline"><strong>對外交系的意義：</strong>外交決策、國際談判、國家形象建構，都需要從海量非結構化資料（新聞、外交部聲明、社群媒體）中提取訊號。我能夠訓練學生利用這些工具，將傳統「讀報紙做外交分析」進化為「用電腦處理十年份資料做趨勢判斷」。</p>
+    <p class="en-inline"><strong>For DDIR:</strong> Diplomatic analysis requires processing massive unstructured text. I can train students to upgrade from traditional &quot;reading newspapers&quot; to &quot;processing ten years of data&quot;.</p>
+  </div>
+</div>
+
+<div class="qa-card">
+  <div class="qa-question">
+    <span class="qa-q-label">Q3</span>
+    <span class="zh-inline">您的研究偏量化，淡江外交系有些教師偏重理論與質性分析，您如何與同仁互補？</span>
+    <span class="en-inline">Your work is quantitative while some DDIR colleagues focus on theory/qualitative analysis. How do you complement them?</span>
+  </div>
+  <div class="qa-answer">
+    <p class="zh-inline"><strong>一句話：</strong><span class="key-line">量化與質性不是對立，而是互補——我的研究都從紮實的理論辯證出發，量化只是驗證工具，「軍機繞台」研究就是範例。</span></p>
+    <p class="en-inline"><strong>Highlight:</strong> <span class="key-line">Quantitative and qualitative methods are complementary. My work starts with strong theory.</span></p>
+
+    <ul class="zh-inline">
+      <li><strong>理論先行：</strong>軍機繞台研究處理的是古典 IR 議題——「聚旗效應」(Mueller 1970) vs.「選舉問責」(Ashworth)。我先用完整文獻回顧梳理理論分歧，再設計實證策略。</li>
+      <li><strong>混合方法：</strong>主要分析用 ARFIMA-MLM 處理八年時序資料，穩健性檢定用 2025 年的實驗法（American Portrait Project），最後用個案研究（裴洛西訪台、四次危機事件）檢驗機制。</li>
+      <li><strong>向質性同仁學習：</strong>我非常願意與做深度訪談、田野調查的同仁合作。例如我目前參與的跨國民調計畫（習近平時代的統戰與宣傳），就需要在台灣、香港、東南亞的地方線人合作。</li>
+    </ul>
+
+    <ul class="en-inline">
+      <li>Theory first: the military-incursion paper builds on Mueller's rally-round-the-flag vs. electoral accountability.</li>
+      <li>Mixed methods: ARFIMA-MLM for 8-year time series + survey experiment for robustness + case studies for mechanisms.</li>
+      <li>Open to collaboration with qualitative colleagues; my cross-national polling project depends on local fieldwork partners.</li>
+    </ul>
+  </div>
+</div>
+
+</div></div>
+
+<!-- ====== P3 Teaching Demonstration ====== -->
+<div class="page" data-page="3"><div class="page-inner">
+<h2 class="zh-inline">③ 教學示範 </h2>
+<h2 class="en-inline">③ Teaching Demonstration ｜ 10 min</h2>
+
+<p class="zh-inline">以下展示我為「<strong>中國大陸問題研究</strong>」設計的 18 週課綱架構。這份課綱是我參與<strong>國防部委託中央研究院研擬軍事院校課綱撰述案</strong>的成果，現已改編用於大學通識與系所專業課程。</p>
+<p class="en-inline">Below is the 18-week syllabus I designed for &quot;Introduction to Mainland China Studies.&quot; This syllabus was developed as part of the <strong>Ministry of National Defense–commissioned Academia Sinica project</strong> to craft a China studies curriculum for military academies.</p>
+
+<div style="background:linear-gradient(135deg,rgba(0,51,102,.05) 0%,rgba(201,162,83,.05) 100%);border-left:4px solid var(--tku-blue);padding:.85rem 1.1rem;border-radius:6px;margin:.9rem 0">
+  <p class="zh-inline" style="margin:0;font-size:.83rem"><strong>📌 課綱來源：</strong>由林宗弘研究員主持、本人協同撰述的「國防部委託中央研究院研擬軍事院校『中國大陸問題研究』課程大綱之撰述案」（2026 年 3 月完成初稿）。團隊成員涵蓋中研院社會所、政治所、文化大學、政治大學多位研究者。</p>
+  <p class="en-inline" style="margin:0;font-size:.83rem"><strong>📌 Source:</strong> Ministry of National Defense–commissioned Academia Sinica project on Mainland China Studies curriculum for military academies, led by Dr. Thung-Hong Lin, with my co-authorship (draft completed March 2026).</p>
+</div>
+
+<h3 class="zh-inline">課綱核心架構：四大模組、18 週</h3>
+<h3 class="en-inline">Core Structure: Four Modules, 18 Weeks</h3>
+
+<!-- ===== Curriculum (HTML version) ===== -->
+<div class="curri">
+  <div class="curri-title zh-inline">中國大陸問題研究 ｜ 18 週課程</div>
+  <div class="curri-title en-inline">Mainland China Studies ｜ 18-Week Curriculum</div>
+
+  <!-- 4 modules -->
+  <div class="curri-modules">
+    <div class="curri-mod modA">
+      <div class="curri-mod-head zh-inline">模組 A ｜ 歷史奠基</div>
+      <div class="curri-mod-head en-inline">Module A ｜ Historical Foundation</div>
+      <div class="curri-mod-sub zh-inline">W1–W3</div>
+      <div class="curri-mod-sub en-inline">W1–W3</div>
+      <div class="curri-mod-list zh-inline">
+        <div>W1 · 課程導論（黨國、銳實力）</div>
+        <div>W2 · 毛澤東時期（反右、大躍進）</div>
+        <div>W3 · 後毛時期（改革開放、WTO）</div>
+      </div>
+      <div class="curri-mod-list en-inline">
+        <div>W1 · Intro (party-state, sharp power)</div>
+        <div>W2 · Mao era (anti-rightist, Great Leap)</div>
+        <div>W3 · Post-Mao (reform, WTO)</div>
+      </div>
+    </div>
+
+    <div class="curri-mod modB">
+      <div class="curri-mod-head zh-inline">模組 B ｜ 內部治理</div>
+      <div class="curri-mod-head en-inline">Module B ｜ Internal Governance</div>
+      <div class="curri-mod-sub zh-inline">W4–W7</div>
+      <div class="curri-mod-sub en-inline">W4–W7</div>
+      <div class="curri-mod-list zh-inline">
+        <div>W4 · 黨政結構（條塊、集權）</div>
+        <div>W5 · 經濟發展（WTO、台商、國資）</div>
+        <div>W6 · 社會結構 + W7 · 數位極權</div>
+      </div>
+      <div class="curri-mod-list en-inline">
+        <div>W4 · Party-state (tiao-kuai, centralization)</div>
+        <div>W5 · Economic development (WTO, Taishang)</div>
+        <div>W6 · Society + W7 · Digital authoritarianism</div>
+      </div>
+    </div>
+
+    <div class="curri-mod modC">
+      <div class="curri-mod-head zh-inline">模組 C ｜ 對外擴張</div>
+      <div class="curri-mod-head en-inline">Module C ｜ External Projection</div>
+      <div class="curri-mod-sub zh-inline">W11–W14</div>
+      <div class="curri-mod-sub en-inline">W11–W14</div>
+      <div class="curri-mod-list zh-inline">
+        <div>W11 · 戰狼外交（國際組織布局）</div>
+        <div>W12 · 全球經濟（一帶一路、BRICS）</div>
+        <div>W13 · 銳實力 + W14 · 大外宣</div>
+      </div>
+      <div class="curri-mod-list en-inline">
+        <div>W11 · Wolf-warrior diplomacy</div>
+        <div>W12 · Global economy (BRI, BRICS)</div>
+        <div>W13 · Sharp power + W14 · Global propaganda</div>
+      </div>
+    </div>
+
+    <div class="curri-mod modD">
+      <div class="curri-mod-head zh-inline">模組 D ｜ 未來</div>
+      <div class="curri-mod-head en-inline">Module D ｜ Future</div>
+      <div class="curri-mod-sub zh-inline">W15–W16</div>
+      <div class="curri-mod-sub en-inline">W15–W16</div>
+      <div class="curri-mod-list zh-inline">
+        <div>W15 · 科技輸出與晶片戰爭</div>
+        <div>W16 · 治理困境</div>
+      </div>
+      <div class="curri-mod-list en-inline">
+        <div>W15 · Tech exports &amp; chip wars</div>
+        <div>W16 · Governance dilemmas</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cross-cutting axis -->
+  <div class="curri-axis">
+    <div class="curri-axis-title zh-inline">🎯 橫貫主軸：「對台灣的意義和影響」</div>
+    <div class="curri-axis-title en-inline">🎯 Cross-cutting theme: &quot;Implications for Taiwan&quot;</div>
+    <div class="curri-axis-desc zh-inline">每週都會在授課尾聲，回到「這對台灣、對外交決策有什麼意義？」這個問題。</div>
+    <div class="curri-axis-desc en-inline">Every week ends with: &quot;What does this mean for Taiwan and its diplomacy?&quot;</div>
+  </div>
+
+  <!-- Update banner -->
+  <div class="curri-update-banner zh-inline">🆕 本次課綱的三大更新重點</div>
+  <div class="curri-update-banner en-inline">🆕 Three Key Updates in this Syllabus</div>
+
+  <div class="curri-updates">
+    <div class="curri-up up1">
+      <div class="curri-up-head zh-inline">更新 ① ｜ 新增「數位極權」(W7)</div>
+      <div class="curri-up-head en-inline">Update ① ｜ New: Digital Authoritarianism (W7)</div>
+      <div class="curri-up-body">
+        <div class="curri-up-q zh-inline">為什麼新增？</div>
+        <div class="curri-up-q en-inline">Why added?</div>
+        <div class="curri-up-a zh-inline">舊版以「經社發展」為主，未處理 AI 監控、天網工程、社會信用體系——這是 2020 年後中國對外影響力的新前沿（含對台網路戰）。</div>
+        <div class="curri-up-a en-inline">Old syllabus focused on socio-economic development without addressing AI surveillance, Skynet, social credit — the new frontier of China's external influence since 2020, including cyber warfare against Taiwan.</div>
+      </div>
+    </div>
+
+    <div class="curri-up up2">
+      <div class="curri-up-head zh-inline">更新 ② ｜「環境與地緣政治」(W8)</div>
+      <div class="curri-up-head en-inline">Update ② ｜ Environment &amp; Geopolitics (W8)</div>
+      <div class="curri-up-body">
+        <div class="curri-up-q zh-inline">為什麼新增？</div>
+        <div class="curri-up-q en-inline">Why added?</div>
+        <div class="curri-up-a zh-inline">碳中和、新三樣（電動車／鋰電池／太陽能）、產業補貼戰——這是美中新冷戰的新戰場，也是外交政策的必修議題。</div>
+        <div class="curri-up-a en-inline">Carbon neutrality, &quot;new three&quot; industries (EVs, batteries, solar), subsidy wars — the new battleground of US-China rivalry and a must-study diplomatic issue.</div>
+      </div>
+    </div>
+
+    <div class="curri-up up3">
+      <div class="curri-up-head zh-inline">更新 ③ ｜ 強化「銳實力」(W13-W14)</div>
+      <div class="curri-up-head en-inline">Update ③ ｜ Strengthened: Sharp Power (W13-W14)</div>
+      <div class="curri-up-body">
+        <div class="curri-up-q zh-inline">為什麼新增？</div>
+        <div class="curri-up-q en-inline">Why added?</div>
+        <div class="curri-up-a zh-inline">結合本人 SSCI 論文研究成果（海外援助、媒體自由），以及漢密爾頓《黑手》、葛宣尼克《中國滲透》等最新文獻；含台灣在地案例。</div>
+        <div class="curri-up-a en-inline">Integrates my SSCI research (foreign aid, media freedom) with recent works (Hamilton's Silent Invasion, Gershaneck's Political Warfare); includes Taiwan cases.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pedagogy -->
+  <div class="curri-peda">
+    <div class="curri-peda-title zh-inline">教學法設計</div>
+    <div class="curri-peda-title en-inline">Pedagogy</div>
+    <div class="curri-peda-grid">
+      <div class="curri-peda-item zh-inline">
+        <strong>📚 每週必讀 ＊</strong>
+        <span>中文書約兩章 + 一篇期刊</span>
+        <span>（優先選五年內新著）</span>
+        <em>制度基因、長期博弈、黑手</em>
+      </div>
+      <div class="curri-peda-item en-inline">
+        <strong>📚 Weekly Readings ＊</strong>
+        <span>~2 chapters + 1 journal paper</span>
+        <span>(priority: works within 5 years)</span>
+        <em>Institutional Genes, The Long Game, Silent Invasion</em>
+      </div>
+      <div class="curri-peda-item zh-inline">
+        <strong>🎬 彈性多元課程</strong>
+        <span>W10、W17 影片課 + 跨領域</span>
+        <span>《大路朝天》《709 彼岸》</span>
+        <em>→ 從影像理解中國現場</em>
+      </div>
+      <div class="curri-peda-item en-inline">
+        <strong>🎬 Flexible Sessions</strong>
+        <span>W10, W17 film + interdisciplinary</span>
+        <span>The Road, 709 Beyond</span>
+        <em>→ Understanding China through film</em>
+      </div>
+      <div class="curri-peda-item zh-inline">
+        <strong>💭 課間課後討論</strong>
+        <span>每週 3-4 題設計性問題</span>
+        <span>避免背誦、鼓勵辯證</span>
+        <em>→ 訓練批判思維</em>
+      </div>
+      <div class="curri-peda-item en-inline">
+        <strong>💭 In-class Discussion</strong>
+        <span>3-4 designed questions per week</span>
+        <span>Avoid rote learning; foster debate</span>
+        <em>→ Training critical thinking</em>
+      </div>
+      <div class="curri-peda-item zh-inline">
+        <strong>📊 期中／期末考</strong>
+        <span>W9 期中 + W18 期末</span>
+        <span>開放式論述 + 案例分析</span>
+        <em>→ 連結當代外交議題</em>
+      </div>
+      <div class="curri-peda-item en-inline">
+        <strong>📊 Mid/Final Exams</strong>
+        <span>W9 midterm + W18 final</span>
+        <span>Essay + case analysis</span>
+        <em>→ Linking to contemporary diplomacy</em>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ===== /Curriculum ===== -->
+
+<h3 class="zh-inline">18 週課程全覽</h3>
+<h3 class="en-inline">Full 18-Week Syllabus </h3>
+
+<div class="week-grid">
+  <div class="week-box"><div class="week-num">W1</div><div class="week-topic">課程導論</div><div class="week-detail">黨國體制、銳實力、地緣政治</div></div>
+  <div class="week-box"><div class="week-num">W2</div><div class="week-topic">毛澤東時期</div><div class="week-detail">反右、大躍進、文革</div></div>
+  <div class="week-box"><div class="week-num">W3</div><div class="week-topic">後毛時期</div><div class="week-detail">改革開放、六四、WTO</div></div>
+  <div class="week-box"><div class="week-num">W4</div><div class="week-topic">黨政結構</div><div class="week-detail">條塊體制、雙重領導、習集權</div></div>
+  <div class="week-box"><div class="week-num">W5</div><div class="week-topic">經濟發展</div><div class="week-detail">WTO、台商角色、國家資本主義</div></div>
+  <div class="week-box"><div class="week-num">W6</div><div class="week-topic">社會不平等</div><div class="week-detail">戶口、階級分化、青年失業</div></div>
+  <div class="week-box new"><div class="week-num">W7</div><div class="week-topic">數位極權</div><div class="week-detail">AI監控、天網、社會信用</div></div>
+  <div class="week-box new"><div class="week-num">W8</div><div class="week-topic">環境&amp;地緣</div><div class="week-detail">碳中和、新三樣、補貼戰</div></div>
+  <div class="week-box exam"><div class="week-num">W9</div><div class="week-topic">期中考</div><div class="week-detail">—</div></div>
+  <div class="week-box video"><div class="week-num">W10</div><div class="week-topic">影片課</div><div class="week-detail">《大路朝天》中國模式</div></div>
+  <div class="week-box"><div class="week-num">W11</div><div class="week-topic">戰狼外交</div><div class="week-detail">國際組織布局、民族主義</div></div>
+  <div class="week-box"><div class="week-num">W12</div><div class="week-topic">全球經濟擴張</div><div class="week-detail">一帶一路、AIIB、BRICS</div></div>
+  <div class="week-box new"><div class="week-num">W13</div><div class="week-topic">威權銳實力</div><div class="week-detail">統戰、滲透、海外影響力</div></div>
+  <div class="week-box new"><div class="week-num">W14</div><div class="week-topic">大外宣</div><div class="week-detail">媒體滲透、資訊戰</div></div>
+  <div class="week-box"><div class="week-num">W15</div><div class="week-topic">科技輸出</div><div class="week-detail">監控科技與晶片戰爭</div></div>
+  <div class="week-box"><div class="week-num">W16</div><div class="week-topic">治理困境</div><div class="week-detail">人口危機、經濟趨緩</div></div>
+  <div class="week-box video"><div class="week-num">W17</div><div class="week-topic">跨領域</div><div class="week-detail">《709彼岸》中國人權</div></div>
+  <div class="week-box exam"><div class="week-num">W18</div><div class="week-topic">期末考</div><div class="week-detail">—</div></div>
+</div>
+
+<p class="zh-inline" style="margin-top:.8rem;font-size:.82rem;color:var(--muted);font-style:italic">※ <strong style="color:var(--gold)">NEW 標記</strong>為本次撰述案的新增/強化週次；<strong style="color:var(--teal)">綠色</strong>為影片彈性課；<strong style="color:var(--muted)">灰色</strong>為考試週。</p>
+<p class="en-inline" style="margin-top:.8rem;font-size:.82rem;color:var(--muted);font-style:italic">※ <strong style="color:var(--gold)">NEW</strong> = latest updated/strengthened; <strong style="color:var(--teal)">green</strong> = film weeks; <strong style="color:var(--muted)">gray</strong> = exams.</p>
+
+<!-- ===== Lesson hint ===== -->
+<div class="lesson-hint">
+  <span class="lesson-hint-icon">💡</span>
+  <span class="zh-inline"><strong>上課內容範例</strong>｜以下兩個範例對應 W4「黨政結構」與 W7「數位極權」單元——<strong>請點選標題列展開／收合</strong>內容，方便依面試時間彈性說明。</span>
+  <span class="en-inline"><strong>Lesson Samples</strong> ｜ Two examples for W4 "Party-State Structure" and W7 "Digital Authoritarianism" — <strong>click headers to expand/collapse</strong> to fit interview time.</span>
+</div>
+
+<!-- ===== Lesson Sample: W4 Party-State Structure ===== -->
+<div class="lesson blue" id="lesson-w4">
+  <div class="lesson-head" onclick="toggleLesson('lesson-w4')">
+    <span class="lesson-week">W4</span>
+    <span class="lesson-topic zh-inline">黨政結構：條塊體制與雙重領導</span>
+    <span class="lesson-topic en-inline">Party-State Structure: Tiao-Kuai &amp; Dual Leadership</span>
+    <div class="lesson-cite zh-inline">📄 教材取材：Lieberthal &amp; Oksenberg (1988)、Shirk (2007)、Pearson, Rithmire &amp; Tsai (2022)、林宗弘等（2024）</div>
+    <div class="lesson-cite en-inline">📄 Source: Lieberthal &amp; Oksenberg (1988); Shirk (2007); Pearson, Rithmire &amp; Tsai (2022); Lin et al. (2024)</div>
+    <div class="lesson-summary zh-inline">用<strong>武漢肺炎初期延誤</strong>的故事，搭配兩張動態網絡圖，解析中共「條塊體制」與「雙重領導」如何運作，以及習近平時代的<strong>個人化集權</strong>轉變。</div>
+    <div class="lesson-summary en-inline">Uses the <strong>early Wuhan COVID delay</strong> story with two dynamic network diagrams to explain CCP's "tiao-kuai" system and Xi's <strong>personalized centralization</strong>.</div>
+    <button class="lesson-toggle" type="button" aria-label="toggle">+</button>
+  </div>
+
+  <div class="lesson-body">
+  <div class="lesson-narr zh-inline">
+    <strong>故事開場：</strong>2020 年初武漢爆發 COVID-19，第一線醫師李文亮的警訊先被武漢公安「訓誡」，再經湖北省衛健委壓下，整整三週後北京才宣布「人傳人」。為什麼一個全國性公衛危機，會被地方層層卡住？答案不在「人」，而在<strong>結構</strong>——中共獨特的<strong>「條塊體制」</strong>讓地方官員同時聽命於兩條線：上級業務系統（條）與同級黨委（塊）。當兩條線意見衝突時，**誰才是真正的老闆**？這就是本週要解開的謎題。
+  </div>
+  <div class="lesson-narr en-inline">
+    <strong>Opening story:</strong> In early 2020, Wuhan's frontline doctor Li Wenliang was first reprimanded by local police, then his warning was suppressed by the provincial health commission — Beijing only declared human-to-human transmission three weeks later. Why does a national public-health crisis get stuck in local layers? The answer lies in <strong>structure</strong> — the CCP's unique <strong>"tiao-kuai" system</strong> requires officials to report to both vertical functional ministries and horizontal party committees. When the two conflict, <strong>who is really the boss?</strong>
+  </div>
+
+  <div class="lesson-blocks">
+    <div class="lesson-blk">
+      <div class="lesson-blk-num zh-inline">① 研究問題</div>
+      <div class="lesson-blk-num en-inline">① Question</div>
+      <div class="lesson-blk-title zh-inline">為什麼中共決策難「中央化」？</div>
+      <div class="lesson-blk-title en-inline">Why is CCP decision-making fragmented?</div>
+      <div class="lesson-blk-body zh-inline">
+        外界以為中共是<strong>「鐵板一塊」</strong>的集權體制；但實際上，中央到地方有<strong>多重委託-代理</strong>關係，存在「<strong>分裂型威權</strong>」（fragmented authoritarianism）的特性。
+      </div>
+      <div class="lesson-blk-body en-inline">
+        Outsiders see the CCP as monolithic; in reality, multiple principal-agent relations create <strong>"fragmented authoritarianism"</strong> (Lieberthal &amp; Oksenberg).
+      </div>
+    </div>
+
+    <div class="lesson-blk">
+      <div class="lesson-blk-num zh-inline">② 條（業務系統）</div>
+      <div class="lesson-blk-num en-inline">② Tiao (Vertical)</div>
+      <div class="lesson-blk-title zh-inline">部委 → 廳 → 局 → 科</div>
+      <div class="lesson-blk-title en-inline">Ministry → Bureau → Office</div>
+      <div class="lesson-blk-body zh-inline">
+        從中央部委（衛健委、教育部、公安部）<strong>垂直延伸</strong>到地方對應單位，掌控<strong>專業預算與人事</strong>。
+      </div>
+      <div class="lesson-blk-body en-inline">
+        Vertical functional lines (Health, Education, Public Security) extending from central to local — control <strong>budget &amp; expertise</strong>.
+      </div>
+    </div>
+
+    <div class="lesson-blk">
+      <div class="lesson-blk-num zh-inline">③ 塊（地方黨委）</div>
+      <div class="lesson-blk-num en-inline">③ Kuai (Horizontal)</div>
+      <div class="lesson-blk-title zh-inline">省委 → 市委 → 縣委</div>
+      <div class="lesson-blk-title en-inline">Province → City → County Party</div>
+      <div class="lesson-blk-body zh-inline">
+        地方黨委<strong>水平整合</strong>同級各部門，掌握<strong>人事任免與政治站隊</strong>——通常贏過業務系統。
+      </div>
+      <div class="lesson-blk-body en-inline">
+        Horizontal party committees integrate all local units — control <strong>personnel &amp; political loyalty</strong> — usually winning.
+      </div>
+    </div>
+
+    <div class="lesson-blk">
+      <div class="lesson-blk-num zh-inline">④ 雙重領導</div>
+      <div class="lesson-blk-num en-inline">④ Dual Leadership</div>
+      <div class="lesson-blk-title zh-inline">「兩個老闆」的張力</div>
+      <div class="lesson-blk-title en-inline">"Two Bosses" Tension</div>
+      <div class="lesson-blk-body zh-inline">
+        武漢市衛健委同時聽命於：<strong>條</strong>＝國家衛健委（業務）+ <strong>塊</strong>＝武漢市委（政治）。當衝突時，<strong>塊壓過條</strong>。
+      </div>
+      <div class="lesson-blk-body en-inline">
+        Wuhan Health Commission reports to both: <strong>Tiao</strong> = National Health Comm. + <strong>Kuai</strong> = Wuhan Party Comm. <strong>Kuai wins</strong>.
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Network Diagrams ===== -->
+  <div class="lesson-figs">
+
+    <!-- Figure A: Network of CCP power structure -->
+    <div class="lesson-fig">
+      <div class="lesson-fig-cap zh-inline">圖 A ｜ 黨政權力網絡：條塊雙軌</div>
+      <div class="lesson-fig-cap en-inline">Fig A ｜ CCP Power Network: Tiao-Kuai Dual Tracks</div>
+      <div class="lesson-fig-sub zh-inline">紅線 = 條（業務指令）｜ 藍線 = 塊（黨委領導）</div>
+      <div class="lesson-fig-sub en-inline">Red = Tiao (functional) ｜ Blue = Kuai (party)</div>
+
+      <svg viewBox="0 0 460 360" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="net-tiao" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M0,0 L10,5 L0,10 Z" fill="#8b2500"/>
+          </marker>
+          <marker id="net-kuai" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M0,0 L10,5 L0,10 Z" fill="#1d3557"/>
+          </marker>
+          <radialGradient id="apex-grad" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#c9a253"/>
+            <stop offset="100%" stop-color="#8a6f1f"/>
+          </radialGradient>
+        </defs>
+
+        <!-- ========= LEVEL 1: Apex ========= -->
+        <!-- Politburo Standing Committee (top) -->
+        <ellipse cx="230" cy="38" rx="115" ry="22" fill="url(#apex-grad)" stroke="#5a4810" stroke-width="1.5"/>
+        <text x="230" y="36" text-anchor="middle" fill="#1a1a1a" font-size="11" font-weight="700" class="zh-inline">政治局常委會（PSC）</text>
+        <text x="230" y="36" text-anchor="middle" fill="#1a1a1a" font-size="11" font-weight="700" class="en-inline">Politburo Standing Comm.</text>
+        <text x="230" y="49" text-anchor="middle" fill="#1a1a1a" font-size="9" class="zh-inline">7 人 ｜ 最終決策</text>
+        <text x="230" y="49" text-anchor="middle" fill="#1a1a1a" font-size="9" class="en-inline">7 members ｜ Top decision</text>
+
+        <!-- Politburo (just below PSC) -->
+        <ellipse cx="230" cy="92" rx="135" ry="18" fill="#c9a253" opacity="0.55" stroke="#8a6f1f" stroke-width="1"/>
+        <text x="230" y="90" text-anchor="middle" fill="#1a1a1a" font-size="10.5" font-weight="700" class="zh-inline">政治局（Politburo）</text>
+        <text x="230" y="90" text-anchor="middle" fill="#1a1a1a" font-size="10.5" font-weight="700" class="en-inline">Politburo</text>
+        <text x="230" y="102" text-anchor="middle" fill="#333" font-size="8.5" class="zh-inline">24 人 ｜ 涵蓋全國要職</text>
+        <text x="230" y="102" text-anchor="middle" fill="#333" font-size="8.5" class="en-inline">24 members ｜ key positions</text>
+
+        <!-- ========= LEVEL 2: Two parallel tracks ========= -->
+        <!-- Left: State Council (政府/國務院 - 條的源頭) -->
+        <rect x="40" y="135" width="155" height="50" rx="6" fill="#fff" stroke="#8b2500" stroke-width="2"/>
+        <text x="118" y="155" text-anchor="middle" fill="#8b2500" font-size="11" font-weight="700" class="zh-inline">國務院 / 中央部委</text>
+        <text x="118" y="155" text-anchor="middle" fill="#8b2500" font-size="11" font-weight="700" class="en-inline">State Council / Ministries</text>
+        <text x="118" y="170" text-anchor="middle" fill="#333" font-size="9" class="zh-inline">衛健委 ｜ 教育部 ｜ 公安部</text>
+        <text x="118" y="170" text-anchor="middle" fill="#333" font-size="9" class="en-inline">Health ｜ Education ｜ Police</text>
+        <text x="118" y="180" text-anchor="middle" fill="#8b2500" font-size="8.5" font-style="italic" class="zh-inline">＝「條」的源頭</text>
+        <text x="118" y="180" text-anchor="middle" fill="#8b2500" font-size="8.5" font-style="italic" class="en-inline">= Source of TIAO</text>
+
+        <!-- Right: Central Committee Departments (中央書記處 - 塊的源頭) -->
+        <rect x="265" y="135" width="155" height="50" rx="6" fill="#fff" stroke="#1d3557" stroke-width="2"/>
+        <text x="343" y="155" text-anchor="middle" fill="#1d3557" font-size="11" font-weight="700" class="zh-inline">中央書記處 / 組織部</text>
+        <text x="343" y="155" text-anchor="middle" fill="#1d3557" font-size="11" font-weight="700" class="en-inline">CC Secretariat / Org. Dept.</text>
+        <text x="343" y="170" text-anchor="middle" fill="#333" font-size="9" class="zh-inline">人事 ｜ 宣傳 ｜ 統戰 ｜ 紀檢</text>
+        <text x="343" y="170" text-anchor="middle" fill="#333" font-size="9" class="en-inline">Personnel ｜ Propaganda ｜ UF</text>
+        <text x="343" y="180" text-anchor="middle" fill="#1d3557" font-size="8.5" font-style="italic" class="zh-inline">＝「塊」的源頭</text>
+        <text x="343" y="180" text-anchor="middle" fill="#1d3557" font-size="8.5" font-style="italic" class="en-inline">= Source of KUAI</text>
+
+        <!-- Apex to Level 2 (gold) -->
+        <line x1="195" y1="105" x2="125" y2="135" stroke="#8a6f1f" stroke-width="1.5" opacity="0.7"/>
+        <line x1="265" y1="105" x2="335" y2="135" stroke="#8a6f1f" stroke-width="1.5" opacity="0.7"/>
+
+        <!-- ========= LEVEL 3: Provincial ========= -->
+        <!-- Left: Provincial Health Commission (條延伸) -->
+        <rect x="40" y="220" width="155" height="42" rx="6" fill="#fdf3f0" stroke="#8b2500" stroke-width="1.5"/>
+        <text x="118" y="238" text-anchor="middle" fill="#1a1a1a" font-size="10.5" font-weight="700" class="zh-inline">省衛健委（業務系統）</text>
+        <text x="118" y="238" text-anchor="middle" fill="#1a1a1a" font-size="10.5" font-weight="700" class="en-inline">Provincial Health Comm.</text>
+        <text x="118" y="253" text-anchor="middle" fill="#666" font-size="9" class="zh-inline">業務 ｜ 預算 ｜ 專業</text>
+        <text x="118" y="253" text-anchor="middle" fill="#666" font-size="9" class="en-inline">Function ｜ Budget ｜ Expert</text>
+
+        <!-- Right: Provincial Party Committee -->
+        <rect x="265" y="220" width="155" height="42" rx="6" fill="#eef3f9" stroke="#1d3557" stroke-width="1.5"/>
+        <text x="343" y="238" text-anchor="middle" fill="#1a1a1a" font-size="10.5" font-weight="700" class="zh-inline">省委（地方黨委）</text>
+        <text x="343" y="238" text-anchor="middle" fill="#1a1a1a" font-size="10.5" font-weight="700" class="en-inline">Provincial Party Comm.</text>
+        <text x="343" y="253" text-anchor="middle" fill="#666" font-size="9" class="zh-inline">人事 ｜ 任免 ｜ 政治</text>
+        <text x="343" y="253" text-anchor="middle" fill="#666" font-size="9" class="en-inline">Personnel ｜ Politics</text>
+
+        <!-- Vertical lines: Tiao (red) and Kuai (blue) -->
+        <line x1="118" y1="185" x2="118" y2="220" stroke="#8b2500" stroke-width="2" marker-end="url(#net-tiao)"/>
+        <line x1="343" y1="185" x2="343" y2="220" stroke="#1d3557" stroke-width="2" marker-end="url(#net-kuai)"/>
+
+        <!-- ========= LEVEL 4: Local unit (the conflict point) ========= -->
+        <rect x="155" y="295" width="150" height="50" rx="6" fill="#fffbf0" stroke="#b8860b" stroke-width="2.5"/>
+        <text x="230" y="315" text-anchor="middle" fill="#1a1a1a" font-size="11" font-weight="700" class="zh-inline">武漢市衛健委</text>
+        <text x="230" y="315" text-anchor="middle" fill="#1a1a1a" font-size="11" font-weight="700" class="en-inline">Wuhan Health Comm.</text>
+        <text x="230" y="330" text-anchor="middle" fill="#b8860b" font-size="9.5" font-weight="700" class="zh-inline">⚡ 兩個老闆的衝突點</text>
+        <text x="230" y="330" text-anchor="middle" fill="#b8860b" font-size="9.5" font-weight="700" class="en-inline">⚡ Conflict point</text>
+        <text x="230" y="342" text-anchor="middle" fill="#666" font-size="8.5" class="zh-inline">2020 武漢肺炎初期</text>
+        <text x="230" y="342" text-anchor="middle" fill="#666" font-size="8.5" class="en-inline">2020 COVID early stage</text>
+
+        <!-- Tiao line: Provincial Health → Wuhan Health (RED, business command) -->
+        <path d="M 118 262 Q 118 285 175 305" fill="none" stroke="#8b2500" stroke-width="2" marker-end="url(#net-tiao)"/>
+        <text x="125" y="290" font-size="9" fill="#8b2500" font-weight="700" class="zh-inline">條：業務指令</text>
+        <text x="125" y="290" font-size="9" fill="#8b2500" font-weight="700" class="en-inline">Tiao: function</text>
+
+        <!-- Kuai line: Provincial Party → Wuhan Health (BLUE, dominant) -->
+        <path d="M 343 262 Q 343 285 285 305" fill="none" stroke="#1d3557" stroke-width="3" marker-end="url(#net-kuai)"/>
+        <text x="295" y="290" font-size="9" fill="#1d3557" font-weight="700" class="zh-inline">塊：政治領導 ★</text>
+        <text x="295" y="290" font-size="9" fill="#1d3557" font-weight="700" class="en-inline">Kuai: party ★</text>
+
+        <!-- Annotation: "Kuai usually wins" -->
+        <rect x="335" y="300" width="120" height="38" rx="4" fill="#1d3557" opacity="0.92"/>
+        <text x="395" y="316" text-anchor="middle" fill="#fff" font-size="9.5" font-weight="700" class="zh-inline">塊壓過條</text>
+        <text x="395" y="316" text-anchor="middle" fill="#fff" font-size="9.5" font-weight="700" class="en-inline">Kuai &gt; Tiao</text>
+        <text x="395" y="330" text-anchor="middle" fill="#c9a253" font-size="8.5" class="zh-inline">→ 訊息被壓下</text>
+        <text x="395" y="330" text-anchor="middle" fill="#c9a253" font-size="8.5" class="en-inline">→ Info suppressed</text>
+      </svg>
+
+      <div class="net-legend">
+        <div class="net-legend-item"><span class="net-legend-dot" style="background:#8b2500"></span><span class="zh-inline">條（業務）</span><span class="en-inline">Tiao (functional)</span></div>
+        <div class="net-legend-item"><span class="net-legend-dot" style="background:#1d3557"></span><span class="zh-inline">塊（黨委）</span><span class="en-inline">Kuai (party)</span></div>
+        <div class="net-legend-item"><span class="net-legend-dot" style="background:#c9a253"></span><span class="zh-inline">最高決策層</span><span class="en-inline">Apex</span></div>
+      </div>
+
+      <div class="lesson-fig-note zh-inline">
+        武漢市衛健委同時受兩條領導：<strong>條</strong>（國家／省衛健委的業務指令）+ <strong>塊</strong>（武漢市委的政治領導）。當衝突時，<strong>塊（黨委）通常勝出</strong>——這就是為什麼地方政治考量會壓過專業判斷。
+      </div>
+      <div class="lesson-fig-note en-inline">
+        Wuhan's Health Commission reports to two superiors: <strong>Tiao</strong> (functional commands from upper Health Commissions) + <strong>Kuai</strong> (political leadership from Wuhan Party Committee). When in conflict, <strong>Kuai usually wins</strong> — local politics overrides professional judgment.
+      </div>
+    </div>
+
+    <!-- Figure B: Power asymmetry across levels -->
+    <div class="lesson-fig">
+      <div class="lesson-fig-cap zh-inline">圖 B ｜ 習近平時代的集權變化</div>
+      <div class="lesson-fig-cap en-inline">Fig B ｜ Centralization under Xi Jinping</div>
+      <div class="lesson-fig-sub zh-inline">2012 前 vs. 2024：權力分布從「碎片化」走向「個人化」</div>
+      <div class="lesson-fig-sub en-inline">Pre-2012 vs. 2024: from fragmented to personalized</div>
+
+      <svg viewBox="0 0 460 360" xmlns="http://www.w3.org/2000/svg">
+        <!-- Title bar -->
+        <text x="115" y="22" text-anchor="middle" font-size="11" fill="#1a1a1a" font-weight="700" class="zh-inline">2012 前：碎片化威權</text>
+        <text x="115" y="22" text-anchor="middle" font-size="11" fill="#1a1a1a" font-weight="700" class="en-inline">Pre-2012: Fragmented</text>
+        <text x="345" y="22" text-anchor="middle" font-size="11" fill="#8b2500" font-weight="700" class="zh-inline">2024：個人化集權</text>
+        <text x="345" y="22" text-anchor="middle" font-size="11" fill="#8b2500" font-weight="700" class="en-inline">2024: Personalized</text>
+
+        <!-- Vertical separator -->
+        <line x1="230" y1="30" x2="230" y2="345" stroke="#ccc" stroke-dasharray="3,3"/>
+
+        <!-- ===== LEFT: Pre-2012 (Hu Jintao era) - distributed network ===== -->
+        <!-- Apex (smaller, less dominant) -->
+        <circle cx="115" cy="55" r="22" fill="#c9a253" opacity="0.65" stroke="#8a6f1f" stroke-width="1.5"/>
+        <text x="115" y="58" text-anchor="middle" font-size="8.5" font-weight="700" fill="#1a1a1a">Hu</text>
+
+        <!-- 9 PSC members (split power) -->
+        <g fill="#c9a253" opacity="0.5" stroke="#8a6f1f" stroke-width="1">
+          <circle cx="55" cy="125" r="14"/>
+          <circle cx="85" cy="115" r="14"/>
+          <circle cx="115" cy="110" r="14"/>
+          <circle cx="145" cy="115" r="14"/>
+          <circle cx="175" cy="125" r="14"/>
+          <circle cx="55" cy="160" r="14"/>
+          <circle cx="115" cy="155" r="14"/>
+          <circle cx="175" cy="160" r="14"/>
+        </g>
+        <text x="55" y="128" text-anchor="middle" font-size="8" fill="#444">P2</text>
+        <text x="85" y="118" text-anchor="middle" font-size="8" fill="#444">P3</text>
+        <text x="115" y="113" text-anchor="middle" font-size="8" fill="#444">P4</text>
+        <text x="145" y="118" text-anchor="middle" font-size="8" fill="#444">P5</text>
+        <text x="175" y="128" text-anchor="middle" font-size="8" fill="#444">P6</text>
+        <text x="55" y="163" text-anchor="middle" font-size="8" fill="#444">P7</text>
+        <text x="115" y="158" text-anchor="middle" font-size="8" fill="#444">P8</text>
+        <text x="175" y="163" text-anchor="middle" font-size="8" fill="#444">P9</text>
+
+        <!-- Lines from Hu to PSC members (thin, equal) -->
+        <g stroke="#8a6f1f" stroke-width="0.8" opacity="0.5" fill="none">
+          <line x1="115" y1="77" x2="55" y2="120"/>
+          <line x1="115" y1="77" x2="85" y2="110"/>
+          <line x1="115" y1="77" x2="115" y2="105"/>
+          <line x1="115" y1="77" x2="145" y2="110"/>
+          <line x1="115" y1="77" x2="175" y2="120"/>
+        </g>
+
+        <!-- Functional ministries (red, distributed) -->
+        <g fill="#fdf3f0" stroke="#8b2500" stroke-width="1">
+          <rect x="35" y="195" width="35" height="22" rx="3"/>
+          <rect x="78" y="195" width="35" height="22" rx="3"/>
+          <rect x="121" y="195" width="35" height="22" rx="3"/>
+          <rect x="164" y="195" width="35" height="22" rx="3"/>
+        </g>
+        <text x="52" y="210" text-anchor="middle" font-size="8.5" fill="#8b2500" font-weight="700">衛</text>
+        <text x="95" y="210" text-anchor="middle" font-size="8.5" fill="#8b2500" font-weight="700">教</text>
+        <text x="138" y="210" text-anchor="middle" font-size="8.5" fill="#8b2500" font-weight="700">公安</text>
+        <text x="181" y="210" text-anchor="middle" font-size="8.5" fill="#8b2500" font-weight="700">財</text>
+
+        <!-- Local levels - many independent nodes -->
+        <g fill="#eef3f9" stroke="#1d3557" stroke-width="0.9">
+          <circle cx="40" cy="255" r="9"/><circle cx="65" cy="265" r="9"/><circle cx="90" cy="255" r="9"/>
+          <circle cx="115" cy="265" r="9"/><circle cx="140" cy="255" r="9"/><circle cx="165" cy="265" r="9"/>
+          <circle cx="190" cy="255" r="9"/>
+          <circle cx="50" cy="295" r="8"/><circle cx="80" cy="305" r="8"/><circle cx="110" cy="295" r="8"/>
+          <circle cx="140" cy="305" r="8"/><circle cx="170" cy="295" r="8"/>
+          <circle cx="60" cy="325" r="7"/><circle cx="100" cy="330" r="7"/><circle cx="140" cy="325" r="7"/>
+          <circle cx="180" cy="330" r="7"/>
+        </g>
+
+        <!-- Many distributed lines -->
+        <g stroke="#888" stroke-width="0.5" opacity="0.4" fill="none">
+          <line x1="52" y1="217" x2="40" y2="246"/>
+          <line x1="52" y1="217" x2="90" y2="246"/>
+          <line x1="95" y1="217" x2="65" y2="256"/>
+          <line x1="95" y1="217" x2="115" y2="256"/>
+          <line x1="138" y1="217" x2="140" y2="246"/>
+          <line x1="138" y1="217" x2="165" y2="256"/>
+          <line x1="181" y1="217" x2="190" y2="246"/>
+        </g>
+
+        <!-- Caption Pre-2012 -->
+        <text x="115" y="350" text-anchor="middle" font-size="8.5" fill="#666" font-style="italic" class="zh-inline">「九龍治水」 ｜ 共識決策</text>
+        <text x="115" y="350" text-anchor="middle" font-size="8.5" fill="#666" font-style="italic" class="en-inline">9 dragons ｜ Consensus</text>
+
+        <!-- ===== RIGHT: 2024 (Xi Jinping era) - centralized ===== -->
+        <!-- Xi (large, dominant, dark) -->
+        <circle cx="345" cy="55" r="30" fill="#8b2500" stroke="#5a1500" stroke-width="2"/>
+        <text x="345" y="60" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">Xi</text>
+
+        <!-- 7 PSC members (smaller, all subordinate) -->
+        <g fill="#fdd" opacity="0.85" stroke="#8b2500" stroke-width="1">
+          <circle cx="285" cy="135" r="11"/>
+          <circle cx="315" cy="125" r="11"/>
+          <circle cx="345" cy="120" r="11"/>
+          <circle cx="375" cy="125" r="11"/>
+          <circle cx="405" cy="135" r="11"/>
+          <circle cx="315" cy="160" r="11"/>
+          <circle cx="375" cy="160" r="11"/>
+        </g>
+
+        <!-- Strong dominant lines from Xi to all PSC -->
+        <g stroke="#8b2500" stroke-width="2" opacity="0.9" fill="none">
+          <line x1="345" y1="85" x2="285" y2="130" marker-end="url(#net-tiao)"/>
+          <line x1="345" y1="85" x2="315" y2="120" marker-end="url(#net-tiao)"/>
+          <line x1="345" y1="85" x2="345" y2="115" marker-end="url(#net-tiao)"/>
+          <line x1="345" y1="85" x2="375" y2="120" marker-end="url(#net-tiao)"/>
+          <line x1="345" y1="85" x2="405" y2="130" marker-end="url(#net-tiao)"/>
+        </g>
+
+        <!-- Central Leading Groups (Xi chairs all) -->
+        <rect x="265" y="190" width="160" height="32" rx="4" fill="#fff" stroke="#8b2500" stroke-width="1.5"/>
+        <text x="345" y="205" text-anchor="middle" font-size="9.5" font-weight="700" fill="#8b2500" class="zh-inline">中央領導小組（習皆主任）</text>
+        <text x="345" y="205" text-anchor="middle" font-size="9.5" font-weight="700" fill="#8b2500" class="en-inline">Central Leading Groups</text>
+        <text x="345" y="217" text-anchor="middle" font-size="8" fill="#666" class="zh-inline">外事 ｜ 經濟 ｜ 改革 ｜ 國安</text>
+        <text x="345" y="217" text-anchor="middle" font-size="8" fill="#666" class="en-inline">FA ｜ Econ ｜ Reform ｜ NS</text>
+
+        <!-- Direct lines from Xi to leading groups -->
+        <line x1="345" y1="85" x2="345" y2="190" stroke="#8b2500" stroke-width="2.5" stroke-dasharray="4,2" opacity="0.6"/>
+
+        <!-- Local levels (vertical, controlled) -->
+        <g fill="#fdf3f0" stroke="#8b2500" stroke-width="1">
+          <rect x="280" y="245" width="130" height="22" rx="3"/>
+          <rect x="280" y="275" width="130" height="22" rx="3"/>
+          <rect x="280" y="305" width="130" height="22" rx="3"/>
+        </g>
+        <text x="345" y="260" text-anchor="middle" font-size="9" fill="#1a1a1a" class="zh-inline">省</text>
+        <text x="345" y="260" text-anchor="middle" font-size="9" fill="#1a1a1a" class="en-inline">Province</text>
+        <text x="345" y="290" text-anchor="middle" font-size="9" fill="#1a1a1a" class="zh-inline">市</text>
+        <text x="345" y="290" text-anchor="middle" font-size="9" fill="#1a1a1a" class="en-inline">City</text>
+        <text x="345" y="320" text-anchor="middle" font-size="9" fill="#1a1a1a" class="zh-inline">縣／區</text>
+        <text x="345" y="320" text-anchor="middle" font-size="9" fill="#1a1a1a" class="en-inline">County</text>
+
+        <!-- Vertical control lines -->
+        <line x1="345" y1="222" x2="345" y2="245" stroke="#8b2500" stroke-width="2" marker-end="url(#net-tiao)"/>
+        <line x1="345" y1="267" x2="345" y2="275" stroke="#8b2500" stroke-width="2"/>
+        <line x1="345" y1="297" x2="345" y2="305" stroke="#8b2500" stroke-width="2"/>
+
+        <!-- Caption 2024 -->
+        <text x="345" y="350" text-anchor="middle" font-size="8.5" fill="#8b2500" font-style="italic" font-weight="700" class="zh-inline">習核心 ｜ 一人決定</text>
+        <text x="345" y="350" text-anchor="middle" font-size="8.5" fill="#8b2500" font-style="italic" font-weight="700" class="en-inline">Xi as core ｜ One-person rule</text>
+      </svg>
+
+      <div class="lesson-fig-note zh-inline">
+        胡錦濤時期（左）的 9 人政治局常委體現「<strong>九龍治水</strong>」——權力相對分散、依賴共識。習近平上任後（右）將自己設為「<strong>核心</strong>」、親任所有中央領導小組組長，把「條塊體制」進一步<strong>集中為「個人化集權」</strong>——這也是 Pearson, Rithmire &amp; Tsai (2022) 所描述的「政治高層化」(politics in command) 現象。
+      </div>
+      <div class="lesson-fig-note en-inline">
+        Hu Jintao era (left) had 9 PSC members with distributed power — "<strong>nine dragons ruling water</strong>". Under Xi (right), he chairs all Central Leading Groups, transforming tiao-kuai into <strong>"personalized centralization"</strong> — what Pearson, Rithmire &amp; Tsai (2022) call "<strong>politics in command</strong>".
+      </div>
+    </div>
+
+  </div>
+
+  <div class="lesson-take">
+    <span class="lesson-take-label zh-inline">課堂結語</span>
+    <span class="lesson-take-label en-inline">TAKEAWAY</span>
+    <span class="zh-inline">理解「條塊體制」與「雙重領導」是看懂中國政治的<strong>結構性鑰匙</strong>——從武漢肺炎延誤、地方債危機、到對台政策的執行落差，都源於這個體制的內部矛盾。<strong>對外交決策的意義是：</strong>當我們討論「中國決策」時，不能假設北京說什麼地方就照做；理解條塊張力，才能精準預測中國對台行動的<strong>地方變異</strong>（例如福建作為對台前沿、與廣東的差異）。</span>
+    <span class="en-inline">Understanding tiao-kuai is the <strong>structural key</strong> to reading Chinese politics — from COVID delays to local debt crises to Taiwan policy implementation. <strong>Diplomatic implication:</strong> never assume "Beijing says, locals comply"; mastering tiao-kuai tension allows precise prediction of <strong>local variations</strong> in China's Taiwan policy (e.g., Fujian as Taiwan-front vs. Guangdong).</span>
+  </div>
+  </div><!-- /.lesson-body W4 -->
+</div>
+
+<!-- ===== Lesson Sample: W7 Digital Authoritarianism ===== -->
+<div class="lesson" id="lesson-w7">
+  <div class="lesson-head" onclick="toggleLesson('lesson-w7')">
+    <span class="lesson-week">W7</span>
+    <span class="lesson-topic zh-inline">數位極權：中國援外如何輸出審查能力</span>
+    <span class="lesson-topic en-inline">Digital Authoritarianism: How Chinese Aid Exports Repression</span>
+    <div class="lesson-cite zh-inline">📄 教材取材自本人發表論文 ｜ <strong>Lin, Lai & Wu (2025)</strong>「Chinese Foreign Aid and the Erosion of Media Freedom」<em>International Relations of the Asia-Pacific</em>（SSCI Q1/Q2）</div>
+    <div class="lesson-cite en-inline">📄 Based on my own publication ｜ <strong>Lin, Lai & Wu (2025)</strong> "Chinese Foreign Aid and the Erosion of Media Freedom" <em>International Relations of the Asia-Pacific</em> (SSCI Q1/Q2)</div>
+    <div class="lesson-summary zh-inline">用<strong>南非專欄被取消</strong>與<strong>委內瑞拉祖國身分證</strong>兩個案例切入，搭配兩張概念圖，說明中國援助如何透過<strong>「壓力」與「技術」雙管道</strong>侵蝕全球媒體自由——並揭示一個反直覺發現：<strong>民主國家受害更深</strong>。</div>
+    <div class="lesson-summary en-inline">Opens with two cases (S. Africa column cancellation, Venezuela ID card), then uses two concept diagrams to show how Chinese aid erodes media freedom via <strong>pressure + technology</strong> — with a counterintuitive finding: <strong>democracies suffer more</strong>.</div>
+    <button class="lesson-toggle" type="button" aria-label="toggle">+</button>
+  </div>
+
+  <div class="lesson-body">
+  <div class="lesson-narr zh-inline">
+    <strong>故事開場：</strong>2018 年，南非《獨立報》專欄作家 Azad Essa 因為撰文批評中國對新疆維吾爾族的迫害，專欄被突然取消——而這份報紙的母公司，正接受中國國際電視公司與中非發展基金的投資。同一時期，委內瑞拉的 ZTE 中國工程師正幫馬杜羅政府打造「祖國身分證」系統，掌控全國 75% 人口的個資。<strong>這些不是孤立事件——而是一個系統性的全球趨勢。</strong>本週我們要回答的問題是：<strong>中國的對外援助，是否正在輸出「數位極權」？</strong>
+  </div>
+  <div class="lesson-narr en-inline">
+    <strong>Opening story:</strong> In 2018, South African columnist Azad Essa had his column abruptly cancelled after criticizing China's persecution of Uighurs — the newspaper's parent company was funded by China International Television Corp. Around the same time, Chinese ZTE engineers were helping Venezuela's Maduro build the "Fatherland ID Card" system, capturing 75% of the population. <strong>These are not isolated incidents — they are a systemic global pattern.</strong> This week's question: <strong>Is Chinese foreign aid exporting "digital authoritarianism"?</strong>
+  </div>
+
+  <div class="lesson-blocks">
+    <!-- Block 1: Research Question -->
+    <div class="lesson-blk">
+      <div class="lesson-blk-num zh-inline">① 研究問題</div>
+      <div class="lesson-blk-num en-inline">① Question</div>
+      <div class="lesson-blk-title zh-inline">為什麼中國援助 ≠ 西方援助？</div>
+      <div class="lesson-blk-title en-inline">Why is Chinese aid ≠ Western aid?</div>
+      <div class="lesson-blk-body zh-inline">
+        西方 ODA 帶有<strong>條件性</strong>（人權、民主、新聞自由改革）；中國援助強調「不干涉內政」，提供<strong>「無條件」</strong>資金與技術。問題是：當受援國拿到沒有條件的中國錢，會不會反而<strong>強化</strong>媒體壓制？
+      </div>
+      <div class="lesson-blk-body en-inline">
+        Western ODA carries <strong>conditionality</strong> (human rights, democracy, media reform); Chinese aid follows "non-interference" — <strong>no strings attached</strong>. Question: do recipients use these unconditional funds to <strong>strengthen</strong> media repression?
+      </div>
+    </div>
+
+    <!-- Block 2: Theory -->
+    <div class="lesson-blk">
+      <div class="lesson-blk-num zh-inline">② 理論架構</div>
+      <div class="lesson-blk-num en-inline">② Theory</div>
+      <div class="lesson-blk-title zh-inline">「援助—政策」交換模型</div>
+      <div class="lesson-blk-title en-inline">"Aid-for-Policy" Model</div>
+      <div class="lesson-blk-body zh-inline">
+        <strong>Bueno de Mesquita & Smith (2007)：</strong>援助本質是「策略交換」——捐贈國給錢，受援國回報政策讓步。中國的版本是：<strong>給錢給技術 → 換取「不報導不利於中國的新聞」+ 受援國順便加強自身審查</strong>。
+      </div>
+      <div class="lesson-blk-body en-inline">
+        <strong>Bueno de Mesquita & Smith (2007):</strong> aid is a strategic exchange. China's version: <strong>give funds and tech → recipients censor anti-China content + strengthen their own surveillance</strong>.
+      </div>
+    </div>
+
+    <!-- Block 3: Strategy -->
+    <div class="lesson-blk">
+      <div class="lesson-blk-num zh-inline">③ 兩條輸出路徑</div>
+      <div class="lesson-blk-num en-inline">③ Two Channels</div>
+      <div class="lesson-blk-title zh-inline">壓力管道 + 技術管道</div>
+      <div class="lesson-blk-title en-inline">Pressure + Technology</div>
+      <div class="lesson-blk-body zh-inline">
+        <strong>① 壓力：</strong>中國以援助為籌碼，要求受援國審查不利新聞（南非案例）。<strong>② 技術：</strong>中國輸出 ICT 基礎設施（華為 5G、ZTE 監控、社會信用模型），讓受援國「自願複製」中國模式（委內瑞拉案例）。
+      </div>
+      <div class="lesson-blk-body en-inline">
+        <strong>① Pressure:</strong> China uses aid as leverage to demand censorship (South Africa case). <strong>② Technology:</strong> ICT exports (Huawei 5G, ZTE surveillance, social credit) let recipients voluntarily copy China's model (Venezuela case).
+      </div>
+    </div>
+
+    <!-- Block 4: Findings -->
+    <div class="lesson-blk">
+      <div class="lesson-blk-num zh-inline">④ 研究發現</div>
+      <div class="lesson-blk-num en-inline">④ Findings</div>
+      <div class="lesson-blk-title zh-inline">3 個反直覺結果</div>
+      <div class="lesson-blk-title en-inline">3 Counterintuitive Results</div>
+      <div class="lesson-blk-body zh-inline">
+        108 國 × 21 年 panel data：<br>
+        <strong>① 中國援助整體 ↓ 媒體自由</strong><br>
+        <strong>② 通訊類援助效應</strong>是其他類別的<strong>3 倍</strong><br>
+        <strong>③ 在民主國家衝擊更大</strong>（不是威權！）
+      </div>
+      <div class="lesson-blk-body en-inline">
+        108 countries × 21 years panel:<br>
+        <strong>① Chinese aid ↓ media freedom</strong><br>
+        <strong>② Communication aid 3× stronger</strong><br>
+        <strong>③ Stronger effect in democracies</strong> (not autocracies!)
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Lesson Figures: 2 concept diagrams ===== -->
+  <div class="lesson-figs">
+
+    <!-- Figure A: Theoretical mechanism -->
+    <div class="lesson-fig">
+      <div class="lesson-fig-cap zh-inline">圖 A ｜ 援助—審查的兩條輸出路徑</div>
+      <div class="lesson-fig-cap en-inline">Fig A ｜ Two Channels: Aid → Censorship</div>
+      <div class="lesson-fig-sub zh-inline">基於 Bueno de Mesquita & Smith (2007)「援助—政策」模型</div>
+      <div class="lesson-fig-sub en-inline">Based on Bueno de Mesquita & Smith (2007) aid-for-policy model</div>
+
+      <svg viewBox="0 0 420 280" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="m-arr-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+            <path d="M0,0 L10,5 L0,10 Z" fill="#8b2500"/>
+          </marker>
+          <marker id="m-arr-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+            <path d="M0,0 L10,5 L0,10 Z" fill="#b8860b"/>
+          </marker>
+          <marker id="m-arr-dark" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+            <path d="M0,0 L10,5 L0,10 Z" fill="#1a1a1a"/>
+          </marker>
+        </defs>
+
+        <!-- China (left) -->
+        <rect x="15" y="115" width="100" height="60" rx="6" fill="#8b2500"/>
+        <text x="65" y="138" text-anchor="middle" fill="#fff" font-size="13" font-weight="700" class="zh-inline">中國</text>
+        <text x="65" y="138" text-anchor="middle" fill="#fff" font-size="13" font-weight="700" class="en-inline">China</text>
+        <text x="65" y="156" text-anchor="middle" fill="#ffe" font-size="10" class="zh-inline">援助 + ICT</text>
+        <text x="65" y="156" text-anchor="middle" fill="#ffe" font-size="10" class="en-inline">Aid + ICT</text>
+
+        <!-- Path 1: Pressure (top) -->
+        <path d="M 115,135 Q 175,80 220,75" fill="none" stroke="#8b2500" stroke-width="2" marker-end="url(#m-arr-red)"/>
+        <text x="160" y="78" text-anchor="middle" font-size="10" fill="#8b2500" font-weight="700" class="zh-inline">① 壓力管道</text>
+        <text x="160" y="78" text-anchor="middle" font-size="10" fill="#8b2500" font-weight="700" class="en-inline">① Pressure</text>
+
+        <rect x="225" y="58" width="120" height="48" rx="6" fill="#fff" stroke="#8b2500" stroke-width="1.5"/>
+        <text x="285" y="78" text-anchor="middle" font-size="10.5" fill="#1a1a1a" font-weight="700" class="zh-inline">受援國政府</text>
+        <text x="285" y="78" text-anchor="middle" font-size="10.5" fill="#1a1a1a" font-weight="700" class="en-inline">Recipient Govt</text>
+        <text x="285" y="92" text-anchor="middle" font-size="9" fill="#666" class="zh-inline">＝南非案例</text>
+        <text x="285" y="92" text-anchor="middle" font-size="9" fill="#666" class="en-inline">e.g., S. Africa</text>
+
+        <!-- Path 2: Technology (bottom) -->
+        <path d="M 115,160 Q 175,210 220,215" fill="none" stroke="#b8860b" stroke-width="2" marker-end="url(#m-arr-gold)"/>
+        <text x="160" y="225" text-anchor="middle" font-size="10" fill="#b8860b" font-weight="700" class="zh-inline">② 技術管道</text>
+        <text x="160" y="225" text-anchor="middle" font-size="10" fill="#b8860b" font-weight="700" class="en-inline">② Technology</text>
+
+        <rect x="225" y="200" width="120" height="48" rx="6" fill="#fff" stroke="#b8860b" stroke-width="1.5"/>
+        <text x="285" y="220" text-anchor="middle" font-size="10.5" fill="#1a1a1a" font-weight="700" class="zh-inline">華為／ZTE 基建</text>
+        <text x="285" y="220" text-anchor="middle" font-size="10.5" fill="#1a1a1a" font-weight="700" class="en-inline">Huawei/ZTE infra</text>
+        <text x="285" y="234" text-anchor="middle" font-size="9" fill="#666" class="zh-inline">＝委內瑞拉案例</text>
+        <text x="285" y="234" text-anchor="middle" font-size="9" fill="#666" class="en-inline">e.g., Venezuela</text>
+
+        <!-- Convergence to outcome -->
+        <path d="M 345,82 Q 380,140 365,140" fill="none" stroke="#1a1a1a" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#m-arr-dark)"/>
+        <path d="M 345,224 Q 380,160 365,160" fill="none" stroke="#1a1a1a" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#m-arr-dark)"/>
+
+        <!-- Outcome -->
+        <rect x="290" y="120" width="120" height="60" rx="6" fill="#1a1a1a"/>
+        <text x="350" y="142" text-anchor="middle" fill="#c9a253" font-size="11" font-weight="700" class="zh-inline">媒體自由</text>
+        <text x="350" y="142" text-anchor="middle" fill="#c9a253" font-size="11" font-weight="700" class="en-inline">Media Freedom</text>
+        <text x="350" y="160" text-anchor="middle" fill="#fff" font-size="14" font-weight="700">↓</text>
+        <text x="350" y="174" text-anchor="middle" fill="#ffe" font-size="9" class="zh-inline">數位極權擴散</text>
+        <text x="350" y="174" text-anchor="middle" fill="#ffe" font-size="9" class="en-inline">DA diffusion</text>
+      </svg>
+
+      <div class="lesson-fig-note zh-inline">
+        中國透過<strong>援助交換</strong>取得受援國政府配合審查（路徑 ①），同時輸出<strong>監控技術</strong>讓受援國「自願複製」中國模式（路徑 ②）——兩條路徑收斂到媒體自由下降。
+      </div>
+      <div class="lesson-fig-note en-inline">
+        China obtains censorship compliance via <strong>aid leverage</strong> (path ①) and exports <strong>surveillance tech</strong> for voluntary replication (path ②) — both converge on media-freedom decline.
+      </div>
+    </div>
+
+    <!-- Figure B: Marginal effects (democracy vs autocracy) -->
+    <div class="lesson-fig">
+      <div class="lesson-fig-cap zh-inline">圖 B ｜ 政體類型的調節效應</div>
+      <div class="lesson-fig-cap en-inline">Fig B ｜ Regime-Type Moderation</div>
+      <div class="lesson-fig-sub zh-inline">通訊類援助對民主國家的衝擊更大（反直覺！）</div>
+      <div class="lesson-fig-sub en-inline">Communication aid hits democracies harder (counterintuitive!)</div>
+
+      <svg viewBox="0 0 420 280" xmlns="http://www.w3.org/2000/svg">
+        <!-- Y axis -->
+        <line x1="60" y1="30" x2="60" y2="220" stroke="#333" stroke-width="1.5"/>
+        <line x1="60" y1="220" x2="380" y2="220" stroke="#333" stroke-width="1.5"/>
+        <!-- Y axis labels -->
+        <text x="55" y="223" text-anchor="end" font-size="10" fill="#666">0</text>
+        <text x="55" y="180" text-anchor="end" font-size="10" fill="#666">−.02</text>
+        <text x="55" y="140" text-anchor="end" font-size="10" fill="#666">−.04</text>
+        <text x="55" y="100" text-anchor="end" font-size="10" fill="#666">−.06</text>
+        <text x="22" y="135" text-anchor="middle" font-size="9.5" fill="#333" font-weight="600" transform="rotate(-90 22 135)" class="zh-inline">通訊援助的邊際效應</text>
+        <text x="22" y="135" text-anchor="middle" font-size="9.5" fill="#333" font-weight="600" transform="rotate(-90 22 135)" class="en-inline">Marginal effect of aid</text>
+
+        <!-- Zero reference line -->
+        <line x1="60" y1="220" x2="380" y2="220" stroke="#888" stroke-dasharray="3,3"/>
+
+        <!-- Autocracy bar/CI -->
+        <rect x="120" y="206" width="60" height="14" fill="#1d3557" opacity="0.85"/>
+        <line x1="150" y1="195" x2="150" y2="217" stroke="#1d3557" stroke-width="2"/>
+        <line x1="143" y1="195" x2="157" y2="195" stroke="#1d3557" stroke-width="2"/>
+        <line x1="143" y1="217" x2="157" y2="217" stroke="#1d3557" stroke-width="2"/>
+        <circle cx="150" cy="206" r="4" fill="#1d3557"/>
+        <text x="150" y="240" text-anchor="middle" font-size="11" fill="#1a1a1a" font-weight="700" class="zh-inline">威權國家</text>
+        <text x="150" y="240" text-anchor="middle" font-size="11" fill="#1a1a1a" font-weight="700" class="en-inline">Autocracy</text>
+        <text x="150" y="255" text-anchor="middle" font-size="9.5" fill="#666" class="zh-inline">效應較弱（已飽和）</text>
+        <text x="150" y="255" text-anchor="middle" font-size="9.5" fill="#666" class="en-inline">weaker (saturated)</text>
+
+        <!-- Democracy bar/CI - much larger negative effect -->
+        <rect x="270" y="160" width="60" height="60" fill="#8b2500" opacity="0.85"/>
+        <line x1="300" y1="140" x2="300" y2="180" stroke="#8b2500" stroke-width="2"/>
+        <line x1="293" y1="140" x2="307" y2="140" stroke="#8b2500" stroke-width="2"/>
+        <line x1="293" y1="180" x2="307" y2="180" stroke="#8b2500" stroke-width="2"/>
+        <circle cx="300" cy="160" r="4" fill="#8b2500"/>
+        <text x="300" y="240" text-anchor="middle" font-size="11" fill="#1a1a1a" font-weight="700" class="zh-inline">民主國家</text>
+        <text x="300" y="240" text-anchor="middle" font-size="11" fill="#1a1a1a" font-weight="700" class="en-inline">Democracy</text>
+        <text x="300" y="255" text-anchor="middle" font-size="9.5" fill="#8b2500" font-weight="700" class="zh-inline">效應更強！</text>
+        <text x="300" y="255" text-anchor="middle" font-size="9.5" fill="#8b2500" font-weight="700" class="en-inline">stronger!</text>
+
+        <!-- Annotation arrow comparing the two -->
+        <path d="M 180 130 Q 225 110 270 145" fill="none" stroke="#b8860b" stroke-width="1.3" stroke-dasharray="4,3"/>
+        <text x="225" y="105" text-anchor="middle" font-size="10" fill="#b8860b" font-weight="700" class="zh-inline">差距 ≈ 3 倍</text>
+        <text x="225" y="105" text-anchor="middle" font-size="10" fill="#b8860b" font-weight="700" class="en-inline">~3× larger</text>
+
+        <!-- Title above -->
+        <text x="220" y="20" text-anchor="middle" font-size="11" fill="#1a1a1a" font-weight="700" class="zh-inline">為什麼？威權媒體已壓到極限；民主制度未鞏固反而成為突破口</text>
+        <text x="220" y="20" text-anchor="middle" font-size="10.5" fill="#1a1a1a" font-weight="700" class="en-inline">Why? Autocratic media is maxed out; nascent democracies are the soft target</text>
+      </svg>
+
+      <div class="lesson-fig-note zh-inline">
+        本研究最反直覺的發現：通訊類援助對<strong>民主國家</strong>的負向效應遠強於威權國家——因為威權媒體早已壓到地板沒有下降空間，而<strong>新興民主的制度尚未鞏固</strong>，正好成為中國數位極權擴散最容易的目標。
+      </div>
+      <div class="lesson-fig-note en-inline">
+        Most counterintuitive finding: communication aid harms <strong>democracies</strong> more than autocracies — because authoritarian media is already maximally repressed, while <strong>nascent democracies have unconsolidated institutions</strong>, making them prime targets for digital authoritarianism diffusion.
+      </div>
+    </div>
+
+  </div>
+
+  <div class="lesson-take">
+    <span class="lesson-take-label zh-inline">課堂結語</span>
+    <span class="lesson-take-label en-inline">TAKEAWAY</span>
+    <span class="zh-inline">為什麼民主國家反而受影響更深？因為威權國家的媒體早就被壓制到極限、沒有再下降的空間；而新興民主的<strong>制度仍未鞏固</strong>，正好成為中國數位極權「最容易擴張」的目標——這對台灣意味著什麼？台灣作為民主國家，<strong>面對中國銳實力時的防禦能力，不能只靠媒體自律，必須有法制層面的反制設計</strong>。</span>
+    <span class="en-inline">Why are democracies more affected? Because authoritarian media is already maximally repressed; <strong>nascent democracies with unconsolidated institutions</strong> are easiest targets. Implication for Taiwan: as a democracy facing China's sharp power, <strong>media self-regulation alone is insufficient — institutional safeguards are essential</strong>.</span>
+  </div>
+  </div><!-- /.lesson-body W7 -->
+</div>
+
+</div></div>
+
+<!-- ====== P4 Research Presentation ====== -->
+<div class="page" data-page="4"><div class="page-inner">
+<h2 class="zh-inline">④ 研究領域介紹 </h2>
+<h2 class="en-inline">④ Research Presentation ｜ 10 min</h2>
+
+<p class="zh-inline"><strong>研究主題：</strong>兩岸關係與台灣民意的動態。延續碩論以來的關懷——<span class="key-line">當中國對台壓力的形式不斷變化，台灣民眾如何回應？</span></p>
+<p class="en-inline"><strong>Core theme:</strong> Dynamics of cross-Strait relations and Taiwanese public opinion — <span class="key-line">as China's pressure evolves, how do Taiwanese publics respond?</span></p>
+
+<h3 class="zh-inline">核心挑戰：研究「難以掌握」的議題</h3>
+<h3 class="en-inline">Core Challenge: Studying &quot;Hard-to-Capture&quot; Issues</h3>
+
+<div class="card-grid">
+  <div class="card">
+    <h4 class="zh-inline">❓ 難以測量</h4>
+    <h4 class="en-inline">❓ Hard to Measure</h4>
+    <p class="zh-inline">威脅感主觀、統戰隱匿、態度行為脫節</p>
+    <p class="en-inline">Subjective threats, covert UF, attitude-behavior gaps</p>
+  </div>
+  <div class="card blue">
+    <h4 class="zh-inline">❓ 缺乏資料</h4>
+    <h4 class="en-inline">❓ No Data</h4>
+    <p class="zh-inline">黨政決策不透明、受援國資料消失、社群平台刪帖</p>
+    <p class="en-inline">Opaque CCP, suppressed recipient data, platform deletions</p>
+  </div>
+  <div class="card gold">
+    <h4 class="zh-inline">✅ 解方</h4>
+    <h4 class="en-inline">✅ Solutions</h4>
+    <p class="zh-inline">三角驗證 + 反事實設計 + 實驗法</p>
+    <p class="en-inline">Triangulation + counterfactual + experiment</p>
+  </div>
+</div>
+
+<h3 class="zh-inline">案例：灰色侵擾與民意影響</h3>
+<h3 class="en-inline">Case: Gray-Zone Coercion &amp; Public Opinion</h3>
+
+<div class="research-flow">
+  <div class="research-step">
+    <div class="rs-num">1</div>
+    <div class="rs-content">
+      <div class="rs-title zh-inline">研究問題</div>
+      <div class="rs-title en-inline">Research Question</div>
+      <div class="rs-desc zh-inline"><strong>聚旗 vs. 問責</strong>——古典 IR 理論（Mueller 1970）只處理「急性、高強度」危機，無法解釋中國對台的「慢性、低強度」灰色地帶操作。</div>
+      <div class="rs-desc en-inline"><strong>Rally vs. Accountability</strong> — classic IR theory handles only acute crises, not chronic gray-zone coercion.</div>
+    </div>
+  </div>
+
+  <div class="research-step blue">
+    <div class="rs-num">2</div>
+    <div class="rs-content">
+      <div class="rs-title zh-inline">資料：國防部 × TEDS（2016–2024）</div>
+      <div class="rs-title en-inline">Data: MOD × TEDS (2016–2024)</div>
+      <div class="rs-desc zh-inline">8 年每日軍機資料 × 31 波 TEDS 調查（N=38,281）；建構幾何合成壓力指數（GCI）。</div>
+      <div class="rs-desc en-inline">8 years of daily PLA records × 31 waves of TEDS (N=38,281); Geometric Composite Index.</div>
+    </div>
+  </div>
+
+  <div class="research-step gold">
+    <div class="rs-num">3</div>
+    <div class="rs-content">
+      <div class="rs-title zh-inline">方法：ARFIMA-MLM 雙層過濾</div>
+      <div class="rs-title en-inline">Method: ARFIMA-MLM Double-Filtering</div>
+      <div class="rs-desc zh-inline">總體層 ARFIMA 分解長短期效應；個體層多層次模型處理群集（ICC=0.144）；跨層次互動項檢驗政黨調節。</div>
+      <div class="rs-desc en-inline">ARFIMA decomposes long/short-term effects; MLM handles clustering; cross-level interactions test partisan moderation.</div>
+    </div>
+  </div>
+
+  <div class="research-step sage">
+    <div class="rs-num">4</div>
+    <div class="rs-content">
+      <div class="rs-title zh-inline">初步發現</div>
+      <div class="rs-title en-inline">Key Finding</div>
+      <div class="rs-desc zh-inline">灰色地帶威脅<strong>不會團結社會、反而深化政治分裂</strong>——顛覆古典聚旗理論。</div>
+      <div class="rs-desc en-inline">Gray-zone coercion <strong>deepens polarization</strong> rather than uniting — overturning classical rally theory.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Figure 1: PLA incursion trends ===== -->
+<div class="paper-fig">
+  <div class="paper-fig-title zh-inline">📊 圖 1 ｜ PLA 軍機架次趨勢（2016–2024）</div>
+  <div class="paper-fig-title en-inline">📊 Fig 1 ｜ PLA Aircraft Incursion Trends (2016–2024)</div>
+  <div class="paper-fig-sub zh-inline">蔡英文任期內軍機繞台從零星 → 常態化 → 高強度</div>
+  <div class="paper-fig-sub en-inline">From sporadic to normalized to high-intensity under Tsai</div>
+
+  <svg viewBox="0 0 800 260" xmlns="http://www.w3.org/2000/svg">
+    <line x1="60" y1="30" x2="60" y2="210" stroke="#333" stroke-width="1.5"/>
+    <line x1="60" y1="210" x2="770" y2="210" stroke="#333" stroke-width="1.5"/>
+    <text x="55" y="215" text-anchor="end" font-size="10" fill="#666">0</text>
+    <text x="55" y="170" text-anchor="end" font-size="10" fill="#666">200</text>
+    <text x="55" y="125" text-anchor="end" font-size="10" fill="#666">400</text>
+    <text x="55" y="80" text-anchor="end" font-size="10" fill="#666">600</text>
+    <text x="30" y="125" text-anchor="middle" font-size="10" fill="#333" font-weight="600" transform="rotate(-90 30 125)">Monthly Sorties</text>
+    <text x="135" y="225" text-anchor="middle" font-size="10" fill="#666">2016</text>
+    <text x="215" y="225" text-anchor="middle" font-size="10" fill="#666">2017</text>
+    <text x="295" y="225" text-anchor="middle" font-size="10" fill="#666">2018</text>
+    <text x="375" y="225" text-anchor="middle" font-size="10" fill="#666">2019</text>
+    <text x="455" y="225" text-anchor="middle" font-size="10" fill="#666">2020</text>
+    <text x="535" y="225" text-anchor="middle" font-size="10" fill="#666">2021</text>
+    <text x="615" y="225" text-anchor="middle" font-size="10" fill="#666">2022</text>
+    <text x="695" y="225" text-anchor="middle" font-size="10" fill="#666">2023</text>
+    <text x="755" y="225" text-anchor="middle" font-size="10" fill="#666">2024</text>
+    <line x1="60" y1="170" x2="770" y2="170" stroke="#eee" stroke-dasharray="2,3"/>
+    <line x1="60" y1="125" x2="770" y2="125" stroke="#eee" stroke-dasharray="2,3"/>
+    <line x1="60" y1="80" x2="770" y2="80" stroke="#eee" stroke-dasharray="2,3"/>
+    <g fill="#8b2500" opacity="0.85">
+      <rect x="110" y="208" width="8" height="2"/>
+      <rect x="140" y="207" width="8" height="3"/>
+      <rect x="170" y="210" width="8" height="0"/>
+      <rect x="200" y="208" width="8" height="2"/>
+      <rect x="230" y="209" width="8" height="1"/>
+      <rect x="260" y="209" width="8" height="1"/>
+      <rect x="290" y="206" width="8" height="4"/>
+      <rect x="320" y="207" width="8" height="3"/>
+      <rect x="350" y="208" width="8" height="2"/>
+      <rect x="380" y="210" width="8" height="0"/>
+      <rect x="410" y="209" width="8" height="1"/>
+      <rect x="440" y="200" width="8" height="10"/>
+      <rect x="470" y="190" width="8" height="20"/>
+      <rect x="500" y="185" width="8" height="25"/>
+      <rect x="530" y="180" width="8" height="30"/>
+      <rect x="560" y="170" width="8" height="40"/>
+      <rect x="590" y="155" width="8" height="55"/>
+      <rect x="605" y="140" width="8" height="70"/>
+      <rect x="615" y="100" width="8" height="110"/>
+      <rect x="625" y="155" width="8" height="55"/>
+      <rect x="640" y="125" width="8" height="85"/>
+      <rect x="655" y="100" width="8" height="110"/>
+      <rect x="670" y="80" width="8" height="130"/>
+      <rect x="685" y="55" width="8" height="155"/>
+      <rect x="700" y="90" width="8" height="120"/>
+      <rect x="715" y="110" width="8" height="100"/>
+      <rect x="730" y="120" width="8" height="90"/>
+      <rect x="745" y="100" width="8" height="110"/>
+    </g>
+    <line x1="455" y1="40" x2="455" y2="210" stroke="#1d3557" stroke-width="1" stroke-dasharray="4,3"/>
+    <text class="zh-inline" x="455" y="40" text-anchor="middle" font-size="9.5" fill="#1d3557" font-weight="700">2020 連任</text>
+    <text class="en-inline" x="455" y="40" text-anchor="middle" font-size="9.5" fill="#1d3557" font-weight="700">Tsai re-elected</text>
+    <text class="zh-inline" x="455" y="52" text-anchor="middle" font-size="9" fill="#666">常態化起點</text>
+    <text class="en-inline" x="455" y="52" text-anchor="middle" font-size="9" fill="#666">Normalized</text>
+
+    <line x1="615" y1="55" x2="615" y2="100" stroke="#b8860b" stroke-width="1" stroke-dasharray="4,3"/>
+    <text class="zh-inline" x="625" y="45" font-size="9.5" fill="#b8860b" font-weight="700">裴洛西訪台</text>
+    <text class="en-inline" x="625" y="45" font-size="9.5" fill="#b8860b" font-weight="700">Pelosi visit</text>
+    <text x="625" y="57" font-size="9" fill="#666">2022/8</text>
+
+    <rect x="600" y="245" width="14" height="8" fill="#8b2500" opacity="0.85"/>
+    <text class="zh-inline" x="620" y="253" font-size="10" fill="#333">每月 PLA 軍機進入 ADIZ 架次</text>
+    <text class="en-inline" x="620" y="253" font-size="10" fill="#333">Monthly PLA sorties into ADIZ</text>
+  </svg>
+
+  <div class="paper-fig-caption zh-inline">
+    <strong>關鍵觀察：</strong>2020 後軍機繞台由零星升級為常態化；2022 裴洛西訪台觸發單月近 600 架次高峰。這是<strong>連續變動</strong>而非單次事件——傳統 DID 或前後比較法無法使用。
+  </div>
+  <div class="paper-fig-caption en-inline">
+    <strong>Key observation:</strong> Post-2020 normalization; ~600-sortie peak after Pelosi's visit. This is <strong>continuous variation</strong>, not a single event — ruling out standard DID.
+  </div>
+</div>
+
+<!-- ===== Figure 2: Partisan divergence ===== -->
+<div class="paper-fig">
+  <div class="paper-fig-title zh-inline">📊 圖 2 ｜ 蔡英文支持度 × 政黨認同</div>
+  <div class="paper-fig-title en-inline">📊 Fig 2 ｜ Tsai's Approval by Partisan ID</div>
+  <div class="paper-fig-sub zh-inline">2019 後 DPP–KMT 支持度差距擴大至近 80 個百分點</div>
+  <div class="paper-fig-sub en-inline">DPP–KMT gap widens to ~80 pp after 2019</div>
+
+  <svg viewBox="0 0 800 280" xmlns="http://www.w3.org/2000/svg">
+    <line x1="60" y1="30" x2="60" y2="210" stroke="#333" stroke-width="1.5"/>
+    <line x1="60" y1="210" x2="770" y2="210" stroke="#333" stroke-width="1.5"/>
+    <text x="55" y="215" text-anchor="end" font-size="10" fill="#666">0</text>
+    <text x="55" y="165" text-anchor="end" font-size="10" fill="#666">.25</text>
+    <text x="55" y="120" text-anchor="end" font-size="10" fill="#666">.50</text>
+    <text x="55" y="75" text-anchor="end" font-size="10" fill="#666">.75</text>
+    <text x="55" y="35" text-anchor="end" font-size="10" fill="#666">1.0</text>
+    <text x="30" y="125" text-anchor="middle" font-size="10" fill="#333" font-weight="600" transform="rotate(-90 30 125)">Approval %</text>
+    <text x="135" y="225" text-anchor="middle" font-size="10" fill="#666">2016</text>
+    <text x="215" y="225" text-anchor="middle" font-size="10" fill="#666">2017</text>
+    <text x="295" y="225" text-anchor="middle" font-size="10" fill="#666">2018</text>
+    <text x="375" y="225" text-anchor="middle" font-size="10" fill="#666">2019</text>
+    <text x="455" y="225" text-anchor="middle" font-size="10" fill="#666">2020</text>
+    <text x="535" y="225" text-anchor="middle" font-size="10" fill="#666">2021</text>
+    <text x="615" y="225" text-anchor="middle" font-size="10" fill="#666">2022</text>
+    <text x="695" y="225" text-anchor="middle" font-size="10" fill="#666">2023</text>
+    <text x="755" y="225" text-anchor="middle" font-size="10" fill="#666">2024</text>
+    <line x1="60" y1="165" x2="770" y2="165" stroke="#eee" stroke-dasharray="2,3"/>
+    <line x1="60" y1="120" x2="770" y2="120" stroke="#eee" stroke-dasharray="2,3"/>
+    <line x1="60" y1="75" x2="770" y2="75" stroke="#eee" stroke-dasharray="2,3"/>
+    <polyline points="100,95 180,100 260,110 340,85 420,60 500,55 580,50 660,52 740,48"
+      fill="none" stroke="#2a7a6e" stroke-width="2.5" stroke-linecap="round"/>
+    <g fill="#2a7a6e">
+      <circle cx="100" cy="95" r="4"/><circle cx="180" cy="100" r="4"/><circle cx="260" cy="110" r="4"/>
+      <circle cx="340" cy="85" r="4"/><circle cx="420" cy="60" r="4"/><circle cx="500" cy="55" r="4"/>
+      <circle cx="580" cy="50" r="4"/><circle cx="660" cy="52" r="4"/><circle cx="740" cy="48" r="4"/>
+    </g>
+    <polyline points="100,130 180,135 260,145 340,130 420,120 500,118 580,115 660,118 740,115"
+      fill="none" stroke="#888" stroke-width="2.5" stroke-dasharray="5,3" stroke-linecap="round"/>
+    <polyline points="100,155 180,165 260,180 340,170 420,185 500,190 580,193 660,192 740,190"
+      fill="none" stroke="#1d3557" stroke-width="2.5" stroke-linecap="round"/>
+    <g fill="#1d3557">
+      <circle cx="100" cy="155" r="4"/><circle cx="180" cy="165" r="4"/><circle cx="260" cy="180" r="4"/>
+      <circle cx="340" cy="170" r="4"/><circle cx="420" cy="185" r="4"/><circle cx="500" cy="190" r="4"/>
+      <circle cx="580" cy="193" r="4"/><circle cx="660" cy="192" r="4"/><circle cx="740" cy="190" r="4"/>
+    </g>
+    <path d="M 600 50 L 600 193 M 605 50 L 595 50 M 605 193 L 595 193" stroke="#b8860b" stroke-width="1.5"/>
+    <text x="614" y="125" font-size="10" fill="#b8860b" font-weight="700">~80pp</text>
+    <text class="zh-inline" x="614" y="137" font-size="9" fill="#b8860b">落差</text>
+    <text class="en-inline" x="614" y="137" font-size="9" fill="#b8860b">gap</text>
+
+    <line x1="400" y1="250" x2="425" y2="250" stroke="#2a7a6e" stroke-width="2.5"/>
+    <text x="430" y="254" font-size="10" fill="#333">DPP</text>
+    <line x1="470" y1="250" x2="495" y2="250" stroke="#888" stroke-width="2.5" stroke-dasharray="5,3"/>
+    <text x="500" y="254" font-size="10" fill="#333">Non-partisan</text>
+    <line x1="580" y1="250" x2="605" y2="250" stroke="#1d3557" stroke-width="2.5"/>
+    <text x="610" y="254" font-size="10" fill="#333">KMT</text>
+  </svg>
+
+  <div class="paper-fig-caption zh-inline">
+    <strong>關鍵發現：</strong>DPP 支持者對蔡維持 0.80 以上滿意度；KMT 支持者停留在 0.20 以下。這不是「團結反共」，而是<strong>政治分裂被放大</strong>。
+  </div>
+  <div class="paper-fig-caption en-inline">
+    <strong>Key finding:</strong> DPP approval stays above .80; KMT below .20 — <strong>amplified polarization</strong>, not unity.
+  </div>
+</div>
+
+<!-- ===== Figure 3: Conditional Rally ===== -->
+<div class="paper-fig">
+  <div class="paper-fig-title zh-inline">📊 圖 3 ｜ 條件性聚旗效應（ARFIMA-MLM 預測）</div>
+  <div class="paper-fig-title en-inline">📊 Fig 3 ｜ Conditional Rally Effect (ARFIMA-MLM)</div>
+  <div class="paper-fig-sub zh-inline">威脅強度 × 政黨認同的交互效應</div>
+  <div class="paper-fig-sub en-inline">Threat intensity × partisan identity interaction</div>
+
+  <svg viewBox="0 0 800 290" xmlns="http://www.w3.org/2000/svg">
+    <line x1="60" y1="40" x2="60" y2="240" stroke="#333" stroke-width="1.5"/>
+    <line x1="60" y1="240" x2="770" y2="240" stroke="#333" stroke-width="1.5"/>
+    <text x="55" y="245" text-anchor="end" font-size="10" fill="#666">0</text>
+    <text x="55" y="195" text-anchor="end" font-size="10" fill="#666">.25</text>
+    <text x="55" y="145" text-anchor="end" font-size="10" fill="#666">.50</text>
+    <text x="55" y="95" text-anchor="end" font-size="10" fill="#666">.75</text>
+    <text x="55" y="45" text-anchor="end" font-size="10" fill="#666">1.0</text>
+    <text x="25" y="140" text-anchor="middle" font-size="10" fill="#333" font-weight="600" transform="rotate(-90 25 140)">Pr(Approval)</text>
+    <text x="120" y="255" text-anchor="middle" font-size="10" fill="#666">-0.8</text>
+    <text x="260" y="255" text-anchor="middle" font-size="10" fill="#666">-0.4</text>
+    <text x="400" y="255" text-anchor="middle" font-size="10" fill="#666">0.0</text>
+    <text x="540" y="255" text-anchor="middle" font-size="10" fill="#666">0.4</text>
+    <text x="680" y="255" text-anchor="middle" font-size="10" fill="#666">0.8</text>
+    <text x="400" y="275" text-anchor="middle" font-size="10" fill="#333" font-weight="600">Short-term Shock (z-score)</text>
+    <line x1="60" y1="195" x2="770" y2="195" stroke="#eee" stroke-dasharray="2,3"/>
+    <line x1="60" y1="145" x2="770" y2="145" stroke="#eee" stroke-dasharray="2,3"/>
+    <line x1="60" y1="95" x2="770" y2="95" stroke="#eee" stroke-dasharray="2,3"/>
+    <line x1="400" y1="40" x2="400" y2="240" stroke="#ccc" stroke-dasharray="3,3"/>
+
+    <path d="M 120,80 Q 260,78 400,75 Q 540,72 680,68 L 680,82 Q 540,85 400,90 Q 260,93 120,95 Z" fill="#2a7a6e" opacity="0.15"/>
+    <polyline points="120,85 260,83 400,80 540,75 680,72" fill="none" stroke="#2a7a6e" stroke-width="3" stroke-linecap="round"/>
+    <path d="M 120,150 Q 260,145 400,140 Q 540,135 680,128 L 680,142 Q 540,148 400,153 Q 260,158 120,162 Z" fill="#888" opacity="0.12"/>
+    <polyline points="120,155 260,150 400,145 540,138 680,132" fill="none" stroke="#888" stroke-width="3" stroke-dasharray="5,3" stroke-linecap="round"/>
+    <path d="M 120,208 Q 260,208 400,208 Q 540,207 680,206 L 680,218 Q 540,218 400,219 Q 260,219 120,220 Z" fill="#1d3557" opacity="0.12"/>
+    <polyline points="120,212 260,212 400,212 540,211 680,210" fill="none" stroke="#1d3557" stroke-width="3" stroke-linecap="round"/>
+
+    <text x="700" y="70" font-size="10" fill="#2a7a6e" font-weight="700">DPP</text>
+    <text class="zh-inline" x="700" y="82" font-size="9" fill="#2a7a6e">聚旗</text>
+    <text class="en-inline" x="700" y="82" font-size="9" fill="#2a7a6e">Rally</text>
+    <text x="700" y="135" font-size="10" fill="#888" font-weight="700">Non-part.</text>
+    <text x="700" y="215" font-size="10" fill="#1d3557" font-weight="700">KMT</text>
+    <text class="zh-inline" x="700" y="227" font-size="9" fill="#1d3557">問責</text>
+    <text class="en-inline" x="700" y="227" font-size="9" fill="#1d3557">Blame</text>
+
+    <text class="zh-inline" x="400" y="30" text-anchor="middle" font-size="10" fill="#b8860b" font-weight="700">威脅升高時 → DPP 飆升、KMT 持平</text>
+    <text class="en-inline" x="400" y="30" text-anchor="middle" font-size="10" fill="#b8860b" font-weight="700">As threat rises → DPP surges, KMT flat</text>
+  </svg>
+
+  <div class="paper-fig-caption zh-inline">
+    <strong>關鍵發現：</strong>高強度威脅下，DPP 支持者滿意度升至 0.80 以上；KMT 始終在 0.20 以下。<strong>聚旗效應僅限於執政黨支持者，而非全民共識</strong>——這是對 Mueller 古典理論的重要修正。
+  </div>
+  <div class="paper-fig-caption en-inline">
+    <strong>Key finding:</strong> Under high-intensity threats, DPP climbs above .80 while KMT stays below .20. <strong>The rally is confined to the incumbent's base, not a national consensus</strong> — a key revision to Mueller's classical theory.
+  </div>
+</div>
+
+<div class="exp-box">
+  <div class="exp-title zh-inline">📌 研究發現：長短期效果 × 政黨差異</div>
+  <div class="exp-title en-inline">📌 Key Findings: Long/Short-term × Partisan</div>
+  <ul class="zh-inline" style="font-size:.88rem;margin-bottom:0">
+    <li><strong>發現 1（頻率）：</strong>「頻繁但不升級」的軍機繞台隨時間失去動員力 → 民眾<strong>習慣化</strong></li>
+    <li><strong>發現 2（強度）：</strong>高強度單次震盪（如裴洛西事件）仍能觸發聚旗效應</li>
+    <li><strong>發現 3（政黨分化）：</strong>DPP 支持者在高強度威脅下滿意度升至 0.80 以上；KMT 停留在 0.20 以下</li>
+    <li><strong>理論貢獻：</strong>灰色地帶威脅<strong>不會團結社會，反而深化政治分裂</strong>——顛覆 Mueller (1970) 古典聚旗理論</li>
+  </ul>
+  <ul class="en-inline" style="font-size:.88rem;margin-bottom:0">
+    <li><strong>Finding 1 (frequency):</strong> Routinized incursions lose mobilization power — <strong>habituation</strong></li>
+    <li><strong>Finding 2 (intensity):</strong> High-intensity shocks (e.g., Pelosi visit) still trigger rally</li>
+    <li><strong>Finding 3 (partisan):</strong> DPP approval climbs above .80; KMT stays below .20</li>
+    <li><strong>Contribution:</strong> Gray-zone threats deepen polarization rather than uniting — revises Mueller (1970)</li>
+  </ul>
+</div>
+
+<div class="highlight-section">
+<h3 class="zh-inline" style="color:var(--gold)">未來擴展：能源地緣政治與民意實驗</h3>
+<h3 class="en-inline" style="color:var(--gold)">Future Extension: Energy Geopolitics Experiment</h3>
+
+<p class="zh-inline">與<strong>林宗弘研究員</strong>合作、規劃於 2026 年執行——<span class="key-line">非核家園 + 再生能源擴張 + 俄烏後地緣政治巨變使「誰提供技術、誰掌控基礎設施」成為核心問題。</span>目標期刊：<em>Energy Research &amp; Social Science</em> / <em>Environmental Politics</em>（SSCI Q1）。</p>
+<p class="en-inline">With <strong>Dr. Thung-Hong Lin</strong>, planned for 2026 — <span class="key-line">nuclear phase-out + renewable expansion + post-Ukraine geopolitics make &quot;who provides tech, who controls infrastructure&quot; a core question.</span> Target: <em>Energy Research &amp; Social Science</em> / <em>Environmental Politics</em> (SSCI Q1).</p>
+
+<div class="energy-exp">
+  <div class="energy-exp-title zh-inline">A × D 因子設計 ｜ 來源國 × 能源類型</div>
+  <div class="energy-exp-title en-inline">A × D Factorial Design ｜ Source Country × Energy Type</div>
+  <div class="energy-exp-sub zh-inline">2×2 因子 + 對照組 ｜ N = 3,000</div>
+  <div class="energy-exp-sub en-inline">2×2 factorial + control ｜ N = 3,000</div>
+
+  <!-- 2x2 matrix -->
+  <div class="energy-label zh-inline">【實驗格別 Experimental Cells】</div>
+  <div class="energy-label en-inline">Experimental Cells</div>
+
+  <div class="cell-matrix">
+    <div class="cell-hd empty"></div>
+    <div class="cell-hd zh-inline">D1 核能設施</div>
+    <div class="cell-hd en-inline">D1 Nuclear Facility</div>
+    <div class="cell-hd zh-inline">D2 綠能供應鏈</div>
+    <div class="cell-hd en-inline">D2 Green Supply Chain</div>
+
+    <div class="cell-hd rowlabel zh-inline">A1<br>盟友<br>（美國）</div>
+    <div class="cell-hd rowlabel en-inline">A1<br>Ally<br>(US)</div>
+    <div class="cell c1">
+      <div class="cell-n">Cell 1</div>
+      <div class="cell-sub zh-inline">美方核電安全顧問進駐<br>民主核能安全夥伴計畫</div>
+      <div class="cell-sub en-inline">US nuclear safety advisors stationed<br>&quot;Democratic Nuclear Safety Partnership&quot;</div>
+      <div class="cell-sz">N = 600</div>
+    </div>
+    <div class="cell c2">
+      <div class="cell-n">Cell 2</div>
+      <div class="cell-sub zh-inline">美方風電技術團隊進駐<br>建立本土維護能力</div>
+      <div class="cell-sub en-inline">US wind tech team onsite<br>Building local maintenance capacity</div>
+      <div class="cell-sz">N = 600</div>
+    </div>
+
+    <div class="cell-hd rowlabel zh-inline">A2<br>競爭國<br>（中國）</div>
+    <div class="cell-hd rowlabel en-inline">A2<br>Rival<br>(China)</div>
+    <div class="cell c3">
+      <div class="cell-n">Cell 3</div>
+      <div class="cell-sub zh-inline">中資持有核電廠維護合約<br>工程師常態進駐</div>
+      <div class="cell-sub en-inline">Chinese firms hold nuclear maintenance contracts<br>Engineers routinely stationed</div>
+      <div class="cell-sz">N = 600</div>
+    </div>
+    <div class="cell c4">
+      <div class="cell-n">Cell 4</div>
+      <div class="cell-sub zh-inline">中資掌控離岸風電維護<br>合約設定中方認證壟斷</div>
+      <div class="cell-sub en-inline">Chinese firms control offshore wind maintenance<br>Contracts require Chinese certification</div>
+      <div class="cell-sz">N = 600</div>
+    </div>
+  </div>
+
+  <div class="cell-ctrl">
+    <strong class="zh-inline">Cell 0 ｜ 對照組（N = 600）</strong>
+    <strong class="en-inline">Cell 0 ｜ Control (N = 600)</strong>
+    <span class="zh-inline">IPCC 科學基線，無國家標籤</span>
+    <span class="en-inline">IPCC scientific baseline, no country label</span>
+  </div>
+
+  <!-- Core hypotheses -->
+  <div class="energy-label zh-inline">【核心假說 Core Hypotheses】</div>
+  <div class="energy-label en-inline">Core Hypotheses</div>
+
+  <div class="hyp-grid">
+    <div class="hyp">
+      <div class="hyp-id">H1</div>
+      <div class="hyp-txt zh-inline">行動溢價：已落地 &gt; 計畫（固定 C2）</div>
+      <div class="hyp-txt en-inline">Action premium: executed &gt; planned (fixed C2)</div>
+    </div>
+    <div class="hyp">
+      <div class="hyp-id">H2 ｜ A 主效應</div>
+      <div class="hyp-txt zh-inline">盟友 vs. 競爭國 引發不同方向的態度變化</div>
+      <div class="hyp-txt en-inline">Ally vs. Rival produce asymmetric shifts</div>
+    </div>
+    <div class="hyp">
+      <div class="hyp-id">H3 ｜ D 主效應</div>
+      <div class="hyp-txt zh-inline">核能 vs. 綠能 觸發不同心理機制</div>
+      <div class="hyp-txt en-inline">Nuclear vs. green trigger different mechanisms</div>
+    </div>
+    <div class="hyp">
+      <div class="hyp-id">H4 ｜ A×D 交互</div>
+      <div class="hyp-txt zh-inline">交叉不對稱效應（核心假說）</div>
+      <div class="hyp-txt en-inline">Cross-over interaction (core)</div>
+    </div>
+  </div>
+
+  <!-- DVs -->
+  <div class="energy-label zh-inline">【依變項 Outcomes】</div>
+  <div class="energy-label en-inline">Dependent Variables</div>
+  <div class="dv-grid">
+    <div class="dv"><div class="dv-id">DV1</div><div class="dv-txt zh-inline">國安 vs. 減碳 政策優先序</div><div class="dv-txt en-inline">Security vs. decarbonization</div></div>
+    <div class="dv"><div class="dv-id">DV2</div><div class="dv-txt zh-inline">核能/風電/光電 支持度</div><div class="dv-txt en-inline">Nuclear/wind/solar support</div></div>
+    <div class="dv"><div class="dv-id">DV3</div><div class="dv-txt zh-inline">核電廠環境風險感知</div><div class="dv-txt en-inline">Nuclear environmental risk</div></div>
+    <div class="dv"><div class="dv-id">DV4</div><div class="dv-txt zh-inline">核電廠 NIMBY 在地接受度</div><div class="dv-txt en-inline">NIMBY acceptance</div></div>
+    <div class="dv"><div class="dv-id">DV5</div><div class="dv-txt zh-inline">能源技術來源信任偏好</div><div class="dv-txt en-inline">Source trust preference</div></div>
+    <div class="dv"><div class="dv-id">DV6</div><div class="dv-txt zh-inline">情境政策方向認同度</div><div class="dv-txt en-inline">Policy frame endorsement</div></div>
+  </div>
+
+  <!-- Experimental workflow -->
+  <div class="energy-label zh-inline">【問卷流程 Experimental Workflow】</div>
+  <div class="energy-label en-inline">Experimental Workflow</div>
+  <div class="exp-flow">
+    <div class="exp-flow-step">
+      <div class="exp-flow-num">1</div>
+      <div class="exp-flow-title zh-inline">前測調節</div>
+      <div class="exp-flow-title en-inline">Pre-test Moderators</div>
+      <div class="exp-flow-desc zh-inline">M1–M5：政黨、認同、核風險、美援信心</div>
+      <div class="exp-flow-desc en-inline">M1–M5: Party ID, identity, risk</div>
+    </div>
+    <div class="exp-flow-step">
+      <div class="exp-flow-num">2</div>
+      <div class="exp-flow-title zh-inline">情境呈現</div>
+      <div class="exp-flow-title en-inline">Vignette</div>
+      <div class="exp-flow-desc zh-inline">隨機分派至 5 格之一</div>
+      <div class="exp-flow-desc en-inline">Random assignment to 5 cells</div>
+    </div>
+    <div class="exp-flow-step">
+      <div class="exp-flow-num">3</div>
+      <div class="exp-flow-title zh-inline">注意力檢核</div>
+      <div class="exp-flow-title en-inline">Attention Check</div>
+      <div class="exp-flow-desc zh-inline">AC_1/2/3：來源國 × 能源類型 × 行動性</div>
+      <div class="exp-flow-desc en-inline">AC_1/2/3: source × type × action</div>
+    </div>
+    <div class="exp-flow-step">
+      <div class="exp-flow-num">4</div>
+      <div class="exp-flow-title zh-inline">操弄檢核</div>
+      <div class="exp-flow-title en-inline">Manipulation Check</div>
+      <div class="exp-flow-desc zh-inline">MC_1–MC_5：辨識率門檻 ≥ 75%</div>
+      <div class="exp-flow-desc en-inline">MC_1–MC_5: ≥ 75% threshold</div>
+    </div>
+    <div class="exp-flow-step">
+      <div class="exp-flow-num">5</div>
+      <div class="exp-flow-title zh-inline">DV + 後置調節</div>
+      <div class="exp-flow-title en-inline">DV + Post-mod</div>
+      <div class="exp-flow-desc zh-inline">DV1–6 + N1/2/3（信任、威脅、可行性）</div>
+      <div class="exp-flow-desc en-inline">DV1–6 + N1/2/3</div>
+    </div>
+  </div>
+
+  <!-- Design metadata -->
+  <div class="energy-meta">
+    <div class="energy-meta-item">
+      <span class="zh-inline">樣本數</span><span class="en-inline">Sample</span>
+      <strong>N = 3,000</strong>
+    </div>
+    <div class="energy-meta-item">
+      <span class="zh-inline">設計</span><span class="en-inline">Design</span>
+      <strong>2×2 + Control</strong>
+    </div>
+    <div class="energy-meta-item">
+      <span class="zh-inline">交互統計力</span><span class="en-inline">Power (A×D)</span>
+      <strong>~ 0.82</strong>
+    </div>
+    <div class="energy-meta-item">
+      <span class="zh-inline">完稿</span><span class="en-inline">Target</span>
+      <strong>2026 Q3</strong>
+    </div>
+  </div>
+</div>
+
+<p class="zh-inline" style="font-size:.88rem;margin-top:.9rem;color:#555;font-style:italic">
+🎯 <strong>理論貢獻：</strong>對話 Tomz &amp; Weeks (2020, APSR)、Shandler et al. (2022, BJPS)、Chow &amp; Levin (2025, APSR)——首次將「行動溢價」與「友好來源」的比較移植至<strong>能源主權</strong>情境，填補該文獻空白。
+</p>
+<p class="en-inline" style="font-size:.88rem;margin-top:.9rem;color:#555;font-style:italic">
+🎯 <strong>Contribution:</strong> Engages Tomz &amp; Weeks (2020), Shandler et al. (2022), Chow &amp; Levin (2025) — first extension of &quot;action premium&quot; and &quot;friendly source&quot; logics to <strong>energy sovereignty</strong>, filling a gap in the literature.
+</p>
+</div>
+
+
+</div></div>
+
+<!-- ====== P5 Open Discussion ====== -->
+<div class="page" data-page="5"><div class="page-inner">
+<h2 class="zh-inline">⑤ 綜合交流 </h2>
+<h2 class="en-inline">⑤ Open Discussion ｜ 10 min</h2>
+
+<p class="zh-inline">以下是針對交流時間預擬的三類回應——研究方法、穩健性檢定、研究關懷延伸。這些問題預期會是委員在聽完研究介紹後最想深入的面向。</p>
+<p class="en-inline">Prepared responses across three categories: methods, robustness, and research extensions.</p>
+
+<div class="qa-card">
+  <div class="qa-question">
+    <span class="qa-q-label">D1</span>
+    <span class="zh-inline">您選擇 ARFIMA-MLM 這個相對少見的模型，為什麼不用更標準的 DID 或固定效應？</span>
+    <span class="en-inline">Why ARFIMA-MLM instead of standard DID or fixed effects?</span>
+  </div>
+  <div class="qa-answer">
+    <p class="zh-inline"><strong>核心理由：</strong><span class="key-line">軍機繞台不是「單次處理」，而是持續八年的連續變動，標準 DID 假設的「處理前後離散對比」根本不適用。</span></p>
+    <p class="en-inline"><strong>Core:</strong> <span class="key-line">Military incursions are not a single treatment but an 8-year continuous variation. Standard DID's discrete pre-post comparison doesn't fit.</span></p>
+
+    <ul class="zh-inline">
+      <li><strong>ARFIMA 的必要性：</strong>軍事威脅資料具有「長記憶」特性（d 介於 0 和 1 之間的分數整合），一般 ARMA 模型會低估標準誤、產生偽相關。ARFIMA 能準確分解「長期趨勢（如常態化）」與「短期衝擊（如裴洛西訪台）」。</li>
+      <li><strong>MLM 的必要性：</strong>ICC = 0.144，超過 Cohen 的高群集門檻。若不用多層次模型，同週受訪者的相關性會被忽略，犯第一類錯誤的風險大幅上升。</li>
+      <li><strong>DID 為什麼不行？</strong>DID 要求「明確的處理時點」和「可信的平行趨勢假設」。但軍機繞台是連續變化、幾乎沒有「乾淨的前後期」可比較。</li>
+      <li><strong>合併策略的優勢：</strong>雙層過濾（total 層 ARFIMA + individual 層群組平減）同時處理時序相依與截面異質——這是 Lebo &amp; Weber (2014) 和 Silver &amp; Raseta (2021) 最新的方法論進展。</li>
+    </ul>
+    <ul class="en-inline">
+      <li>ARFIMA handles long-memory processes (fractional integration) that standard ARMA cannot.</li>
+      <li>ICC = 0.144 exceeds high-clustering threshold—MLM is required.</li>
+      <li>DID needs discrete treatment timing; our data has continuous variation.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="qa-card">
+  <div class="qa-question">
+    <span class="qa-q-label">D2</span>
+    <span class="zh-inline">觀察性資料有內生性疑慮——中國選擇何時派機，可能與台灣內部政治事件相關。您如何確保因果推論的穩健？（穩健性檢定：實驗法補強）</span>
+    <span class="en-inline">Observational data face endogeneity. How do you ensure causal robustness? (Experimental robustness check)</span>
+  </div>
+  <div class="qa-answer">
+    <p class="zh-inline"><strong>核心策略：</strong><span class="key-line">觀察資料揭示現象與規律，實驗法揭示機制——兩者互相補充，沒有單一方法能獨自完成因果推論。</span></p>
+    <p class="en-inline"><strong>Core:</strong> <span class="key-line">Observational data reveal patterns; experiments reveal mechanisms. No single method can establish causation alone.</span></p>
+
+    <h4 class="zh-inline">四層穩健性檢定架構</h4>
+    <h4 class="en-inline">Four-Layer Robustness Framework</h4>
+
+    <div class="contrib-grid">
+      <div class="contrib-item">
+        <div class="contrib-icon">📊</div>
+        <div class="contrib-label zh-inline">① 觀察資料穩健性</div>
+        <div class="contrib-label en-inline">① Observational Robustness</div>
+        <div class="contrib-text zh-inline">不同壓力指標（天數 vs. 架次）、不同時間窗（週、月）、不同子樣本（民進黨執政/國民黨執政）的重複檢定。</div>
+        <div class="contrib-text en-inline">Multiple pressure measures, time windows, and subsamples.</div>
+      </div>
+      <div class="contrib-item">
+        <div class="contrib-icon">🧪</div>
+        <div class="contrib-label zh-inline">② 實驗法補強（關鍵！）</div>
+        <div class="contrib-label en-inline">② Experimental Augmentation (key!)</div>
+        <div class="contrib-text zh-inline">2025 美國肖像調查實驗（N=1,249），在受控條件下測試威脅訊息對總統支持度的因果效果——這是觀察資料做不到的。</div>
+        <div class="contrib-text en-inline">2025 APP experiment (N=1,249) testing causal effects under controlled conditions.</div>
+      </div>
+      <div class="contrib-item">
+        <div class="contrib-icon">🎯</div>
+        <div class="contrib-label zh-inline">③ 質性機制檢驗</div>
+        <div class="contrib-label en-inline">③ Qualitative Mechanism Check</div>
+        <div class="contrib-text zh-inline">針對四次危機事件（蔡英文就任、蔡訪捷克、裴洛西訪台、賴清德就任）做個案研究，驗證量化結果與實際事件脈絡一致。</div>
+        <div class="contrib-text en-inline">Case studies of four crisis events verifying quantitative findings.</div>
+      </div>
+    </div>
+
+    <p class="zh-inline" style="margin-top:.5rem;font-size:.85rem"><strong>為什麼實驗法是穩健性檢定的核心？</strong>因為軍機繞台是「中國的策略選擇」，可能存在反向因果（中國看到民進黨民調下滑就加大壓力）。只有在實驗室情境下「隨機分配」威脅訊息，才能排除反向因果的污染——這就是我在 2025 年實驗的設計邏輯。</p>
+    <p class="en-inline" style="margin-top:.5rem;font-size:.85rem"><strong>Why experiments are central:</strong> only random assignment eliminates reverse-causation contamination (China increasing pressure when DPP polls drop).</p>
+
+    <!-- 2025 APP Experiment Details -->
+    <div class="exp-box" style="margin-top:1rem">
+      <div class="exp-title zh-inline">🧪 2025 美國肖像實驗：背後的心理機制（N=1,249）</div>
+      <div class="exp-title en-inline">🧪 2025 APP Experiment: Underlying Mechanisms (N=1,249)</div>
+
+      <!-- Mechanism Figure: 3 paths from treatment -->
+      <div style="background:#fff;border:1px solid var(--line);border-radius:6px;padding:.9rem;margin:.7rem 0">
+        <div style="text-align:center;font-size:.85rem;color:#666;font-style:italic;margin-bottom:.4rem" class="zh-inline">處理（隨機分派威脅訊息）→ 三條異質性機制</div>
+        <div style="text-align:center;font-size:.85rem;color:#666;font-style:italic;margin-bottom:.4rem" class="en-inline">Treatment (randomized threat info) → 3 heterogeneous mechanisms</div>
+
+        <svg viewBox="0 0 800 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block">
+          <defs>
+            <marker id="arr-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+              <path d="M0,0 L10,5 L0,10 Z" fill="#8b2500"/>
+            </marker>
+            <marker id="arr-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+              <path d="M0,0 L10,5 L0,10 Z" fill="#2a7a6e"/>
+            </marker>
+            <marker id="arr-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+              <path d="M0,0 L10,5 L0,10 Z" fill="#1d3557"/>
+            </marker>
+          </defs>
+
+          <!-- Treatment box (left) -->
+          <rect x="20" y="105" width="150" height="70" rx="8" fill="#1a1a1a"/>
+          <text x="95" y="135" text-anchor="middle" fill="#f5f0e8" font-size="13" font-weight="700" class="zh-inline">處理（T）</text>
+          <text x="95" y="135" text-anchor="middle" fill="#f5f0e8" font-size="13" font-weight="700" class="en-inline">Treatment (T)</text>
+          <text x="95" y="153" text-anchor="middle" fill="#c9a253" font-size="11" class="zh-inline">展示軍機數據</text>
+          <text x="95" y="153" text-anchor="middle" fill="#c9a253" font-size="11" class="en-inline">PLA threat data</text>
+          <text x="95" y="167" text-anchor="middle" fill="#fff" font-size="9" opacity="0.85">N = 1,249</text>
+
+          <!-- Path 1: Anger (rejected) -->
+          <line x1="170" y1="125" x2="320" y2="55" stroke="#8b2500" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#arr-red)"/>
+          <rect x="320" y="20" width="220" height="65" rx="6" fill="#fff" stroke="#8b2500" stroke-width="1.5" stroke-dasharray="4,3"/>
+          <text x="335" y="42" font-size="12" font-weight="700" fill="#8b2500" class="zh-inline">機制 1 ｜ 情緒路徑</text>
+          <text x="335" y="42" font-size="12" font-weight="700" fill="#8b2500" class="en-inline">Mech 1 ｜ Affective</text>
+          <text x="335" y="58" font-size="10" fill="#333" class="zh-inline">「憤怒」中介 → <tspan font-weight="700">不顯著</tspan></text>
+          <text x="335" y="58" font-size="10" fill="#333" class="en-inline">Anger mediation → <tspan font-weight="700">null</tspan></text>
+          <text x="335" y="73" font-size="9.5" fill="#666" font-style="italic" class="zh-inline">與 Shandler (2022) 不同 ✗</text>
+          <text x="335" y="73" font-size="9.5" fill="#666" font-style="italic" class="en-inline">Differs from Shandler (2022) ✗</text>
+          <text x="555" y="55" font-size="20" fill="#8b2500" font-weight="700">✗</text>
+
+          <!-- Path 2: Wake-up (positive) -->
+          <line x1="170" y1="140" x2="320" y2="140" stroke="#2a7a6e" stroke-width="2.5" marker-end="url(#arr-green)"/>
+          <rect x="320" y="105" width="220" height="65" rx="6" fill="#fff" stroke="#2a7a6e" stroke-width="1.5"/>
+          <text x="335" y="127" font-size="12" font-weight="700" fill="#2a7a6e" class="zh-inline">機制 2 ｜ 喚醒效應</text>
+          <text x="335" y="127" font-size="12" font-weight="700" fill="#2a7a6e" class="en-inline">Mech 2 ｜ Wake-up</text>
+          <text x="335" y="143" font-size="10" fill="#333" class="zh-inline">低基線 DPP/中立 → <tspan font-weight="700">提升</tspan></text>
+          <text x="335" y="143" font-size="10" fill="#333" class="en-inline">Low-baseline → <tspan font-weight="700">aroused</tspan></text>
+          <text x="335" y="158" font-size="9.5" fill="#666" font-style="italic" class="zh-inline">習慣化是可逆的 ✓</text>
+          <text x="335" y="158" font-size="9.5" fill="#666" font-style="italic" class="en-inline">Habituation is reversible ✓</text>
+          <text x="555" y="140" font-size="20" fill="#2a7a6e" font-weight="700">✓</text>
+
+          <!-- Path 3: Partisan filter (blocked for KMT) -->
+          <line x1="170" y1="155" x2="320" y2="225" stroke="#1d3557" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#arr-blue)"/>
+          <rect x="320" y="190" width="220" height="65" rx="6" fill="#fff" stroke="#1d3557" stroke-width="1.5"/>
+          <text x="335" y="212" font-size="12" font-weight="700" fill="#1d3557" class="zh-inline">機制 3 ｜ 政黨濾鏡</text>
+          <text x="335" y="212" font-size="12" font-weight="700" fill="#1d3557" class="en-inline">Mech 3 ｜ Partisan Filter</text>
+          <text x="335" y="228" font-size="10" fill="#333" class="zh-inline">KMT 阻擋訊號 → <tspan font-weight="700">無反應</tspan></text>
+          <text x="335" y="228" font-size="10" fill="#333" class="en-inline">KMT blocks → <tspan font-weight="700">no shift</tspan></text>
+          <text x="335" y="243" font-size="9.5" fill="#666" font-style="italic" class="zh-inline">除非達存亡等級 ⊘</text>
+          <text x="335" y="243" font-size="9.5" fill="#666" font-style="italic" class="en-inline">Unless existential ⊘</text>
+          <text x="555" y="225" font-size="20" fill="#1d3557" font-weight="700">⊘</text>
+
+          <!-- Outcome (right) -->
+          <rect x="600" y="105" width="180" height="70" rx="8" fill="#b8860b"/>
+          <text x="690" y="130" text-anchor="middle" fill="#fff" font-size="12" font-weight="700" class="zh-inline">總體結果</text>
+          <text x="690" y="130" text-anchor="middle" fill="#fff" font-size="12" font-weight="700" class="en-inline">Overall Outcome</text>
+          <text x="690" y="148" text-anchor="middle" fill="#fff" font-size="10" class="zh-inline">支持度的條件性提升</text>
+          <text x="690" y="148" text-anchor="middle" fill="#fff" font-size="10" class="en-inline">Conditional rally</text>
+          <text x="690" y="162" text-anchor="middle" fill="#ffe" font-size="9" font-style="italic" class="zh-inline">＝聚旗 ≠ 共識</text>
+          <text x="690" y="162" text-anchor="middle" fill="#ffe" font-size="9" font-style="italic" class="en-inline">rally ≠ consensus</text>
+
+          <!-- Convergence arrows from 3 mechanisms to outcome -->
+          <line x1="555" y1="55" x2="600" y2="125" stroke="#888" stroke-width="1" stroke-dasharray="3,3"/>
+          <line x1="540" y1="140" x2="600" y2="140" stroke="#888" stroke-width="1.5"/>
+          <line x1="555" y1="225" x2="600" y2="155" stroke="#888" stroke-width="1" stroke-dasharray="3,3"/>
+        </svg>
+
+        <div style="font-size:.78rem;color:#555;text-align:center;margin-top:.3rem;line-height:1.6" class="zh-inline">
+          <strong>三條機制差異化整合</strong>，造就觀察到的「條件性聚旗效應」——而非全民團結
+        </div>
+        <div style="font-size:.78rem;color:#555;text-align:center;margin-top:.3rem;line-height:1.6" class="en-inline">
+          <strong>Three mechanisms differentially integrate</strong> to produce observed conditional rally — not unified consensus
+        </div>
+      </div>
+
+      <ul class="zh-inline" style="font-size:.88rem;margin-bottom:0">
+        <li><strong>處理：</strong>展示軍機繞台數據 vs. 中性資訊（隨機分派）</li>
+        <li><strong>機制 1：</strong>「憤怒」中介效應不顯著 → <strong>拒絕情緒路徑假說</strong>（與 Shandler 2022 不同）</li>
+        <li><strong>機制 2：</strong>低基線威脅感的 DPP／中立者有「<strong>喚醒效應</strong>」——說明「習慣化」是可逆的</li>
+        <li><strong>機制 3：</strong>KMT 的<strong>政黨濾鏡</strong>會阻擋威脅訊號，除非達存亡等級</li>
+        <li><strong>意義：</strong>實驗確認觀察資料的發現並非反向因果，同時揭示三種異質性機制</li>
+      </ul>
+      <ul class="en-inline" style="font-size:.88rem;margin-bottom:0">
+        <li>Treatment: PLA data vs. neutral info (randomized)</li>
+        <li><strong>Mechanism 1:</strong> Anger mediation null — rejects affective pathway</li>
+        <li><strong>Mechanism 2:</strong> &quot;Wake-up effect&quot; among low-baseline DPP/independents — habituation is reversible</li>
+        <li><strong>Mechanism 3:</strong> KMT partisan filter blocks threats except at existential level</li>
+        <li>Validates observational findings and reveals three heterogeneous mechanisms</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="qa-card">
+  <div class="qa-question">
+    <span class="qa-q-label">D3</span>
+    <span class="zh-inline">您的研究關懷如何延續與擴展？未來五年有什麼規劃？（簡述研究關懷）</span>
+    <span class="en-inline">How will your research agenda continue and extend? What are your plans for the next five years?</span>
+  </div>
+  <div class="qa-answer">
+    <p class="zh-inline"><strong>核心脈絡：</strong><span class="key-line">從「中國做什麼」（輸入面）延伸到「台灣社會如何反應」（輸出面），再擴展到「第三地的連動效應」（比較面）。</span></p>
+    <p class="en-inline"><strong>Core:</strong> <span class="key-line">From &quot;what China does&quot; → &quot;how Taiwan responds&quot; → &quot;comparative effects across third regions&quot;.</span></p>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-year zh-inline">2024-2025 ｜ 已完成</div>
+        <div class="tl-year en-inline">2024-2025 ｜ Completed</div>
+        <div class="tl-title zh-inline">銳實力的台灣在地效應</div>
+        <div class="tl-title en-inline">Sharp power's local effects in Taiwan</div>
+        <div class="tl-desc zh-inline">中國銳實力對台灣 2014-2022 選舉影響、反送中的香港效應、民粹崛起與衰退、軍機繞台民意反應。</div>
+        <div class="tl-desc en-inline">Elections 2014-2022, Hong Kong effect, populism, military incursions.</div>
+      </div>
+      <div class="tl-item blue">
+        <div class="tl-year zh-inline">2026-2027 ｜ 進行中</div>
+        <div class="tl-year en-inline">2026-2027 ｜ Ongoing</div>
+        <div class="tl-title zh-inline">從台灣延伸到跨國比較</div>
+        <div class="tl-title en-inline">From Taiwan to cross-national comparison</div>
+        <div class="tl-desc zh-inline">參與中研院「習近平時代的中國對外統戰與宣傳」跨國民調計畫（1/3 年）；大罷免潮的連結性行動研究（預計 2026/3 投稿《台灣社會學刊》）。</div>
+        <div class="tl-desc en-inline">Cross-national polling on CCP united front; Great Recall Wave and connective action.</div>
+      </div>
+      <div class="tl-item gold">
+        <div class="tl-year zh-inline">2027-2028 ｜ 規劃中</div>
+        <div class="tl-year en-inline">2027-2028 ｜ Planned</div>
+        <div class="tl-title zh-inline">能源地緣政治與安全</div>
+        <div class="tl-title en-inline">Energy geopolitics and security</div>
+        <div class="tl-desc zh-inline">與林宗弘研究員合作執行「淨零排放」下的再生能源公眾支持研究，加入地緣政治變數。</div>
+        <div class="tl-desc en-inline">Net-zero public support and energy infrastructure with Dr. Lin Thung-Hong.</div>
+      </div>
+      <div class="tl-item sage">
+        <div class="tl-year zh-inline">2029-2031 ｜ 長期目標</div>
+        <div class="tl-year en-inline">2029-2031 ｜ Long-term</div>
+        <div class="tl-title zh-inline">AI 時代的民主治理</div>
+        <div class="tl-title en-inline">Democratic governance in the AI era</div>
+        <div class="tl-desc zh-inline">初探臺灣民眾接受 AI 判決之因素（已於東吳大學報告）；AI 生成內容對民意的影響；威權的數位監控技術擴散。</div>
+        <div class="tl-desc en-inline">AI adjudication acceptance; AI-generated content on public opinion; diffusion of digital authoritarian tech.</div>
+      </div>
+    </div>
+
+    <h4 class="zh-inline">對淡江外交系的研究承諾</h4>
+    <h4 class="en-inline">Research Commitment to DDIR</h4>
+    <p class="zh-inline">
+      • 每年至少 1 篇 SSCI / TSSCI 論文產出<br>
+      • 每年至少 1 次國際會議發表（APSA / IPSA / MPSA / PIPC）<br>
+      • 積極申請國科會專題研究計畫（延續目前與中研院林宗弘、吳文欽研究員的合作網絡）<br>
+      • 與兩岸關係研究中心、中國大陸研究中心建立實質合作<br>
+      • 開設大學部「中國大陸問題研究」與碩士班「量化研究方法」為核心貢獻
+    </p>
+    <p class="en-inline">
+      • At least 1 SSCI/TSSCI publication per year<br>
+      • At least 1 international conference per year (APSA / IPSA / MPSA / PIPC)<br>
+      • Active NSTC grant applications (extending current collaborations)<br>
+      • Substantive collaboration with TKU's Cross-Strait &amp; Mainland China research centers<br>
+      • Core teaching: undergraduate China Studies and graduate Quantitative Methods
+    </p>
+  </div>
+</div>
+
+<div style="background:linear-gradient(135deg,var(--tku-blue) 0%,#002855 100%);color:#fff;padding:1.4rem;border-radius:8px;margin-top:1.5rem;text-align:center">
+  <p class="zh-inline" style="color:#c9a253;font-size:1.1rem;font-weight:700;margin-bottom:.6rem;font-family:'Playfair Display',serif">感謝各位委員的時間</p>
+  <p class="en-inline" style="color:#c9a253;font-size:1.1rem;font-weight:700;margin-bottom:.6rem;font-family:'Playfair Display',serif">Thank You for Your Time</p>
+  <p style="font-size:.88rem;color:#fff;margin-bottom:.3rem" class="zh-inline">期待有機會加入淡江大學外交與國際關係學系，與各位同仁共同推動研究與教學。</p>
+  <p style="font-size:.88rem;color:#fff;margin-bottom:.3rem" class="en-inline">Looking forward to contributing to TKU's Department of Diplomacy and International Relations.</p>
+  <p style="font-size:.75rem;color:#c9a253;margin-top:.7rem;letter-spacing:.05em">林文正 ｜ Wen-Cheng Lin ｜ 101252504@nccu.edu.tw</p>
+</div>
+
+</div></div>
+
+</div><!-- /.page-container -->
+
+<!-- ====== Bottom Bar ====== -->
+<div class="bottom-bar">
+  <div class="page-indicator">
+    <span id="pageNum">1</span> / 6
+    <span style="margin-left:.8rem;color:var(--gold)" id="pageName">
+      <span class="zh-inline">封面</span><span class="en-inline">Cover</span>
+    </span>
+  </div>
+  <div class="page-dots">
+    <div class="dot active" onclick="goPage(0)"></div>
+    <div class="dot" onclick="goPage(1)"></div>
+    <div class="dot" onclick="goPage(2)"></div>
+    <div class="dot" onclick="goPage(3)"></div>
+    <div class="dot" onclick="goPage(4)"></div>
+    <div class="dot" onclick="goPage(5)"></div>
+  </div>
+  <div class="arrow-btns">
+    <button class="arrow-btn" id="prevBtn" onclick="goPrev()">‹</button>
+    <button class="arrow-btn" id="nextBtn" onclick="goNext()">›</button>
+  </div>
+</div>
+
+</div><!-- /.app -->
+
+<script>
+var currentPage = 0;
+var totalPages = 6;
+var pageNames = {
+  zh: ['封面','① 自我介紹','② 委員提問','③ 教學示範','④ 研究領域','⑤ 綜合交流'],
+  en: ['Cover','① Self-Intro','② Q&A','③ Teaching','④ Research','⑤ Discussion']
+};
+
+function goPage(n){
+  if(n < 0 || n >= totalPages) return;
+  currentPage = n;
+  var pages = document.querySelectorAll('.page');
+  var navBtns = document.querySelectorAll('.nav-btn');
+  var dots = document.querySelectorAll('.dot');
+
+  pages.forEach(function(p,i){
+    if(i === n) p.classList.add('active');
+    else p.classList.remove('active');
+  });
+  navBtns.forEach(function(b,i){
+    if(i === n) b.classList.add('active');
+    else b.classList.remove('active');
+  });
+  dots.forEach(function(d,i){
+    if(i === n) d.classList.add('active');
+    else d.classList.remove('active');
+  });
+
+  document.getElementById('pageNum').textContent = (n+1);
+  document.getElementById('prevBtn').disabled = (n === 0);
+  document.getElementById('nextBtn').disabled = (n === totalPages - 1);
+
+  // update page name (both zh/en spans — css hides the inactive)
+  var pn = document.getElementById('pageName');
+  var lang = document.body.classList.contains('lang-en') ? 'en' : 'zh';
+  pn.innerHTML = '<span class="zh-inline">'+pageNames.zh[n]+'</span><span class="en-inline">'+pageNames.en[n]+'</span>';
+
+  // scroll the active page to top
+  pages[n].scrollTop = 0;
+}
+
+function goPrev(){ if(currentPage > 0) goPage(currentPage - 1); }
+function goNext(){ if(currentPage < totalPages - 1) goPage(currentPage + 1); }
+
+function setLang(lang){
+  document.body.classList.remove('lang-zh','lang-en');
+  document.body.classList.add('lang-' + lang);
+  var btns = document.querySelectorAll('.lang-btn');
+  btns.forEach(function(b){ b.classList.remove('active'); });
+  // find the clicked button — simplest: match text
+  btns.forEach(function(b){
+    if((lang === 'zh' && b.textContent.trim() === '中文') ||
+       (lang === 'en' && b.textContent.trim() === 'EN')){
+      b.classList.add('active');
+    }
+  });
+  // refresh page name
+  goPage(currentPage);
+}
+
+// Keyboard navigation
+document.addEventListener('keydown', function(e){
+  if(e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+  if(e.key === 'ArrowLeft') goPrev();
+  else if(e.key === 'ArrowRight') goNext();
+});
+
+// Lesson toggle (collapsible W4/W7 lesson samples)
+function toggleLesson(id){
+  var el = document.getElementById(id);
+  if(!el) return;
+  el.classList.toggle('is-open');
+  var btn = el.querySelector('.lesson-toggle');
+  if(btn) btn.textContent = el.classList.contains('is-open') ? '×' : '+';
+}
+
+// Init: disable prev button on page 0
+document.getElementById('prevBtn').disabled = true;
+</script>
+
+</body>
+</html>
